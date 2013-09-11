@@ -14,6 +14,21 @@ $.fn.centro = function () {
     return this;
 }
 
+
+function carregaPin(){
+	
+	
+	$.each(arrayPin, function(n1, v1) {
+	  $.each(v1, function(n2, v2) {
+		if(v2 == 'sem'){$('.'+n2).hide();}
+		if(v2 == 'sim'){$('.'+n2).html('<div class="pin_sim"></div>');}
+		if(v2 == 'nao'){$('.'+n2).html('<div class="pin_nao"></div>');}
+	  });
+	});
+	
+	
+}
+
 function janelas(){		
       $('.popup').click(function() { 
 	  	var $id = $(this).attr('class').split(' ')[2];
@@ -73,16 +88,25 @@ function fecha(){
 
   
 function Slider(){
+	
+	// inicia o mapa no momento (/#m1 - EMPRESÁRIO DE PEQUENOS NEGÓCIOS, /#m2 - MICROEMPREENDEDOR INDIVIDUAL, /#m3 - POTENCIAL EMPREENDEDOR)
+	inicio = 0;
+	if (window.location.hash != '') {
+	  inicio = window.location.hash.substr(2,1)-1;
+	}
+	
+	
 	$captions = $('.captions');
 	$('.centro').centro();
 	$('.flexslider').flexslider({
         animation: "slide",
 		slideshow: false,
 		animationSpeed: 800,
-		controlNav: false,
+		controlNav: true,
 		keyboard: false,
 		touch: true,
 		useCSS: true,
+		startAt: inicio,
 		start: function(slider) {
 			$activecaption = $('.flex-active-slide .flex-caption');
 			$captions.html($activecaption.text()); 
@@ -92,6 +116,7 @@ function Slider(){
 			
 			janelas();
 			fecha();
+			
 		},
 		after: function(slide) {
 			$activecaption = $('.flex-active-slide .flex-caption');
@@ -220,18 +245,17 @@ $(document).ready(function(e) {
 	});
 });
 $(window).load(function() {
+	
 
-			$('[data-toggle=tooltip]').tooltip();
+	$('[data-toggle=tooltip]').tooltip();
 	$(window).trigger('resize');
 	Slider();
 	vaiMapa()
-			paraCarrosel()
-			
-			$('.nav-tabs a').click(function (e) {
-  e.preventDefault();
-  $(this).tab('show');
-})
-
+	paraCarrosel()
+	carregaPin()
+	
+	
+	
 	
 	$('a.abre_modal').click(function() {
 		var $momento = $(this).attr('class').split(' ')[0];

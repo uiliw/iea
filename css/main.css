@@ -181,17 +181,23 @@ text-transform: uppercase;margin: 20px;line-height: 40px;}
 	 .fechar_conteudo_janela:hover{background-color: rgb(9, 105, 102);}
 .flex-caption{ display:none}
 
-.pin1b{position:absolute; left: 934px; top: 500px;z-index: 9999;}
-.pin2b{position:absolute; left: 1110px; top: 428px;z-index: 9999;}
-.pin3b{position:absolute; left: 1149px; top: 543px;z-index: 10001;}
-.pin4b{position:absolute; left: 1294px; top: 480px;z-index: 10009;}
-.pin5b{position:absolute; left: 1194px; top: 725px;z-index: 10009;}
-.pin6b{position:absolute; left: 1354px; top: 590px;z-index: 10009;}
-.pin7b{position:absolute; left: 1527px; top: 420px;z-index: 9999;}
-.pin8b{position:absolute; left: 1544px; top: 670px;z-index: 9999;}
+.pin1a{position:absolute; left: 934px; top: 500px;z-index: 9999;}
+.pin2a{position:absolute; left: 1110px; top: 428px;z-index: 9999;}
+.pin3a{position:absolute; left: 1149px; top: 543px;z-index: 10001;}
+.pin4a{position:absolute; left: 1294px; top: 480px;z-index: 10009;}
+.pin5a{position:absolute; left: 1194px; top: 725px;z-index: 10009;}
+.pin6a{position:absolute; left: 1354px; top: 590px;z-index: 10009;}
+.pin7a{position:absolute; left: 1527px; top: 420px;z-index: 9999;}
+.pin8a{position:absolute; left: 1544px; top: 670px;z-index: 9999;}
 
 
-.pin{background-image:url(../img/pin.png); background-repeat:no-repeat; width: 20px; height: 38px;  position:absolute;
+.pin_nao{background-image:url(../img/pin.png); background-repeat:no-repeat; width: 20px; height: 38px;  position:absolute;
+	-webkit-animation: jump 1s infinite;
+	-moz-animation: jump 1s infinite;
+	-o-animation: jump 1s infinite;
+	-ms-animation: jump 1s infinite;
+	animation: jump 1s infinite;}
+.pin_sim{background-image:url(../img/pin.png); background-repeat:no-repeat; width: 20px; height: 38px;  position:absolute;
 	-webkit-animation: jump 1s infinite;
 	-moz-animation: jump 1s infinite;
 	-o-animation: jump 1s infinite;
