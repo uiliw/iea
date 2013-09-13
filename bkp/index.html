@@ -1,118 +1,696 @@
-<article class="deck-container">
-<section class="slide">
-    <h1>Linhas de crédito</h1>
-    <div class="row-fluid">
-      <div class="span6">
-        <div class="sombra-img pull-left">
-        <div style="width:413px; height:300px; background-color:#777; display:block; text-align:center; color:#FFF">413x300</div>
-        </div>
-      </div>
-      <div class="span6">
-        <p>Você chegou à parada <strong>Linhas de crédito</strong>.</p>
-    <p>Ao percorrê-la, poderá:</p>
-    <div class="clearfix"></div>
-    <ul class="icons-ul">
-      <li><i class="icon-li icon-ok"></i>conhecer as linhas de crédito para o MEI;</li>
-      <li><i class="icon-li icon-ok"></i>identificar os bancos que oferecem crédito ao MEI.</li>
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title></title>
+<meta name="description" content="">
+<meta name="viewport" content=" user-scalable=no">
+
+<!--[if lt IE 9]>
+            <script src="js/vendor/html5-3.6-respond-1.1.0.min.js"></script>
+        <![endif]-->
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script src="js/vendor/modernizr.js"></script>
+<script src="js/vendor/caroufredsel/jquery.carouFredSel-6.2.1-packed.js"></script>
+<script src="js/vendor/caroufredsel/helper-plugins/jquery.touchSwipe.min.js"></script>
+<script src="js/vendor/jquery.easing.min.js"></script>
+<script src="js/vendor/bootstrap.min.js"></script>
+<script src="js/vendor/modal/bootstrap-modal.js"></script>
+<script src="js/vendor/modal/bootstrap-modalmanager.js"></script>
+<script src="js/vendor/flexslider/jquery.flexslider.js"></script>
+<script src="js/vendor/jquery.transit.min.js"></script>
+<script src="js/vendor/jquery.zoomooz.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+
+
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="js/vendor/modal/bootstrap-modal.css">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="icones/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="js/vendor/flexslider/flexslider.css">
+<link href='http://fonts.googleapis.com/css?family=Anaheim|Roboto+Slab:400,700|Shadows+Into+Light+Two' rel='stylesheet' type='text/css'>
+
+
+<script language="JavaScript">
+
+	/*	
+		sem = trilha sem pin
+		sim = trilha concluida
+		nao = trilha não concluida
+	*/
+	
+    var arrayPin = [ 
+    { "pin1a": "sim" }, // m1/t1
+    { "pin2a": "nao" }, // m1/t2
+    { "pin3a": "sem" }, // m1/t3
+    { "pin4a": "sim" }, // m1/t4
+    { "pin5a": "sim" }, // m1/t5
+    { "pin6a": "sim" }, // m1/t6
+    { "pin7a": "sim" }, // m1/t7
+    { "pin8a": "sim" }, // m1/t8
+	
+    { "pin1b": "sim" }, // m2/t1
+    { "pin2b": "sim" }, // m2/t2
+    { "pin3b": "sim" }, // m2/t3
+    { "pin4b": "sim" }, // m2/t4
+    { "pin5b": "sim" }, // m2/t5
+    { "pin6b": "sim" }, // m2/t6
+    { "pin7b": "sim" }, // m2/t7
+    { "pin8b": "sim" }, // m2/t8
+	
+    { "pin1c": "sim" }, // m3/t1
+    { "pin2c": "sim" }, // m3/t2
+    { "pin3c": "sim" }, // m3/t3
+    { "pin4c": "sim" }, // m3/t4
+    { "pin5c": "sim" }, // m3/t5
+    { "pin6c": "sim" }, // m3/t6
+    { "pin7c": "sim" }, // m3/t7
+    { "pin8c": "sim" }, // m3/t8
+	];
+	
+	/* sugestão do sandro
+	
+     var arrayPins = {
+		m1: {
+			 "pin1a": "sim", // m1/t1
+			 "pin2a": "nao", // m1/t2
+			 "pin3a": "sem", // m1/t3
+			 "pin4a": "sim", // m1/t4
+			 "pin5a": "sim", // m1/t5
+			 "pin6a": "sim", // m1/t6
+			 "pin7a": "sim", // m1/t7
+			 "pin8a": "sim", // m1/t8
+		},
+		m2: {
+			"pin1b": "sim", // m2/t1
+			"pin2b": "sim", // m2/t2
+			"pin3b": "sim", // m2/t3
+			"pin4b": "sim", // m2/t4
+			"pin5b": "sim", // m2/t5
+			"pin6b": "sim", // m2/t6
+			"pin7b": "sim", // m2/t7
+			"pin8b": "sim", // m2/t8
+		},
+		m3: {
+			"pin1c": "sim", // m3/t1
+			"pin2c": "sim", // m3/t2
+			"pin3c": "sim", // m3/t3
+			"pin4c": "sim", // m3/t4
+			"pin5c": "sim", // m3/t5
+			"pin6c": "sim", // m3/t6
+			"pin7c": "sim", // m3/t7
+			"pin8c": "sim", // m3/t8
+		}
+	};
+	
+	*/
+
+	
+	
+</script>
+</head>
+<body>
+<!--[if lt IE 9]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+<div id="nav">
+  <div class="container">
+    <ul>
+      <li><a href="#" class="teste"><i class="icon-book"></i> MEUS DADOS</a></li>
+      <li><a href="#"><i class="icon-info"></i> GUIA DE NAVEGAÇÃO</a></li>
     </ul>
-    <p>Aproveite as informações trazidas pelas próximas telas!</p>
-      </div>
-    </div>
-  </section>
-  <section class="slide">
-    <h1>Crédito para MEI</h1>
-    <p>A maior parte do crédito para MEI é para capital de giro e isso é feito basicamente por bancos públicos como o Banco do Brasil, Caixa Econômica Federal, organizações de microcrédito e cooperativas de crédito.</p>
-    <div class="row-fluid">
-      <div class="span4">
-        <div class="sombra-img pull-left margin-bottom20">
-          <div style="width:269px; height:190px; background-color:#777; display:block; float:left; text-align:center; color:#FFF">269x190</div>
-        </div>
-      </div>
-      <div class="span8">
-        <blockquote class="pull-left pulse" style="margin-top:40px">Capital de giro é o recurso utilizado para sustentar as operações do dia a dia da empresa; é o capital disponível para condução normal dos negócios. </blockquote>
-      </div>
-    </div>
-    <p>A seguir, são apresentadas informações sobre linhas de crédito de acordo com as diferentes instituições bancárias. Acompanhe-as!</p>
-  </section>
-  <section class="slide">
-    <h1>Banco do Brasil</h1>
-    <p>O Banco do Brasil oferece várias linhas de crédito, como o microcrédito, que atende desde o MEI até a Microempresa e Pequena Empresa (MPE).</p>
-    <div class="sombra-img" style="margin-left: 220px;margin-bottom: 20px;">
-      <div style="width: 400px; height: 210px; background-color:#777; display:block; float:left; text-align:center; color:#FFF">400x210</div>
-    </div>
-    <p>Para obter mais informações sobre as linhas de crédito do Banco do Brasil, acesse seu site: <a href="http://www.bb.com.br" target="_blank">www.bb.com.br.</a></p>
-  </section>
-  <section class="slide">
-    <h1>Caixa Econômica Federal</h1>
-    <div class="sombra-img" style="margin-left: 220px;margin-bottom: 20px;margin-top: 20px;">
-      <div style="width: 400px; height: 210px; background-color:#777; display:block; float:left; text-align:center; color:#FFF">400x210</div>
-    </div>
-    <div class="clearfix"></div>
-    <p>A Caixa Econômica Federal também oferece várias linhas de crédito para o MEI e para a MPE. </p>
-    <p>Acesse o site da Caixa Econômica Federal para buscar mais informações sobre suas opções: <a href="http://www.caixa.gov.br" target="_blank">www.caixa.gov.br.</a></p>
-  </section>
-  <section class="slide">
-    <h1>As agências de microcrédito (Oscip)</h1>
-    <p>As agências de microcrédito (Oscip), situadas em diversas cidades do estado de Santa Catarina, habilitadas pela Agência de Fomento do Estado de Santa Catarina (Badesc), têm a função de operacionalizar os empréstimos do Programa Juro Zero, disponibilizado pelo Governo do Estado de Santa Catarina.</p>
-    <div class="row-fluid">
-      <div class="span4">
-        <div class="sombra-img pull-left margin-bottom20">
-          <div style="width:269px; height:150px; background-color:#777; display:block; float:left; text-align:center; color:#FFF">269x150</div>
-        </div>
-      </div>
-      <div class="span8"><blockquote class="pull-left pulse" style="margin-top:30px">A intenção é fomentar o empreendedorismo, estimular a formalização e promover o desenvolvimento da economia catarinense.</blockquote></div>
-    </div>
-    <p>No Programa Juro Zero, o MEI formalizado tem acesso a uma linha de crédito de até R$ 3.000,00 (três mil reais) e, se pagar todas as prestações em dia, a última parcela é paga pelo Governo do Estado de Santa Catarina.</p>
-    <p>Acesse o site do Juro Zero para mais informações: <a href="http://www.jurozero.sc.gov.br" target="_blank">www.jurozero.sc.gov.br.</a></p>
-  </section>
-  <section class="slide">
-    <h1>Cooperativas de crédito</h1>
-    <p>As cooperativas de crédito são instituições que atendem seus cooperados de forma personalizada. São fundamentais na inclusão financeira, pois trabalham com juros mais baixos que a maioria dos bancos e ainda fortalecem a união dos cooperados.</p>
-    <p>Além de financiamentos, oferecem outros serviços financeiros e seu objetivo é fomentar o desenvolvimento empresarial e a geração de emprego e renda nas regiões onde estão inseridas.</p>
-    <p>Localize uma cooperativa de crédito em seu município, escolhendo um dos três sistemas de cooperativas a seguir:</p>
-    <strong>INSERIR GALERIA</strong> </section>
-  <section class="slide">
-    <h1>Encerramento</h1>
-    <div class="row-fluid">
-      <div class="span6">
-        <p>Para encerrar esta parada, é importante ressaltar que as linhas de crédito disponíveis são de responsabilidade de cada instituição bancária, podendo sofrer alterações a qualquer momento. </p>
-        <p>O Portal do Empreendedor<br/><a href="http://www.portaldoempreendedor.gov.br" target="_blank">(www.portaldoempreendedor.gov.br)</a><br/>é uma excelente fonte para manter você a par das principais atualizações dessas e de outras informações. </p>
-        <p>Acesse-o!</p>
-      </div>
-      <div class="span6"><div class="sombra-img"><div style="width:413px; height:300px; background-color:#777; display:block; text-align:center; color:#FFF">413x300</div></div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- deck.navigation snippet --> 
-  <a href="#" class="deck-prev-link" title="Voltar"><i class="icon-chevron-left"></i></a> <a href="#" class="deck-next-link" title="Avançar"><i class="icon-chevron-right"></i></a> 
-  
-  <!-- deck.status snippet -->
-  <p class="deck-status"> <span class="deck-status-current"></span> / <span class="deck-status-total"></span> </p>
-  
-  <!-- deck.goto snippet -->
-  <form action="." method="get" class="goto-form">
-    <label for="goto-slide">Ir para o slide:</label>
-    <input type="number" name="slidenum" id="goto-slide" class="input-mini" list="goto-datalist">
-    <datalist id="goto-datalist"></datalist>
-    <input type="submit" class="btn" value="Ir">
-  </form>
-  
-  <!-- deck.hash snippet --> 
-  <a href="." title="Permalink to this slide" class="deck-permalink">#</a> </article>
-<div class="complementar">
-  <h5>CONTEÚDO COMPLEMENTAR</h5>
-  <ul class="inline icons-ul">
-    <li><i class="icon-li icon-camera-retro"></i>Foto</li>
-    <li><i class="icon-li icon-music"></i>Áudio</li>
-    <li><i class="icon-li icon-film"></i>Vídeo</li>
-    <li><i class="icon-li icon-file-alt"></i>Texto</li>
-    <li class="pull-right googlep"><a href="https://plus.google.com/share?url=http://iea.uili.com.br/v2" onclick="javascript:window.open(this.href,
-  '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="icon-google-plus-sign"></i></a></li>
-    <li class="pull-right linkedin"><a href="http://www.linkedin.com/shareArticle?mini=true&url=http://iea.uili.com.br/v2&title=Obtendo acesso ao crédito&summary=Aqui você identificará aspectos importantes para o crescimento do seu negócio por meio do acesso ao crédito.&source=Sebrae SC" onclick="javascript:window.open(this.href,
-  '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=600');return false;"><i class="icon-linkedin-sign"></i></a></li>
-    <li class="pull-right face"><a onclick='SendFacetrilha4(); return false;'><i class="icon-facebook-sign"></i></a></li>
-    <li class="pull-right twitter"><a href="https://twitter.com/home?status=O objetivo principal desta etapa é auxiliar você a identificar quais ideias de negócio são possíveis de se enquadrar como MEI, analisar o mercado que o negócio se encontra e verificar a viabilidade da ideia de negócio escolhida." class="popup" data-lang="pt_BR"><i class="icon-twitter-sign"></i></a></li>
-  </ul>
+  </div>
 </div>
-</article>
+<header>
+  <div class="container">
+    <div class="brand">
+    	<a href="index.html">
+            <span>
+                <object type="image/svg+xml" data="img/logo-sebrae.svg">           
+                   <img src="img/logo-sebrae.png"/>
+                </object>
+            </span>
+        </a>
+    </div>
+    <div class="titulos">
+      <h3 class="sub-titulo-trilhas">TRILHAS DE AUTOATENDIMENTO</h3>
+      <div class="clearfix"></div>
+      <h2 class="titulo-trilhas captions"></h2>
+    </div>
+  </div>
+</header>
+<section class="slider">
+ <div class="loading-container">
+        	<div class="pulse-loading"></div>
+        </div>
+  <div class="flexslider">
+    <ul class="slides">
+      <li>
+      
+        <p class="flex-caption">EMPRESÁRIO DE PEQUENOS NEGÓCIOS</p>
+        
+        <div class="centro">
+          <div class="zoomViewport view1">
+            <div class="zoomContainer">
+              
+            
+              <div class="trilha1a"><img src="mapa/predio1a.png"/></div><div class="zoomTarget popup trilha1a-box" data-targetsize="0.23" data-duration="1000" data-easing="ease-in-out" data-closeclick="false"></div>
+              <div class="trilha2a"><img src="mapa/predio2a.png"/></div><div class="zoomTarget popup trilha2a-box" data-targetsize="0.22" data-duration="1000" data-easing="ease-in-out" data-closeclick="false"></div>
+              <div class="trilha3a"><img src="mapa/predio3a.png"/></div><div class="zoomTarget popup trilha3a-box" data-targetsize="0.2" data-duration="1000" data-easing="ease-in-out" data-closeclick="false"></div>
+              <div class="trilha4a"><img src="mapa/predio4a.png"/></div><div class="zoomTarget popup trilha4a-box" data-targetsize="0.15" data-duration="1000" data-easing="ease-in-out" data-closeclick="false"></div>
+              <div class="trilha5a"><img src="mapa/predio5a.png"/></div><div class="zoomTarget popup trilha5a-box" data-targetsize="0.16" data-duration="1000" data-easing="ease-in-out" data-closeclick="false"></div>
+              <div class="trilha6a"><img src="mapa/predio6a.png"/></div><div class="zoomTarget popup trilha6a-box" data-targetsize="0.2" data-duration="1000" data-easing="ease-in-out" data-closeclick="false"></div>
+              <div class="trilha7a"><img src="mapa/predio7a.png"/></div><div class="zoomTarget popup trilha7a-box" data-targetsize="0.3" data-duration="1000" data-easing="ease-in-out" data-closeclick="false"></div>
+              <div class="trilha8a"><img src="mapa/predio8a.png"/></div><div class="zoomTarget popup trilha8a-box" data-targetsize="0.23" data-duration="1000" data-easing="ease-in-out" data-closeclick="false"></div>
+              
+              
+              <div class="default1a"><img src="mapa/default1a.png"/></div>
+              <div class="default2b"><img src="mapa/default2b.png"/></div>
+              
+              
+              <div class="pins pin1a"><div class="pin_sem"></div></div> 
+              <div class="pins pin2a"><div class="pin_sim"></div></div> 
+              <div class="pins pin3a"></div> 
+              <div class="pins pin4a"><div class="pin"></div></div> 
+              <div class="pins pin5a"><div class="pin"></div></div> 
+              <div class="pins pin6a"><div class="pin"></div></div> 
+              <div class="pins pin7a"><div class="pin"></div></div> 
+              <div class="pins pin8a"><div class="pin"></div></div> 
+              
+              <div class="mapa-fundo"></div>
+              
+              
+            </div>
+          </div>
+          
+          
+          
+          <div class="menu_janela trilha1a-box-popup">
+          <i class="icon-remove-circle menu_fecha fechaa"></i>
+          
+            <div class="menu_links">
+              <div  class="zoomButton" data-type="next" data-root=".view1"><span><i class="icon-chevron-right"></i></span></div>
+              <div  class="zoomButton" data-type="prev" data-root=".view1"><span><i class="icon-chevron-left"></i></span></div>
+            </div>
+            <div class="titulo_menu_janela">
+              <h3>Você está no</h3>
+              <h2>Centro Tecnológico</h2>
+              <br/><br/><br/><br/><br/>
+            </div>
+          </div>
+          
+          
+          <div class="menu_janela trilha2a-box-popup">
+          <i class="icon-remove-circle menu_fecha fechaa"></i>
+          
+            <div class="menu_links">
+              <div  class="zoomButton" data-type="next" data-root=".view1"><span><i class="icon-chevron-right"></i></span></div>
+              <div  class="zoomButton" data-type="prev" data-root=".view1"><span><i class="icon-chevron-left"></i></span></div>
+            </div>
+            <div class="titulo_menu_janela">
+              <h3>Você está no</h3>
+              <h2>Banco</h2>
+              <br/><br/><br/><br/><br/>
+            </div>
+          </div>
+          
+          
+          <div class="menu_janela trilha3a-box-popup">
+          <i class="icon-remove-circle menu_fecha fechaa"></i>
+          
+            <div class="menu_links">
+              <div  class="zoomButton" data-type="next" data-root=".view1"><span><i class="icon-chevron-right"></i></span></div>
+              <div  class="zoomButton" data-type="prev" data-root=".view1"><span><i class="icon-chevron-left"></i></span></div>
+            </div>
+            <div class="titulo_menu_janela">
+              <h3>Você está no</h3>
+              <h2>Centro de Capacitação</h2>
+              <br/><br/><br/><br/><br/>
+            </div>
+          </div>
+          
+          
+          <div class="menu_janela trilha4a-box-popup">
+          <i class="icon-remove-circle menu_fecha fechaa"></i>
+          
+            <div class="menu_links">
+              <div  class="zoomButton" data-type="next" data-root=".view1"><span><i class="icon-chevron-right"></i></span></div>
+              <div  class="zoomButton" data-type="prev" data-root=".view1"><span><i class="icon-chevron-left"></i></span></div>
+            </div>
+            <div class="titulo_menu_janela">
+              <h3>Você está no</h3>
+              <h2>Shopping</h2>
+              <br/><br/><br/><br/><br/>
+            </div>
+          </div>
+          
+          
+          <div class="menu_janela trilha5a-box-popup">
+          <i class="icon-remove-circle menu_fecha fechaa"></i>
+          
+            <div class="menu_links">
+              <div  class="zoomButton" data-type="next" data-root=".view1"><span><i class="icon-chevron-right"></i></span></div>
+              <div  class="zoomButton" data-type="prev" data-root=".view1"><span><i class="icon-chevron-left"></i></span></div>
+            </div>
+            <div class="titulo_menu_janela">
+              <h3>Você está na</h3>
+              <h2>Universidade</h2>
+              <br/><br/><br/><br/><br/>
+            </div>
+          </div>
+          
+          
+          <div class="menu_janela trilha6a-box-popup">
+          <i class="icon-remove-circle menu_fecha fechaa"></i>
+          
+            <div class="menu_links">
+              <div  class="zoomButton" data-type="next" data-root=".view1"><span><i class="icon-chevron-right"></i></span></div>
+              <div  class="zoomButton" data-type="prev" data-root=".view1"><span><i class="icon-chevron-left"></i></span></div>
+            </div>
+            <div class="titulo_menu_janela">
+              <h3>Você está no</h3>
+              <h2>Sebrae</h2>
+              <br/><br/><br/><br/><br/>
+            </div>
+          </div>
+          
+          
+          <div class="menu_janela trilha7a-box-popup">
+          <i class="icon-remove-circle menu_fecha fechaa"></i>
+          
+            <div class="menu_links">
+              <div  class="zoomButton" data-type="next" data-root=".view1"><span><i class="icon-chevron-right"></i></span></div>
+              <div  class="zoomButton" data-type="prev" data-root=".view1"><span><i class="icon-chevron-left"></i></span></div>
+            </div>
+            <div class="titulo_menu_janela">
+              <h3>Você está no</h3>
+              <h2>Centro Empresarial</h2>
+              <br/><br/><br/><br/><br/>
+            </div>
+          </div>
+          
+          
+          <div class="menu_janela trilha8a-box-popup">
+          <i class="icon-remove-circle menu_fecha fechaa"></i>
+          
+            <div class="menu_links">
+              <div  class="zoomButton" data-type="next" data-root=".view1"><span><i class="icon-chevron-right"></i></span></div>
+              <div  class="zoomButton" data-type="prev" data-root=".view1"><span><i class="icon-chevron-left"></i></span></div>
+            </div>
+            <div class="titulo_menu_janela">
+              <h3>Você está na</h3>
+              <h2>Contabilidade</h2>
+              <br/><br/><br/><br/><br/>
+            </div>
+          </div>
+          
+          
+        </div>
+      </li>
+      <li>
+      
+        <p class="flex-caption">MICROEMPREENDEDOR INDIVIDUAL</p>
+        
+        <div class="centro">
+          <div class="zoomViewport view2">
+            <div class="zoomContainer">
+            
+                
+              <div class="trilha1b"><img src="mapa/predio1b.png"/></div><div class="zoomTarget popup trilha1b-box" data-targetsize="0.23" data-duration="1000" data-easing="ease-in-out" data-closeclick="false"></div>
+              <div class="trilha2b"><img src="mapa/predio2b.png"/></div><div class="zoomTarget popup trilha2b-box" data-targetsize="0.25" data-duration="1000" data-easing="ease-in-out" data-closeclick="false"></div>
+              <div class="trilha3b"><img src="mapa/predio3b.png"/></div><div class="zoomTarget popup trilha3b-box" data-targetsize="0.23" data-duration="1000" data-easing="ease-in-out" data-closeclick="false"></div>
+              <div class="trilha4b"><img src="mapa/predio4b.png"/></div><div class="zoomTarget popup trilha4b-box" data-targetsize="0.2" data-duration="1000" data-easing="ease-in-out" data-closeclick="false"></div>
+              <div class="trilha5b"><img src="mapa/predio5b.png"/></div><div class="zoomTarget popup trilha5b-box" data-targetsize="0.2" data-duration="1000" data-easing="ease-in-out" data-closeclick="false"></div>
+              <div class="trilha6b"><img src="mapa/predio6b.png"/></div><div class="zoomTarget popup trilha6b-box" data-targetsize="0.2" data-duration="1000" data-easing="ease-in-out" data-closeclick="false"></div>
+              <div class="trilha7b"><img src="mapa/predio7b.png"/></div><div class="zoomTarget popup trilha7b-box" data-targetsize="0.23" data-duration="1000" data-easing="ease-in-out" data-closeclick="false"></div>
+              <div class="trilha8b"><img src="mapa/predio8b.png"/></div><div class="zoomTarget popup trilha8b-box" data-targetsize="0.2" data-duration="1000" data-easing="ease-in-out" data-closeclick="false"></div>
+              
+              
+              
+              <div class="default1a"><img src="mapa/default1a.png"/></div>
+              <div class="default2a"><img src="mapa/default2a.png"/></div>
+              
+              
+
+              <div class="mapa-fundo"></div>
+              
+              
+            </div>
+          </div>
+          
+          
+          
+          
+          <div class="menu_janela trilha1b-box-popup">
+          <i class="icon-remove-circle menu_fecha fechab"></i>
+          
+            <div class="menu_links">
+              <div  class="zoomButton" data-type="next" data-root=".view2"><span><i class="icon-chevron-right"></i></span></div>
+              <div  class="zoomButton" data-type="prev" data-root=".view2"><span><i class="icon-chevron-left"></i></span></div>
+            </div>
+            <div class="titulo_menu_janela">
+              <h3>Você está no </h3>
+              <h2>Centro Tecnológico</h2>
+              <br/><br/><br/><br/><br/>
+            </div>
+          </div>
+         
+         
+         
+         
+          <div class="menu_janela trilha2b-box-popup">
+          <i class="icon-remove-circle menu_fecha fechab"></i>
+          
+            <div class="menu_links">
+              <div  class="zoomButton" data-type="next" data-root=".view2"><span><i class="icon-chevron-right"></i></span></div>
+              <div  class="zoomButton" data-type="prev" data-root=".view2"><span><i class="icon-chevron-left"></i></span></div>
+            </div>
+            <div class="titulo_menu_janela">
+              <h3>Você está no </h3>
+              <h2>Banco</h2>
+              <p>Invista seu tempo e lucre com muitas informações!<br/>
+                <br/>
+                Aqui você encontra a trilha <strong>Acesso ao crédito.</strong><br/>
+                Nela, você identificará aspectos importantes para o crescimento do seu negócio por meio do acesso ao crédito. Percorrendo todas as paradas dessa trilha, você:</p>
+              <ul class="icons-ul">
+                <li><i class="icon-li icon-caret-right"></i>compreenderá o conceito de crédito;</li>
+                <li><i class="icon-li icon-caret-right"></i>saberá quais são os requisitos necessários à obtenção do crédito – 5 Cs do crédito;</li>
+                <li><i class="icon-li icon-caret-right"></i>conhecerá as linhas de crédito para o MEI;</li>
+                <li><i class="icon-li icon-caret-right"></i>identificará os bancos que oferecem crédito ao MEI.</li>
+              </ul>
+            </div>
+            <div class="menu_links">
+              <div class="menu_trilha"><a data-toggle="modal" data-target="#modal" class="m2 t5 abre_modal"><span>Acessar Trilha</span></a></div>
+            </div>
+          </div>
+         
+         
+          <div class="menu_janela trilha3b-box-popup">
+          <i class="icon-remove-circle menu_fecha fechab"></i>
+          
+            <div class="menu_links">
+              <div  class="zoomButton" data-type="next" data-root=".view2"><span><i class="icon-chevron-right"></i></span></div>
+              <div  class="zoomButton" data-type="prev" data-root=".view2"><span><i class="icon-chevron-left"></i></span></div>
+            </div>
+            <div class="titulo_menu_janela">
+              <h3>Você está na</h3>
+              <h2>Biblioteca</h2>
+              <br/><br/><br/><br/><br/>
+            </div>
+          </div>
+          
+          <div class="menu_janela trilha4b-box-popup">
+          <i class="icon-remove-circle menu_fecha fechab"></i>
+          
+            <div class="menu_links">
+              <div  class="zoomButton" data-type="next" data-root=".view2"><span><i class="icon-chevron-right"></i></span></div>
+              <div  class="zoomButton" data-type="prev" data-root=".view2"><span><i class="icon-chevron-left"></i></span></div>
+            </div>
+            <div class="titulo_menu_janela">
+              <h3>Você está no</h3>
+              <h2>Shopping</h2>
+              <br/><br/><br/><br/><br/>
+            </div>
+          </div>
+          
+          <div class="menu_janela trilha5b-box-popup">
+          <i class="icon-remove-circle menu_fecha fechab"></i>
+          
+            <div class="menu_links">
+              <div  class="zoomButton" data-type="next" data-root=".view2"><span><i class="icon-chevron-right"></i></span></div>
+              <div  class="zoomButton" data-type="prev" data-root=".view2"><span><i class="icon-chevron-left"></i></span></div>
+            </div>
+            <div class="titulo_menu_janela">
+              <h3>Você está na</h3>
+              <h2>Universidade</h2>
+              <br/><br/><br/><br/><br/>
+            </div>
+          </div>
+          
+          <div class="menu_janela trilha6b-box-popup">
+          <i class="icon-remove-circle menu_fecha fecha"></i>
+          
+            <div class="menu_links">
+              <div  class="zoomButton" data-type="next" data-root=".view2"><span><i class="icon-chevron-right"></i></span></div>
+              <div  class="zoomButton" data-type="prev" data-root=".view2"><span><i class="icon-chevron-left"></i></span></div>
+            </div>
+            <div class="titulo_menu_janela">
+              <h3>Você está no</h3>
+              <h2>Sebrae</h2>
+              <br/><br/><br/><br/><br/>
+            </div>
+          </div>
+          
+          <div class="menu_janela trilha7b-box-popup">
+          <i class="icon-remove-circle menu_fecha fechab"></i>
+          
+            <div class="menu_links">
+              <div  class="zoomButton" data-type="next" data-root=".view2"><span><i class="icon-chevron-right"></i></span></div>
+              <div  class="zoomButton" data-type="prev" data-root=".view2"><span><i class="icon-chevron-left"></i></span></div>
+            </div>
+            <div class="titulo_menu_janela">
+              <h3>Você está no</h3>
+              <h2>Centro Empresarial</h2>
+          <p>Dedique o seu tempo e descubra muitas informações!<br/>
+                <br/>
+                Aqui você encontra a trilha<strong> Organização e administração.</strong><br/>
+                Nela, você conhecerá informações importantes a respeito dos controles administrativos e financeiros que permitirá que você gerencie melhor o seu negócio.</p>
+                <p>Percorrendo todas as paradas dessa trilha, você:</p>
+
+              <ul class="icons-ul">
+                <li><i class="icon-li icon-caret-right"></i>compreenderá a formulação correta do seu preço de venda para comparar com o seu mercado de atuação;</li>
+                <li><i class="icon-li icon-caret-right"></i>saberá como gerenciar o seu negócio.</li>
+              </ul>
+            </div>
+            <div class="menu_links">
+              <div class="menu_trilha"><a data-toggle="modal" data-target="#modal" class="m2 t3 abre_modal"><span>Acessar Trilha</span></a></div>
+            </div>
+          </div>
+          
+          <div class="menu_janela trilha8b-box-popup">
+          <i class="icon-remove-circle menu_fecha fechab"></i>
+          
+            <div class="menu_links">
+              <div  class="zoomButton" data-type="next" data-root=".view2"><span><i class="icon-chevron-right"></i></span></div>
+              <div  class="zoomButton" data-type="prev" data-root=".view2"><span><i class="icon-chevron-left"></i></span></div>
+            </div>
+            <div class="titulo_menu_janela">
+              <h3>Você está na</h3>
+              <h2>Contabilidade</h2>
+              <br/><br/><br/><br/><br/>
+            </div>
+          </div>
+          
+        </div>
+      </li>
+      <li>
+      
+        <p class="flex-caption">POTENCIAL EMPREENDEDOR</p>
+        
+        <div class="centro">
+          <div class="zoomViewport view3">
+            <div class="zoomContainer">
+            
+            
+              <div class="trilha1c"><img src="mapa/predio1c.png"/></div><div class="zoomTarget popup trilha1c-box" data-targetsize="0.3" data-duration="1000" data-easing="ease-in-out" data-closeclick="false"></div>
+              <div class="trilha2c"><img src="mapa/predio2c.png"/></div><div class="zoomTarget popup trilha2c-box" data-targetsize="0.2" data-duration="1000" data-easing="ease-in-out" data-closeclick="false"></div>
+              <div class="trilha3c"><img src="mapa/predio3c.png"/></div><div class="zoomTarget popup trilha3c-box" data-targetsize="0.3" data-duration="1000" data-easing="ease-in-out" data-closeclick="false"></div>
+              <div class="trilha4c"><img src="mapa/predio4c.png"/></div><div class="zoomTarget popup trilha4c-box" data-targetsize="0.2" data-duration="1000" data-easing="ease-in-out" data-closeclick="false"></div>
+              <div class="trilha5c"><img src="mapa/predio5c.png"/></div><div class="zoomTarget popup trilha5c-box" data-targetsize="0.2" data-duration="1000" data-easing="ease-in-out" data-closeclick="false"></div>
+              <div class="trilha6c"><img src="mapa/predio6c.png"/></div><div class="zoomTarget popup trilha6c-box" data-targetsize="0.18" data-duration="1000" data-easing="ease-in-out" data-closeclick="false"></div>
+              <div class="trilha7c"><img src="mapa/predio7c.png"/></div><div class="zoomTarget popup trilha7c-box" data-targetsize="0.26" data-duration="1000" data-easing="ease-in-out" data-closeclick="false"></div>
+              <div class="trilha8c"><img src="mapa/predio8c.png"/></div><div class="zoomTarget popup trilha8c-box" data-targetsize="0.25" data-duration="1000" data-easing="ease-in-out" data-closeclick="false"></div>
+              <div class="default1b"><img src="mapa/default1b.png"/></div><div class="zoomTarget popup trilha9c-box" data-targetsize="0.14" data-duration="1000" data-easing="ease-in-out" data-closeclick="false"></div>
+              <div class="default1c"><img src="mapa/default1c.png"/></div>
+              
+              <div class="mapa-fundo"></div>
+              
+              
+            </div>
+          </div>
+          
+          
+          
+          <div class="menu_janela trilha1c-box-popup">
+          <i class="icon-remove-circle menu_fecha fecha"></i>
+          
+            <div class="menu_links">
+              <div  class="zoomButton" data-type="next" data-root=".view3"><span><i class="icon-chevron-right"></i></span></div>
+              <div  class="zoomButton" data-type="prev" data-root=".view3"><span><i class="icon-chevron-left"></i></span></div>
+            </div>
+            <div class="titulo_menu_janela">
+              <h3>Você está no</h3>
+              <h2>Centro Tecnológico</h2>
+              <br/><br/><br/><br/><br/>
+            </div>
+          </div>
+          
+          
+          
+          <div class="menu_janela trilha2c-box-popup">
+          <i class="icon-remove-circle menu_fecha fecha"></i>
+          
+            <div class="menu_links">
+              <div  class="zoomButton" data-type="next" data-root=".view3"><span><i class="icon-chevron-right"></i></span></div>
+              <div  class="zoomButton" data-type="prev" data-root=".view3"><span><i class="icon-chevron-left"></i></span></div>
+            </div>
+            <div class="titulo_menu_janela">
+              <h3>Você está na</h3>
+              <h2>Biblioteca</h2>
+              <br/><br/><br/><br/><br/>
+            </div>
+          </div>
+          
+          
+          
+          <div class="menu_janela trilha3c-box-popup">
+          <i class="icon-remove-circle menu_fecha fecha"></i>
+          
+            <div class="menu_links">
+              <div  class="zoomButton" data-type="next" data-root=".view3"><span><i class="icon-chevron-right"></i></span></div>
+              <div  class="zoomButton" data-type="prev" data-root=".view3"><span><i class="icon-chevron-left"></i></span></div>
+            </div>
+            <div class="titulo_menu_janela">
+              <h3>Você está no</h3>
+              <h2>Centro de Capacitação</h2>
+              <br/><br/><br/><br/><br/>
+            </div>
+          </div>
+          
+          
+          
+          <div class="menu_janela trilha4c-box-popup">
+          <i class="icon-remove-circle menu_fecha fecha"></i>
+          
+            <div class="menu_links">
+              <div  class="zoomButton" data-type="next" data-root=".view3"><span><i class="icon-chevron-right"></i></span></div>
+              <div  class="zoomButton" data-type="prev" data-root=".view3"><span><i class="icon-chevron-left"></i></span></div>
+            </div>
+            <div class="titulo_menu_janela">
+              <h3>Você está no</h3>
+              <h2>Shopping</h2>
+              <br/><br/><br/><br/><br/>
+            </div>
+          </div>
+          
+          
+          
+          <div class="menu_janela trilha5c-box-popup">
+          <i class="icon-remove-circle menu_fecha fecha"></i>
+          
+            <div class="menu_links">
+              <div  class="zoomButton" data-type="next" data-root=".view3"><span><i class="icon-chevron-right"></i></span></div>
+              <div  class="zoomButton" data-type="prev" data-root=".view3"><span><i class="icon-chevron-left"></i></span></div>
+            </div>
+            <div class="titulo_menu_janela">
+              <h3>Você está na</h3>
+              <h2>Universidade</h2>
+              <br/><br/><br/><br/><br/>
+            </div>
+          </div>
+          
+          
+          
+          <div class="menu_janela trilha6c-box-popup">
+          <i class="icon-remove-circle menu_fecha fecha"></i>
+          
+            <div class="menu_links">
+              <div  class="zoomButton" data-type="next" data-root=".view3"><span><i class="icon-chevron-right"></i></span></div>
+              <div  class="zoomButton" data-type="prev" data-root=".view3"><span><i class="icon-chevron-left"></i></span></div>
+            </div>
+            <div class="titulo_menu_janela">
+              <h3>Você está no</h3>
+              <h2>Sebrae</h2>
+              <br/><br/><br/><br/><br/>
+            </div>
+          </div>
+          
+          
+          
+          <div class="menu_janela trilha7c-box-popup">
+          <i class="icon-remove-circle menu_fecha fecha"></i>
+          
+            <div class="menu_links">
+              <div  class="zoomButton" data-type="next" data-root=".view3"><span><i class="icon-chevron-right"></i></span></div>
+              <div  class="zoomButton" data-type="prev" data-root=".view3"><span><i class="icon-chevron-left"></i></span></div>
+            </div>
+            <div class="titulo_menu_janela">
+              <h3>Você está no</h3>
+              <h2>Centro Empresarial</h2>
+              <br/><br/><br/><br/><br/>
+            </div>
+          </div>
+          
+          
+          
+          <div class="menu_janela trilha8c-box-popup">
+          <i class="icon-remove-circle menu_fecha fecha"></i>
+          
+            <div class="menu_links">
+              <div  class="zoomButton" data-type="next" data-root=".view3"><span><i class="icon-chevron-right"></i></span></div>
+              <div  class="zoomButton" data-type="prev" data-root=".view3"><span><i class="icon-chevron-left"></i></span></div>
+            </div>
+            <div class="titulo_menu_janela">
+              <h3>Você está na</h3>
+              <h2>Contabilidade</h2>
+              <br/><br/><br/><br/><br/>
+            </div>
+          </div>
+          
+          <div class="menu_janela trilha9c-box-popup">
+          <i class="icon-remove-circle menu_fecha fecha"></i>
+          
+            <div class="menu_links">
+              <div  class="zoomButton" data-type="next" data-root=".view3"><span><i class="icon-chevron-right"></i></span></div>
+              <div  class="zoomButton" data-type="prev" data-root=".view3"><span><i class="icon-chevron-left"></i></span></div>
+            </div>
+            <div class="titulo_menu_janela">
+              <h3>Você está na</h3>
+              <h2>Praça</h2>
+              <br/><br/><br/><br/><br/>
+            </div>
+          </div>
+          
+          
+        </div>
+      </li>
+      
+      
+      
+      
+    </ul>
+  </div>
+</section>
+<div class="modal hide fade" id="modal">
+  <div class="conteudo_janela">
+    
+  </div>
+</div>
+
+
+
+</body>
+</html>
+
+    </ul>
+  </div>
+</section>
+<div class="modal hide fade" id="modal">
+  <div class="conteudo_janela">
+    
+  </div>
+</div>
+
+
+
+</body>
+</html>

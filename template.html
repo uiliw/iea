@@ -16,18 +16,24 @@
             <script src="js/vendor/html5-3.6-respond-1.1.0.min.js"></script>
         <![endif]-->
 
+
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 <script src="js/vendor/modernizr.js"></script>
 <script src="js/vendor/caroufredsel/jquery.carouFredSel-6.2.1-packed.js"></script>
 <script src="js/vendor/caroufredsel/helper-plugins/jquery.touchSwipe.min.js"></script>
 <script src="js/vendor/jquery.easing.min.js"></script>
 <script src="js/vendor/bootstrap.min.js"></script>
+<script src="js/vendor/modal/bootstrap-modal.js"></script>
+<script src="js/vendor/modal/bootstrap-modalmanager.js"></script>
 <script src="js/vendor/flexslider/jquery.flexslider.js"></script>
 <script src="js/vendor/jquery.transit.min.js"></script>
 <script src="js/vendor/jquery.zoomooz.js"></script>
-
+<script src="js/plugins.js"></script>
 <script src="js/main.js"></script>
+
+
 <link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="js/vendor/modal/bootstrap-modal.css">
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="icones/font-awesome/css/font-awesome.min.css">
 <link rel="stylesheet" href="js/vendor/flexslider/flexslider.css">
@@ -273,6 +279,40 @@
       <p class="deck-status"> <span class="deck-status-current">0</span> / <span class="deck-status-total">0</span> </p>
     </article>
   </div>
+  
+  <div class="conteudo" style="height: 435px; width:940px; margin:20px auto">
+    <article class="deck-container">
+      <section class="slide deck-current">
+      
+      <!------>
+      
+        <h3>Modal</h3>
+        
+        <div class="clearfix"></div>
+        
+        <!-- ATENÇÃO COM O HREF E ID DO MODAL.. DEVEM SER O MESMO E ÚNICOS PARA CADA MODAL -->
+        <a href="#modal_01" role="button" class="btn" data-toggle="modal">Abrir modal</a>
+         
+        <!-- Modal -->
+        <div id="modal_01" class="modal hide fade modal-conteudo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3>Quisque vel magna nunc.</h3>
+          </div>
+          <div class="modal-body">
+            <p>Sed quis sapien vel lorem congue vulputate. Quisque vel magna nunc. Maecenas vehicula velit dolor, quis fringilla erat accumsan vitae. Fusce gravida gravida convallis. Nunc nec eros lacus. Cras convallis tortor ut lectus consequat, eu vehicula eros lobortis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec consectetur elit ac lectus cursus, dapibus suscipit justo ornare. Fusce at tincidunt libero. Quisque condimentum leo vitae mi tristique commodo. Donec sit amet sapien eget felis hendrerit tempus. Maecenas scelerisque libero tincidunt urna volutpat laoreet. Sed bibendum quam augue, nec dapibus elit cursus vitae. Curabitur mollis dui in neque euismod vestibulum. Etiam condimentum sem eu sapien euismod, eleifend tristique ipsum malesuada.</p>
+          </div>
+          
+        </div>
+      <!------>
+      
+      </section>
+      <a href="#" class="deck-prev-link" title="Voltar"><i class="icon-arrow-left"></i></a> <a href="#" class="deck-next-link" title="Avançar"><i class="icon-arrow-right"></i></a>
+      <p class="deck-status"> <span class="deck-status-current">0</span> / <span class="deck-status-total">0</span> </p>
+    </article>
+  </div>
+  
+  
 </div>
 </body>
 </html>
