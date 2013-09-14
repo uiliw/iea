@@ -29,6 +29,19 @@ function carregaPin(){
 	
 }
 
+/*
+
+// Sugestão do programador do IEA
+// poderia ser chamada na troca de mapa. Ex showPins('m2');
+
+function showPins( map ){
+	$.each(arrayPins[ map ], function(n1, v1) {
+		if(v1 == 'sem'){$('.'+n1).hide();}
+		if(v1 == 'sim'){$('.'+n1).html('<div class="pin_sim"></div>');}
+		if(v1 == 'nao'){$('.'+n1).html('<div class="pin_nao"></div>');}
+	});
+}
+*/
 function janelas(){		
       $('.popup').click(function() { 
 	  	var $id = $(this).attr('class').split(' ')[2];
