@@ -459,7 +459,9 @@
           }
         }
 
-        slider.animating = true;
+        // slider.animating = true;
+        //*FIX PARA O PROBLEMA DE QUANDO O TRAVA NO IPAD SE CLICAR NO PREDIO ANTES (https://github.com/woothemes/flexslider/issues/253)
+        slider.animating = slider.animating = !(target === 0 && target === slider.animatingTo);
         slider.animatingTo = target;
         // API: before() animation Callback
         vars.before(slider);
