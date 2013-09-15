@@ -4,7 +4,7 @@ $(function() {
 
 	app = {
 
-		/*	
+/*	
 			sem = trilha sem pin
 			sim = trilha concluida
 			nao = trilha não concluida
@@ -93,8 +93,40 @@ $(function() {
 			//EVENTOS DE ALTERACAO DE TOPICO
 			app.initTopicoEvent();
 
+			app.initTabEvent();
+
+			app.vaiMapa();
+
 			$(window).trigger('resize');
 
+		},
+
+		vaiMapa: function() {
+
+
+			$('.trilha1a-box-mapa').click(function(evt) {
+
+				$(".zoomContainer").zoomContainer();
+				var datatargetsize = $(".trilha1a-box").data("targetsize");
+				var dataduration = $(".trilha1a-box").data("duration");
+
+				$(".trilha1a-box").zoomTo({
+					targetsize: datatargetsize,
+					duration: dataduration,
+					easing: "ease-in-out",
+					closeclick: true
+				});
+				evt.stopPropagation();
+
+
+			});
+		},
+
+		initTabEvent: function() {
+			$('.nav-tabs a').click(function(e) {
+				e.preventDefault();
+				$(this).tab('show');
+			})
 		},
 
 		//INICIALIZA TOOLTIP
@@ -157,7 +189,9 @@ $(function() {
 		//OBS.: ADICIONAR OS VALORES COM OS ATRIBUTOS DE DATA NOS LINKS COM CLASSE ABRE_MODAL
 		initTrilhaEvent: function() {
 
-			$('.menu_trilha').on('click', 'a.abre_modal', function() {
+			$('.menu_trilha').on('click', 'a.abre_modal', function(e) {
+
+				e.preventDefault();
 
 				var linkAbreModal = $(this);
 				var url_conteudo_janela = linkAbreModal.data('momento') + '/' + linkAbreModal.data('trilha') + '/intro.html';
@@ -177,7 +211,9 @@ $(function() {
 
 					}, 300);
 
-					$('.conteudo_janela').show();
+					$('.conteudo_janela').show();				
+					$("#modal").modal();
+
 
 					//LMS - SETA TRILHA
 					app.getAPI().setTrilha(linkAbreModal.data('momento'), linkAbreModal.data('trilha'));
@@ -324,7 +360,8 @@ $(function() {
 			});
 
 		},
-		
+
+
 		//INICIALIZA EVENTO PARA ABRIR O SOCIAL TWITTER EM UM POPUP
 		initPopupTwitter: function() {
 		$('.popup-twitter').click(function(event) {
@@ -343,8 +380,7 @@ $(function() {
 		
 			return false;
 		  });
-		},
-
+		},		
 
 		//INICIALIZA EVENTO DE AO CLICAR EM FECHAR O POPUP
 		//FOI ALTERADA PRA NAO PRECISAR ADICIONAR UM EVENTO DE CLICK EM CADA JANELA
@@ -363,6 +399,18 @@ $(function() {
 				$(this).parents('.centro').find('.zoomViewport').click();
 
 			});
+
+			//FECHA O POPUP AO CLICAR FORA
+			$('.zoomContainer').click(function() {
+				$("ul.flex-direction-nav").removeClass('hide');
+				$('.menu_janela').css({
+					display: 'none'
+				}).transition({
+					opacity: 0
+				});
+			});
+
+
 		},
 
 		//INICIALIZA EVENTO PARA MARCAR AS TRILHAS ATIVAS AO CLICAR
@@ -399,6 +447,7 @@ $(function() {
 
 		//MANTIVE, MAS ATUALMENTE NAO ESTA EM USO, FIZ UMA BUSCA E SOMENTE ACHEI REFERENCIA EM OUTROS HTMLS, MANTIVE PARA FUTURO USO
 		paraCarrossel: function() {
+
 			$('#myCarousel').on('slid', '', function() {
 
 				var $this = $(this);
@@ -428,9 +477,7 @@ $(function() {
 			});
 
 			// $(document).bind('deck.init', function(event) {
-
 			// });
-
 		},
 
 		//ADICIONA O EVENTO DE CLICK NOS BOTOES DE PARADA, E CARREGA SEU CONTEUDO COM PRE-CARREGAMENTO DE IMAGENS
@@ -470,7 +517,7 @@ $(function() {
 							app.initTooltip();
 
 							app.paraCarrossel();
-							
+
 							app.initPopupTwitter();
 
 							$('.conteudo').transition({
@@ -502,7 +549,7 @@ $(function() {
 						//$.deck('getContainer').off('touchstart.deck touchmove.deck touchend.deck');
 						app.initTooltip();
 
-						app.paraCarrosel()
+						app.paraCarrossel()
 
 						setTimeout(function() {
 							$('.conteudo').transition({
