@@ -237,14 +237,23 @@ $(function() {
 					imgs.push($(this).attr('src'));
 				});
 
-				$.imgpreload(imgs, {
+				if($(imgs).size() > 0){
 
-					all: function() {
+					$.imgpreload(imgs, {
 
-						callback(response);
+						all: function() {
 
-					}
-				})
+							callback(response);
+
+						}
+					});
+
+				} else {
+
+					callback(response);
+
+				}
+
 
 			})
 
