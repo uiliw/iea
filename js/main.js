@@ -4,7 +4,7 @@ $(function() {
 
 	app = {
 
-		/*	
+/*	
 			sem = trilha sem pin
 			sim = trilha concluida
 			nao = trilha não concluida
@@ -93,8 +93,40 @@ $(function() {
 			//EVENTOS DE ALTERACAO DE TOPICO
 			app.initTopicoEvent();
 
+			app.initTabEvent();
+
+			app.vaiMapa();
+
 			$(window).trigger('resize');
 
+		},
+
+		vaiMapa: function() {
+
+
+			$('.trilha1a-box-mapa').click(function(evt) {
+
+				$(".zoomContainer").zoomContainer();
+				var datatargetsize = $(".trilha1a-box").data("targetsize");
+				var dataduration = $(".trilha1a-box").data("duration");
+
+				$(".trilha1a-box").zoomTo({
+					targetsize: datatargetsize,
+					duration: dataduration,
+					easing: "ease-in-out",
+					closeclick: true
+				});
+				evt.stopPropagation();
+
+
+			});
+		},
+
+		initTabEvent: function() {
+			$('.nav-tabs a').click(function(e) {
+				e.preventDefault();
+				$(this).tab('show');
+			})
 		},
 
 		//INICIALIZA TOOLTIP
@@ -157,7 +189,9 @@ $(function() {
 		//OBS.: ADICIONAR OS VALORES COM OS ATRIBUTOS DE DATA NOS LINKS COM CLASSE ABRE_MODAL
 		initTrilhaEvent: function() {
 
-			$('.menu_trilha').on('click', 'a.abre_modal', function() {
+			$('.menu_trilha').on('click', 'a.abre_modal', function(e) {
+
+				e.preventDefault();
 
 				var linkAbreModal = $(this);
 				var url_conteudo_janela = linkAbreModal.data('momento') + '/' + linkAbreModal.data('trilha') + '/intro.html';
@@ -177,7 +211,9 @@ $(function() {
 
 					}, 200);
 
-					$('.conteudo_janela').show();
+					$('.conteudo_janela').show();				
+					$("#modal").modal();
+
 
 					//LMS - SETA TRILHA
 					app.getAPI().setTrilha(linkAbreModal.data('momento'), linkAbreModal.data('trilha'));
@@ -288,17 +324,17 @@ $(function() {
 		//POIS NAO TEM COMO VALIDAR, NAO SABEMOS A RESPOSTA NEM O METODO QUE PRECISA SER CHAMADO DO LMS
 		//MAS E UMA ALTERACAO SIMPLES
 		showPins: function(map) {
-			$.each(app.arrayPins[map], function(n1, v1) {
-				if (v1 == 'sem') {
-					$('.' + n1).hide();
-				}
-				if (v1 == 'sim') {
-					$('.' + n1).html('<div class="pin_sim"></div>');
-				}
-				if (v1 == 'nao') {
-					$('.' + n1).html('<div class="pin_nao"></div>');
-				}
-			});
+			// $.each(app.arrayPins[map], function(n1, v1) {
+			// 	if (v1 == 'sem') {
+			// 		$('.' + n1).hide();
+			// 	}
+			// 	if (v1 == 'sim') {
+			// 		$('.' + n1).html('<div class="pin_sim"></div>');
+			// 	}
+			// 	if (v1 == 'nao') {
+			// 		$('.' + n1).html('<div class="pin_nao"></div>');
+			// 	}
+			// });
 		},
 
 		//INICIALIZA EVENTO PARA ABRIR POPUP AO CLICAR NO PREDIO DO MAPA
@@ -342,6 +378,18 @@ $(function() {
 				$(this).parents('.centro').find('.zoomViewport').click();
 
 			});
+
+			//FECHA O POPUP AO CLICAR FORA
+			$('.zoomContainer').click(function() {
+				$("ul.flex-direction-nav").removeClass('hide');
+				$('.menu_janela').css({
+					display: 'none'
+				}).transition({
+					opacity: 0
+				});
+			});
+
+
 		},
 
 		//INICIALIZA EVENTO PARA MARCAR AS TRILHAS ATIVAS AO CLICAR
@@ -378,6 +426,7 @@ $(function() {
 
 		//MANTIVE, MAS ATUALMENTE NAO ESTA EM USO, FIZ UMA BUSCA E SOMENTE ACHEI REFERENCIA EM OUTROS HTMLS, MANTIVE PARA FUTURO USO
 		paraCarrosel: function() {
+
 			$('#myCarousel').on('slid', '', function() {
 
 				var $this = $(this);
@@ -407,9 +456,7 @@ $(function() {
 			});
 
 			// $(document).bind('deck.init', function(event) {
-
 			// });
-
 		},
 
 		//ADICIONA O EVENTO DE CLICK NOS BOTOES DE PARADA, E CARREGA SEU CONTEUDO COM PRE-CARREGAMENTO DE IMAGENS
