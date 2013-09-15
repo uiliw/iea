@@ -209,7 +209,7 @@ $(function() {
 						app.loadAjax();
 						app.highlight();
 
-					}, 300);
+					}, 400);
 
 					$('.conteudo_janela').show();				
 					$("#modal").modal();
