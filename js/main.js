@@ -43,7 +43,7 @@ $(function() {
 				// m2/t6
 				"pin7b": "sim",
 				// m2/t7
-				"pin8b": "sem",
+				"pin8b": "sim",
 				// m2/t8
 			},
 			m3: {
