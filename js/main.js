@@ -324,17 +324,17 @@ $(function() {
 		//POIS NAO TEM COMO VALIDAR, NAO SABEMOS A RESPOSTA NEM O METODO QUE PRECISA SER CHAMADO DO LMS
 		//MAS E UMA ALTERACAO SIMPLES
 		showPins: function(map) {
-			// $.each(app.arrayPins[map], function(n1, v1) {
-			// 	if (v1 == 'sem') {
-			// 		$('.' + n1).hide();
-			// 	}
-			// 	if (v1 == 'sim') {
-			// 		$('.' + n1).html('<div class="pin_sim"></div>');
-			// 	}
-			// 	if (v1 == 'nao') {
-			// 		$('.' + n1).html('<div class="pin_nao"></div>');
-			// 	}
-			// });
+			$.each(app.arrayPins[map], function(n1, v1) {
+				if (v1 == 'sem') {
+					$('.' + n1).hide();
+				}
+				if (v1 == 'sim') {
+					$('.' + n1).html('<div class="pin_sim"></div>');
+				}
+				if (v1 == 'nao') {
+					$('.' + n1).html('<div class="pin_nao"></div>');
+				}
+			});
 		},
 
 		//INICIALIZA EVENTO PARA ABRIR POPUP AO CLICAR NO PREDIO DO MAPA
