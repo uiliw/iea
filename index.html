@@ -17,7 +17,8 @@
         <![endif]-->
 
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script src="js/vendor/jquery-1.10.2.min.js"></script>
+<script src="js/vendor/imgpreload/jquery.imgpreload.min.js"></script>
 <script src="js/vendor/modernizr.js"></script>
 <script src="js/vendor/caroufredsel/jquery.carouFredSel-6.2.1-packed.js"></script>
 <script src="js/vendor/caroufredsel/helper-plugins/jquery.touchSwipe.min.js"></script>
@@ -42,79 +43,7 @@
 
 <script language="JavaScript">
 
-	/*	
-		sem = trilha sem pin
-		sim = trilha concluida
-		nao = trilha não concluida
-	*/
 	
-    var arrayPin = [ 
-    { "pin1a": "sem" }, // m1/t1
-    { "pin2a": "sem" }, // m1/t2
-    { "pin3a": "sem" }, // m1/t3
-    { "pin4a": "sem" }, // m1/t4
-    { "pin5a": "sem" }, // m1/t5
-    { "pin6a": "sem" }, // m1/t6
-    { "pin7a": "sem" }, // m1/t7
-    { "pin8a": "sem" }, // m1/t8
-	
-    { "pin1b": "sem" }, // m2/t1
-    { "pin2b": "sem" }, // m2/t2
-    { "pin3b": "sem" }, // m2/t3
-    { "pin4b": "sem" }, // m2/t4
-    { "pin5b": "sem" }, // m2/t5
-    { "pin6b": "sem" }, // m2/t6
-    { "pin7b": "sem" }, // m2/t7
-    { "pin8b": "sem" }, // m2/t8
-	
-    { "pin1c": "sem" }, // m3/t1
-    { "pin2c": "sem" }, // m3/t2
-    { "pin3c": "sem" }, // m3/t3
-    { "pin4c": "sem" }, // m3/t4
-    { "pin5c": "sem" }, // m3/t5
-    { "pin6c": "sem" }, // m3/t6
-    { "pin7c": "sem" }, // m3/t7
-    { "pin8c": "sem" }, // m3/t8
-	];
-
-	/*
-	
-	// Sugestão do programador do IEA
-	// poderia ser chamada na troca de mapa. Ex showPins('m2');
-	
-	  var arrayPins = {
-		m1: {
-			 "pin1a": "sim", // m1/t1
-			 "pin2a": "nao", // m1/t2
-			 "pin3a": "sem", // m1/t3
-			 "pin4a": "sim", // m1/t4
-			 "pin5a": "sim", // m1/t5
-			 "pin6a": "sim", // m1/t6
-			 "pin7a": "sim", // m1/t7
-			 "pin8a": "sim", // m1/t8
-		},
-		m2: {
-			"pin1b": "sim", // m2/t1
-			"pin2b": "sim", // m2/t2
-			"pin3b": "sim", // m2/t3
-			"pin4b": "sim", // m2/t4
-			"pin5b": "sim", // m2/t5
-			"pin6b": "sim", // m2/t6
-			"pin7b": "sim", // m2/t7
-			"pin8b": "sim", // m2/t8
-		},
-		m3: {
-			"pin1c": "sim", // m3/t1
-			"pin2c": "sim", // m3/t2
-			"pin3c": "sim", // m3/t3
-			"pin4c": "sim", // m3/t4
-			"pin5c": "sim", // m3/t5
-			"pin6c": "sim", // m3/t6
-			"pin7c": "sim", // m3/t7
-			"pin8c": "sim", // m3/t8
-		}
-	};
-	*/
 	
 </script>
 </head>
@@ -156,7 +85,7 @@
     <ul class="slides">
       <li>
       
-        <p class="flex-caption">EMPRESÁRIO DE PEQUENOS NEGÓCIOS</p>
+        <p class="flex-caption" data-mapa="m1">EMPRESÁRIO DE PEQUENOS NEGÓCIOS</p>
         
         <div class="centro">
           <div class="zoomViewport view1">
@@ -318,7 +247,7 @@
       </li>
       <li>
       
-        <p class="flex-caption">MICROEMPREENDEDOR INDIVIDUAL</p>
+        <p class="flex-caption" data-mapa="m2">MICROEMPREENDEDOR INDIVIDUAL</p>
         
         <div class="centro">
           <div class="zoomViewport view2">
@@ -396,7 +325,7 @@
               </ul>
             </div>
             <div class="menu_links">
-              <div class="menu_trilha"><a data-toggle="modal" data-target="#modal" class="m2 t5 abre_modal"><span>Acessar Trilha</span></a></div>
+              <div class="menu_trilha"><a data-toggle="modal" data-target="#modal" data-momento="m2" data-trilha="t5" class="abre_modal"><span>Acessar Trilha</span></a></div>
             </div>
           </div>
          
@@ -422,7 +351,7 @@
               </ul>
             </div>
             <div class="menu_links">
-              <div class="menu_trilha"><a data-toggle="modal" data-target="#modal" class="m2 t1 abre_modal"><span>Acessar Trilha</span></a></div>
+              <div class="menu_trilha"><a data-toggle="modal" data-target="#modal" data-momento="m2" data-trilha="t1" class="abre_modal"><span>Acessar Trilha</span></a></div>
             </div>
           </div>
           
@@ -490,7 +419,7 @@
               </ul>
             </div>
             <div class="menu_links">
-              <div class="menu_trilha"><a data-toggle="modal" data-target="#modal" class="m2 t3 abre_modal"><span>Acessar Trilha</span></a></div>
+              <div class="menu_trilha"><a data-toggle="modal" data-target="#modal" data-momento="m2" data-trilha="t3" class="abre_modal"><span>Acessar Trilha</span></a></div>
             </div>
           </div>
           
@@ -512,7 +441,7 @@
       </li>
       <li>
       
-        <p class="flex-caption">POTENCIAL EMPREENDEDOR</p>
+        <p class="flex-caption" data-mapa="m3">POTENCIAL EMPREENDEDOR</p>
         
         <div class="centro">
           <div class="zoomViewport view3">
@@ -571,7 +500,7 @@
               </ul>
             </div>
             <div class="menu_links">
-              <div class="menu_trilha"><a data-toggle="modal" data-target="#modal" class="m3 t1 abre_modal"><span>Acessar Trilha</span></a></div>
+              <div class="menu_trilha"><a data-toggle="modal" data-target="#modal" data-momento="m3" data-trilha="t1" class="abre_modal"><span>Acessar Trilha</span></a></div>
             </div>
           </div>
           
