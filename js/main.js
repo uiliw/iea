@@ -35,7 +35,7 @@ $(function() {
 				// m2/t2
 				"pin3b": "sim",
 				// m2/t3
-				"pin4b": "sem",
+				"pin4b": "sim",
 				// m2/t4
 				"pin5b": "sem",
 				// m2/t5
