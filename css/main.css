@@ -20,7 +20,7 @@
 .trilha2b-box { left: 1045px; top: 415px; z-index: 9999; width: 142px; height: 164px; }
 .trilha3b { left: 972px; top: 627px; z-index: 9998; width: 181px; display: block; }
 .trilha3b-box { left: 974px; top: 627px; z-index: 9999; width: 140px; height: 136px; }
-.trilha4b { width: 184px; height: 247px; left: 1206px; top: 504px; z-index: 9996; display: block; }
+.trilha4b { width: 184px; left: 1206px; top: 504px; z-index: 9996; display: block; }
 .trilha4b-box { left: 1207px; top: 504px; z-index: 10000; width: 127px; height: 116px; }
 .trilha5b { left: 1121px; top: 725px; z-index: 9999; width: 193px; display: block; }
 .trilha5b-box { left: 1119px; top: 725px; z-index: 9999; width: 169px; height: 139px; display: block; }
@@ -88,21 +88,21 @@
 .pin7a { position: absolute; left: 1527px; top: 420px; z-index: 9999; }
 .pin8a { position: absolute; left: 1544px; top: 670px; z-index: 9999; }
 .pin1b { position: absolute; left: 934px; top: 500px; z-index: 9999; }
-.pin2b { position: absolute; left: 1110px; top: 428px; z-index: 9999; }
-.pin3b { position: absolute; left: 1149px; top: 543px; z-index: 10001; }
-.pin4b { position: absolute; left: 1294px; top: 480px; z-index: 10009; }
-.pin5b { position: absolute; left: 1194px; top: 725px; z-index: 10009; }
+.pin2b { position: absolute; left: 1110px; top: 398px; z-index: 9999; }
+.pin3b { position: absolute; left: 1029px; top: 623px; z-index: 10001; }
+.pin4b { position: absolute; left: 1262px; top: 480px; z-index: 10009; }
+.pin5b { position: absolute; left: 1194px; top: 715px; z-index: 10009; }
 .pin6b { position: absolute; left: 1354px; top: 590px; z-index: 10009; }
-.pin7b { position: absolute; left: 1527px; top: 420px; z-index: 9999; }
-.pin8b { position: absolute; left: 1544px; top: 670px; z-index: 9999; }
-.pin1c { position: absolute; left: 934px; top: 500px; z-index: 9999; }
-.pin2c { position: absolute; left: 1110px; top: 428px; z-index: 9999; }
-.pin3c { position: absolute; left: 1149px; top: 543px; z-index: 10001; }
-.pin4c { position: absolute; left: 1294px; top: 480px; z-index: 10009; }
-.pin5c { position: absolute; left: 1194px; top: 725px; z-index: 10009; }
+.pin7b { position: absolute; left: 1567px; top: 487px; z-index: 9999; }
+.pin8b { position: absolute; left: 1544px; top: 680px; z-index: 9999; }
+.pin1c { position: absolute; left: 934px; top: 450px; z-index: 9999; }
+.pin2c { position: absolute; left: 1038px; top: 598px; z-index: 9999; }
+.pin3c { position: absolute; left: 1169px; top: 493px; z-index: 10001; }
+.pin4c { position: absolute; left: 1315px; top: 460px; z-index: 10009; }
+.pin5c { position: absolute; left: 1194px; top: 675px; z-index: 10009; }
 .pin6c { position: absolute; left: 1354px; top: 590px; z-index: 10009; }
-.pin7c { position: absolute; left: 1527px; top: 420px; z-index: 9999; }
-.pin8c { position: absolute; left: 1544px; top: 670px; z-index: 9999; }
+.pin7c { position: absolute; left: 1527px; top: 430px; z-index: 9999; }
+.pin8c { position: absolute; left: 1544px; top: 630px; z-index: 9999; }
 
 .pin_nao { background-image: url(../img/pin.png); background-repeat: no-repeat; width: 20px; height: 38px; position: absolute; -webkit-animation: jump 1s infinite; -moz-animation: jump 1s infinite; -o-animation: jump 1s infinite; -ms-animation: jump 1s infinite; animation: jump 1s infinite; }
 .pin_sim { background-image: url(../img/pin.png); background-repeat: no-repeat; width: 20px; height: 38px; position: absolute; -webkit-animation: jump 1s infinite; -moz-animation: jump 1s infinite; -o-animation: jump 1s infinite; -ms-animation: jump 1s infinite; animation: jump 1s infinite; }
