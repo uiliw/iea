@@ -11,57 +11,57 @@ $(function() {
 		*/
 		arrayPins: {
 			m1: {
-				"pin1a": "sim",
+				"pin1a": "sem",
 				// m1/t1
-				"pin2a": "nao",
+				"pin2a": "sem",
 				// m1/t2
 				"pin3a": "sem",
 				// m1/t3
-				"pin4a": "sim",
+				"pin4a": "sem",
 				// m1/t4
-				"pin5a": "sim",
+				"pin5a": "sem",
 				// m1/t5
-				"pin6a": "sim",
+				"pin6a": "sem",
 				// m1/t6
-				"pin7a": "sim",
+				"pin7a": "sem",
 				// m1/t7
-				"pin8a": "sim",
+				"pin8a": "sem",
 				// m1/t8
 			},
 			m2: {
-				"pin1b": "sim",
+				"pin1b": "sem",
 				// m2/t1
 				"pin2b": "sim",
 				// m2/t2
-				"pin3b": "sim",
+				"pin3b": "sem",
 				// m2/t3
-				"pin4b": "sim",
+				"pin4b": "sem",
 				// m2/t4
-				"pin5b": "sim",
+				"pin5b": "sem",
 				// m2/t5
-				"pin6b": "sim",
+				"pin6b": "sem",
 				// m2/t6
 				"pin7b": "sim",
 				// m2/t7
-				"pin8b": "sim",
+				"pin8b": "sem",
 				// m2/t8
 			},
 			m3: {
 				"pin1c": "sim",
 				// m3/t1
-				"pin2c": "sim",
+				"pin2c": "sem",
 				// m3/t2
-				"pin3c": "sim",
+				"pin3c": "sem",
 				// m3/t3
-				"pin4c": "sim",
+				"pin4c": "sem",
 				// m3/t4
-				"pin5c": "sim",
+				"pin5c": "sem",
 				// m3/t5
-				"pin6c": "sim",
+				"pin6c": "sem",
 				// m3/t6
-				"pin7c": "sim",
+				"pin7c": "sem",
 				// m3/t7
-				"pin8c": "sim",
+				"pin8c": "sem",
 				// m3/t8
 			}
 		},
@@ -87,8 +87,8 @@ $(function() {
 			//INICLIZA SLIDER
 			app.slider();
 
-			//AINDA NAO ESTA SENDO UTILIZADO
-			app.paraCarrosel();
+			//TRAVA CARROSSEL
+			app.paraCarrossel();
 
 			//EVENTOS DE ALTERACAO DE TOPICO
 			app.initTopicoEvent();
@@ -209,7 +209,7 @@ $(function() {
 						app.loadAjax();
 						app.highlight();
 
-					}, 200);
+					}, 300);
 
 					$('.conteudo_janela').show();				
 					$("#modal").modal();
@@ -361,6 +361,27 @@ $(function() {
 
 		},
 
+
+		//INICIALIZA EVENTO PARA ABRIR O SOCIAL TWITTER EM UM POPUP
+		initPopupTwitter: function() {
+		$('.popup-twitter').click(function(event) {
+			var width  = 575,
+				height = 400,
+				left   = ($(window).width()  - width)  / 2,
+				top    = ($(window).height() - height) / 2,
+				url    = this.href,
+				opts   = 'status=1' +
+						 ',width='  + width  +
+						 ',height=' + height +
+						 ',top='    + top    +
+						 ',left='   + left;
+		
+			window.open(url, 'twitter', opts);
+		
+			return false;
+		  });
+		},		
+
 		//INICIALIZA EVENTO DE AO CLICAR EM FECHAR O POPUP
 		//FOI ALTERADA PRA NAO PRECISAR ADICIONAR UM EVENTO DE CLICK EM CADA JANELA
 		initPopupCloseEvent: function() {
@@ -425,7 +446,7 @@ $(function() {
 		},
 
 		//MANTIVE, MAS ATUALMENTE NAO ESTA EM USO, FIZ UMA BUSCA E SOMENTE ACHEI REFERENCIA EM OUTROS HTMLS, MANTIVE PARA FUTURO USO
-		paraCarrosel: function() {
+		paraCarrossel: function() {
 
 			$('#myCarousel').on('slid', '', function() {
 
@@ -495,7 +516,9 @@ $(function() {
 
 							app.initTooltip();
 
-							app.paraCarrosel();
+							app.paraCarrossel();
+
+							app.initPopupTwitter();
 
 							$('.conteudo').transition({
 								height: '496px'
@@ -526,7 +549,7 @@ $(function() {
 						//$.deck('getContainer').off('touchstart.deck touchmove.deck touchend.deck');
 						app.initTooltip();
 
-						app.paraCarrosel()
+						app.paraCarrossel()
 
 						setTimeout(function() {
 							$('.conteudo').transition({
