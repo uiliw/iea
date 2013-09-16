@@ -17,7 +17,8 @@
         <![endif]-->
 
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script src="js/vendor/jquery-1.10.2.min.js"></script>
+<script src="js/vendor/imgpreload/jquery.imgpreload.min.js"></script>
 <script src="js/vendor/modernizr.js"></script>
 <script src="js/vendor/caroufredsel/jquery.carouFredSel-6.2.1-packed.js"></script>
 <script src="js/vendor/caroufredsel/helper-plugins/jquery.touchSwipe.min.js"></script>
@@ -31,6 +32,17 @@
 <script src="js/plugins.js"></script>
 <script src="js/main.js"></script>
 
+<script>
+$(document).ready(function(e) {
+    $('#anima').click(function(){
+		$('.bullets_div.bulletanima_div').toggleClass('bulletanima_div bulletanima');
+		setTimeout(function(){
+			$('.bullets_div.bulletanima').toggleClass('bulletanima bulletanima_div');
+			},10);
+		})
+});
+
+</script>
 
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="js/vendor/modal/bootstrap-modal.css">
@@ -169,18 +181,32 @@
       <section class="slide deck-current">
       
       <!------>
-      
-        <h3>Notificação - Dúvida</h3>
+		<div class="row-fluid">
+           <div class="span6">
+           <h3>Notificação - Dúvida</h3>
         
-        <div class="alert alert-duvida">Donec fermentum orci eu tortor ullamcorper, quis egestas nisi pellentesque. Etiam egestas libero sed sapien rutrum, a mollis massa ornare.</div>
+        <div class="alert alert-duvida">Donec fermentum orci eu tortor ullamcorper, quis egestas nisi pellentesque.</div>
         
         <h3>Notificação - Exemplo</h3>
         
-        <div class="alert alert-info">Aliquam pharetra euismod placerat. Praesent nec mi in purus convallis aliquam. Donec fermentum orci eu tortor ullamcorper, quis egestas nisi pellentesque. Etiam egestas libero sed sapien rutrum, a mollis massa ornare. Nunc sit amet nisi vitae sapien sollicitudin hendrerit a ac erat.</div>
+        <div class="alert alert-info">Donec fermentum orci eu tortor ullamcorper, quis egestas nisi pellentesque.</div>
+        
+           </div>
+           <div class="span6">
         
         <h3>Notificação - Saiba mais</h3>
         
-        <div class="alert alert-saibamais">Aliquam pharetra euismod placerat. Praesent nec mi in purus convallis aliquam. Donec fermentum orci eu tortor ullamcorper, quis egestas nisi pellentesque. Etiam egestas libero sed sapien rutrum, a mollis massa ornare. Nunc sit amet nisi vitae sapien sollicitudin hendrerit a ac erat.</div>
+        <div class="alert alert-saibamais">Donec fermentum orci eu tortor ullamcorper, quis egestas nisi pellentesque.</div>
+           <h3>Notificação - Exemplo/Exercício</h3>
+        
+        <div class="alert alert-exercicio">Donec fermentum orci eu tortor ullamcorper, quis egestas nisi pellentesque.</div>
+        
+        
+        
+        
+           </div>
+        </div>
+        
         
       <!------>
       
@@ -323,6 +349,7 @@
         
         <!-- ATENÇÃO COM O HREF E ID DO MODAL.. DEVEM SER O MESMO E ÚNICOS PARA CADA MODAL -->
         <a href="#modal_01" role="button" class="btn" data-toggle="modal">Abrir modal</a>
+        <p style="text-align:center; width:100%"><a href="#modal_01" role="button" class="btn" data-toggle="modal">Abrir modal</a></p>
          
         <!-- Modal -->
         <div id="modal_01" class="modal hide fade modal-conteudo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -371,6 +398,31 @@
       <!------>
       
       
+            <div class="clearfix"></div>
+            <table class="table table-hover table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th colspan="3">D</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                </tr>
+              </tbody>
+            </table>
      
       
       
