@@ -1264,15 +1264,17 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffee5f5b', en
 	width: 80px;
 	height: 100%;
 	position: absolute;
-	content: "";
+	content: "\f0c6";
+	line-height: 150%;
+	font-family: "FontAwesome";
 	color: #ffffff;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 	background-color: #006dcc;
     *background-color: #0044cc;
-	background-image: url(../img/info.png), -moz-linear-gradient(to bottom, #0088cc, #0044cc);
-	background-image: url(../img/info.png), -webkit-linear-gradient(to bottom, #0088cc, #0044cc);
-	background-image: url(../img/info.png), -o-linear-gradient(to bottom, #0088cc, #0044cc);
-	background-image: url(../img/info.png), linear-gradient(to bottom, #0088cc, #0044cc);
+	background-image: url(../img/saibamais.png), -moz-linear-gradient(to bottom, #0088cc, #0044cc);
+	background-image: url(../img/saibamais.png), -webkit-linear-gradient(to bottom, #0088cc, #0044cc);
+	background-image: url(../img/saibamais.png), -o-linear-gradient(to bottom, #0088cc, #0044cc);
+	background-image: url(../img/saibamais.png), linear-gradient(to bottom, #0088cc, #0044cc);
 	border-color: #0044cc #0044cc #002a80;
 	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
 filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0044cc', GradientType=0);
@@ -1282,6 +1284,34 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', en
 	float: none;
 	background-position: center center;
 	background-repeat: no-repeat;
+	text-align: center;
+	vertical-align: middle;
+}
+.alert-exercicio:before {
+	width: 80px;
+	height: 100%;
+	position: absolute;
+	content: "\f044";
+	color: #ffffff;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	background-color: #006dcc;
+    *background-color: #0044cc;
+	background-image: url(../img/exercicio.png), -moz-linear-gradient(to bottom, #0088cc, #0044cc);
+	background-image: url(../img/exercicio.png), -webkit-linear-gradient(to bottom, #0088cc, #0044cc);
+	background-image: url(../img/exercicio.png), -o-linear-gradient(to bottom, #0088cc, #0044cc);
+	background-image: url(../img/exercicio.png), linear-gradient(to bottom, #0088cc, #0044cc);
+	border-color: #0044cc #0044cc #002a80;
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0044cc', GradientType=0);
+ filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+	margin: -12px 0 0 -95px;
+	font-size: 50px;
+	float: none;
+	background-position: center center;
+	background-repeat: no-repeat;
+	font-family: "FontAwesome";
+	text-align: center;
+	line-height: 150%;
 }
 /* ==========================================================================
    HEADER
