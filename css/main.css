@@ -985,14 +985,23 @@ blockquote.pull-left {
 	border-left: 0;
 	text-align: left;
 }
-blockquote.pull-center {
+blockquote.pull-center, p.pull-center {
 	padding-right: 20px;
 	padding-left: 20px;
 	border-right: none;
 	border-left: 0;
 	text-align: center;
 	position: relative;
+    width:100%
 }
+
+p.pull-center {
+	text-align: center;
+    width:100%;
+    position:relative;
+    float:left;
+}
+
 /*
 @-webkit-keyframes pulse_animation {
 	0% { -webkit-transform: scale(1); }
