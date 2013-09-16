@@ -454,9 +454,9 @@ $(function() {
 			});
 		},
 
-		//MANTIVE, MAS ATUALMENTE NAO ESTA EM USO, FIZ UMA BUSCA E SOMENTE ACHEI REFERENCIA EM OUTROS HTMLS, MANTIVE PARA FUTURO USO
+		//TRAVA CARROSSEL NO PRIMEIRO E NO ULTIMO SLIDE
 		paraCarrossel: function() {
-
+			
 			$('#myCarousel').on('slid', '', function() {
 
 				var $this = $(this);
