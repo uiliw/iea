@@ -1466,6 +1466,7 @@ thead {
 tbody {
 	background-color: #eee
 }
+tbody td{font-size:15px; line-height:15px!important}
 .media-heading {
 	margin: 0 0 5px;
 	font-family: 'Anaheim', sans-serif;
