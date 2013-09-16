@@ -895,6 +895,14 @@ top: 0;
 /* ==========================================================================
    RESET
    ========================================================================== */
+   a.btn-primary,a.btn-primary i {
+color: #fff!important;
+}
+a.btn:hover,a.btn i:hover {
+text-decoration:none!important;
+}
+
+
 .nav-tabs {
 	margin: 0!important
 }
@@ -1273,9 +1281,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffee5f5b', en
 	width: 80px;
 	height: 100%;
 	position: absolute;
-	content: "\f0c6";
-	line-height: 150%;
-	font-family: "FontAwesome";
+	content: "";
 	color: #ffffff;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 	background-color: #006dcc;
@@ -1293,14 +1299,12 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', en
 	float: none;
 	background-position: center center;
 	background-repeat: no-repeat;
-	text-align: center;
-	vertical-align: middle;
 }
 .alert-exercicio:before {
 	width: 80px;
 	height: 100%;
 	position: absolute;
-	content: "\f044";
+	content: "";
 	color: #ffffff;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 	background-color: #006dcc;
@@ -1318,9 +1322,6 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', en
 	float: none;
 	background-position: center center;
 	background-repeat: no-repeat;
-	font-family: "FontAwesome";
-	text-align: center;
-	line-height: 150%;
 }
 /* ==========================================================================
    HEADER
