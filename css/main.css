@@ -963,8 +963,11 @@ text-decoration:none!important;
 	padding: 5px 15px;
 	border-top: none;
 	background: #eee;
-	line-height: 23px;
+	line-height: 23px!important;
 	font-size: 16px;
+}
+.accordion-inner .bullets_div{
+	line-height: 20px;
 }
 body {
 	background: url(../img/bg.jpg);
@@ -987,15 +990,15 @@ blockquote.pull-right {
 }
 blockquote.pull-left {
 	float: left;
-	padding-right: 20px;
-	padding-left: 20px;
+	padding-right: 0;
+	padding-left: 0;
 	border-right: none;
 	border-left: 0;
 	text-align: left;
 }
 blockquote.pull-center, p.pull-center {
-	padding-right: 20px;
-	padding-left: 20px;
+	padding-right: 0;
+	padding-left: 0;
 	border-right: none;
 	border-left: 0;
 	text-align: center;
@@ -1004,10 +1007,11 @@ blockquote.pull-center, p.pull-center {
 }
 
 p.pull-center {
-	text-align: center;
+	text-align: center!important;
     width:100%;
     position:relative;
     float:left;
+	padding-left: 0!important;
 }
 
 /*
@@ -1231,6 +1235,7 @@ transform: scale(1);
 	float: left;
 	line-height: 17px;
 }
+.alert p{margin-bottom:5px!important}
 .alert-info:before {
 	width: 80px;
 	height: 100%;
