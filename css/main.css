@@ -891,7 +891,14 @@ top: 0;
     width:500px;
     margin-left:-250px
 }
-
+.modal-conteudoG {
+	color: #FFF;
+	font-size: 17px;
+	background: url(../img/bg_menu.jpg);
+    width:800px;
+    margin-left:-400px
+}
+.modal-body .table{color:#000}
 /* ==========================================================================
    RESET
    ========================================================================== */
@@ -1473,6 +1480,7 @@ tbody {
 	background-color: #eee
 }
 tbody td{font-size:15px; line-height:15px!important}
+tfoot{background-color: #868686;font-weight: bold;}
 .media-heading {
 	margin: 0 0 5px;
 	font-family: 'Anaheim', sans-serif;
@@ -1619,7 +1627,7 @@ tbody td{font-size:15px; line-height:15px!important}
 }
 .bullets_div.inline > .bullet_div {
 	float: left;
-	margin: 20px 10px 10px;
+	margin: 10px 10px 10px;
 	position: relative;
 }
 .bullets_div {
