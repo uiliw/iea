@@ -898,6 +898,7 @@ top: 0;
     width:800px;
     margin-left:-400px
 }
+.sem-borda{ border-bottom:0 solid transparent!important}
 .modal-body .table{color:#000}
 /* ==========================================================================
    RESET
