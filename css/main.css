@@ -1479,8 +1479,9 @@ thead {
 tbody {
 	background-color: #eee
 }
-tbody td{font-size:15px; line-height:15px!important}
+tbody td{font-size:15px; line-height:15px!important;color: #000;}
 tfoot{background-color: #868686;font-weight: bold;}
+.table-atividades tbody td{width:33.333px}
 .media-heading {
 	margin: 0 0 5px;
 	font-family: 'Anaheim', sans-serif;
@@ -1920,7 +1921,7 @@ filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
 }
 }
 .deck-container > .slide {
-	text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+	/* text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5); */
 }
 .deck-container > .slide .deck-before:not(.deck-child-current) .deck-before, .deck-container > .slide .deck-before:not(.deck-child-current) .deck-previous, .deck-container > .slide .deck-previous:not(.deck-child-current) .deck-before, .deck-container > .slide .deck-previous:not(.deck-child-current) .deck-previous {
 	opacity: 1;
@@ -2130,6 +2131,7 @@ filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
 	margin: 0 auto;
 	font-size: 18px;
 	line-height: 32px;
+	text-shadow: 1px 1px 1px rgba(255,255,255,.5);
 	overflow: hidden; /* Resets and base styles from HTML5 Boilerplate */ /* End HTML5 Boilerplate adaptations */
 	position: relative;
 	height: 435px;
