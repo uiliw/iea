@@ -98,6 +98,7 @@ $(function() {
 			app.vaiMapa();
 
 			$(window).trigger('resize');
+			app.initSidr();
 
 		},
 
@@ -133,6 +134,17 @@ $(function() {
 		//OBS.: NAO VI NENHUM LUGAR COM TOOLTIP, DEIXEI PARA SE FUTURAMENTE FOR INSERIDO, VAI FUNCIONAR
 		initTooltip: function() {
 			$('[data-toggle=tooltip]').tooltip();
+		},
+		
+		initSidr: function(){
+			$('#menu-sidr').sidr({
+			  side: 'right'
+			});
+			
+			$('#sidr, #nav').click( function(e){
+				e.preventDefault();
+				$.sidr('close');
+			})
 		},
 
 		//CHAMADAS AJAX PARA O LMS
@@ -317,6 +329,8 @@ $(function() {
 				},
 				after: function(slide) {
 
+					$cor = $('.flex-active-slide .flex-caption').data('cor');
+					$('header').css('border-bottom',$cor);
 					$activecaption = $('.flex-active-slide .flex-caption');
 					$captions.html($activecaption.text());
 

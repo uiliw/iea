@@ -12,10 +12,7 @@
 <meta name="description" content="">
 <meta name="viewport" content=" user-scalable=no">
 
-<!--[if lt IE 9]>
-            <script src="js/vendor/html5-3.6-respond-1.1.0.min.js"></script>
-        <![endif]-->
-
+<!--[if lt IE 9]><script src="js/vendor/html5-3.6-respond-1.1.0.min.js"></script><![endif]-->
 
 <script src="js/vendor/jquery-1.10.2.min.js"></script>
 <script src="js/vendor/imgpreload/jquery.imgpreload.min.js"></script>
@@ -29,6 +26,7 @@
 <script src="js/vendor/flexslider/jquery.flexslider.js"></script>
 <script src="js/vendor/jquery.transit.min.js"></script>
 <script src="js/vendor/jquery.zoomooz.js"></script>
+<script src="js/vendor/sidr/dist/jquery.sidr.js"></script>
 <script src="js/plugins.js"></script>
 <script src="js/main.js"></script>
 
@@ -38,38 +36,57 @@
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="icones/font-awesome/css/font-awesome.min.css">
 <link rel="stylesheet" href="js/vendor/flexslider/flexslider.css">
+<link rel="stylesheet" href="js/vendor/sidr/dist/stylesheets/jquery.sidr.dark.css">
 <link href='http://fonts.googleapis.com/css?family=Anaheim|Roboto+Slab:400,700|Shadows+Into+Light+Two' rel='stylesheet' type='text/css'>
 
-
-<script language="JavaScript">
-
-	
-	
-</script>
 </head>
 <body>
-<!--[if lt IE 9]>
-            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-        <![endif]-->
-<div id="nav">
+
+<!-- MENU LATERAL -->
+<div id="sidr">
+  <ul>
+      <li><a href="#meus_dados" data-toggle="modal">MEUS DADOS</a></li>
+      <li><a href="#faq" data-toggle="modal">FAQ/AJUDA</a></li>
+      <li><a href="#duvidas" data-toggle="modal">TIRA-DÚVIDAS</a></li>
+      <li><a href="#pontos" data-toggle="modal">PONTOS</a></li>
+      <li><a href="#biblioteca" data-toggle="modal">BIBLIOTECA</a></li>
+      <li><a href="#questionario" data-toggle="modal">QUESTIONÁRIO</a></li>
+      <li><a href="#" data-toggle="modal">SAIR</a></li>
+  </ul>
+</div>
+
+<!-- MENU SUPERIOR -->
+<div id="nav" class="visible-desktop hidden-tablet">
   <div class="container">
     <ul>
-      <li><a href="#" class="teste"><i class="icon-book"></i> MEUS DADOS</a></li>
-      <li><a href="#"><i class="icon-info"></i> GUIA DE NAVEGAÇÃO</a></li>
+      <li><a href="#questionario" data-toggle="modal">QUESTIONÁRIO</a></li>
+      <li><a href="#biblioteca" data-toggle="modal">BIBLIOTECA</a></li>
+      <li><a href="#pontos" data-toggle="modal">PONTOS</a></li>
+      <li><a href="#duvidas" data-toggle="modal">TIRA-DÚVIDAS</a></li>
+      <li><a href="#faq" data-toggle="modal">FAQ/AJUDA</a></li>
+      <li><a href="#meus_dados" data-toggle="modal">MEUS DADOS</a></li>
     </ul>
   </div>
 </div>
+		
+<!-- HOME -->
+<div class="home">
+    <img class="home-ico" src="img/home.png" alt=""/>
+    <p>Olá, john Doe</p>
+</div>
+
+<!-- SAIr -->
+<a href="#" id="sair" class="visible-desktop hidden-tablet">SAIR</a>
+
+<!-- HEADER -->
 <header>
+	<a href="#sidr" id="menu-sidr" class="btn-navbar hidden-desktop visible-tablet">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+	</a>
   <div class="container">
-    <div class="brand">
-    	<a href="index.html">
-            <span>
-                <object type="image/svg+xml" data="img/logo-sebrae.svg">           
-                   <img src="img/logo-sebrae.png"/>
-                </object>
-            </span>
-        </a>
-    </div>
+  
     <div class="titulos">
       <h3 class="sub-titulo-trilhas">TRILHAS DE AUTOATENDIMENTO</h3>
       <div class="clearfix"></div>
@@ -83,9 +100,11 @@
         </div>
   <div class="flexslider">
     <ul class="slides">
+    
+      <!-- MAPA EMPRESÁRIO DE PEQUENOS NEGÓCIOS -->
       <li>
       
-        <p class="flex-caption" data-mapa="m1">EMPRESÁRIO DE PEQUENOS NEGÓCIOS</p>
+        <p class="flex-caption" data-mapa="m1" data-cor="#bd676c">EMPRESÁRIO DE PEQUENOS NEGÓCIOS</p>
         
         <div class="centro">
           <div class="zoomViewport view1">
@@ -245,9 +264,10 @@
           
         </div>
       </li>
+      <!-- MAPA MICROEMPREENDEDOR INDIVIDUAL -->
       <li>
       
-        <p class="flex-caption" data-mapa="m2">MICROEMPREENDEDOR INDIVIDUAL</p>
+        <p class="flex-caption" data-mapa="m2" data-cor="#73aa2d">MICROEMPREENDEDOR INDIVIDUAL</p>
         
         <div class="centro">
           <div class="zoomViewport view2">
@@ -467,9 +487,10 @@
           
         </div>
       </li>
+      <!-- MAPA POTENCIAL EMPREENDEDOR -->
       <li>
       
-        <p class="flex-caption" data-mapa="m3">POTENCIAL EMPREENDEDOR</p>
+        <p class="flex-caption" data-mapa="m3" data-cor="#dfb163">POTENCIAL EMPREENDEDOR</p>
         
         <div class="centro">
           <div class="zoomViewport view3">
@@ -668,12 +689,86 @@
     </ul>
   </div>
 </section>
+
+      
+      
+<!-- MODAL CONTEÚDO -->
 <div class="modal hide fade" id="modal">
   <div class="conteudo_janela">
     
   </div>
 </div>
 
+<!-- MODAL QUESTIONÁRIO -->
+<div id="questionario" class="modal hide fade modal-curso">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3><span>QUESTIONÁRIO DE PERFIL</span></h3>
+    <p>No Portal Trihas de Autoatendimento, você é convidado a responder um questionário simplificado, que ajudará a orientar quais são os assuntos mais relevantes para seu perfil empreendedor.<br/>Responda com sinceridade as questões abaixo e se for necessário, poderá refazer o questionário para atualizar infomações.</p>
+  </div>
+  <div class="modal-body">
+    <p>Sed quis sapien vel lorem congue vulputate. Quisque vel magna nunc. Maecenas vehicula velit dolor, quis fringilla erat accumsan vitae. Fusce gravida gravida convallis. Nunc nec eros lacus. Cras convallis tortor ut lectus consequat, eu vehicula eros lobortis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec consectetur elit ac lectus cursus, dapibus suscipit justo ornare. Fusce at tincidunt libero. Quisque condimentum leo vitae mi tristique commodo. Donec sit amet sapien eget felis hendrerit tempus. Maecenas scelerisque libero tincidunt urna volutpat laoreet. Sed bibendum quam augue, nec dapibus elit cursus vitae. Curabitur mollis dui in neque euismod vestibulum. Etiam condimentum sem eu sapien euismod, eleifend tristique ipsum malesuada.</p>
+  </div>
+  <div class="modal-footer">
+  	<button class="btn btn-success pull-right" style="margin-left:20px">Enviar</button>
+  	<button class="btn btn-danger pull-right">Cancelar</button>
+  </div>
+</div>
+
+<!-- MODAL BIBLIOTECA -->
+<div id="biblioteca" class="modal hide fade modal-curso">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3>Quisque vel magna nunc.</h3>
+  </div>
+  <div class="modal-body">
+    <p>Sed quis sapien vel lorem congue vulputate. Quisque vel magna nunc. Maecenas vehicula velit dolor, quis fringilla erat accumsan vitae. Fusce gravida gravida convallis. Nunc nec eros lacus. Cras convallis tortor ut lectus consequat, eu vehicula eros lobortis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec consectetur elit ac lectus cursus, dapibus suscipit justo ornare. Fusce at tincidunt libero. Quisque condimentum leo vitae mi tristique commodo. Donec sit amet sapien eget felis hendrerit tempus. Maecenas scelerisque libero tincidunt urna volutpat laoreet. Sed bibendum quam augue, nec dapibus elit cursus vitae. Curabitur mollis dui in neque euismod vestibulum. Etiam condimentum sem eu sapien euismod, eleifend tristique ipsum malesuada.</p>
+  </div>
+</div>
+
+<!-- MODAL PONTOS -->
+<div id="pontos" class="modal hide fade modal-curso">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3>Quisque vel magna nunc.</h3>
+  </div>
+  <div class="modal-body">
+    <p>Sed quis sapien vel lorem congue vulputate. Quisque vel magna nunc. Maecenas vehicula velit dolor, quis fringilla erat accumsan vitae. Fusce gravida gravida convallis. Nunc nec eros lacus. Cras convallis tortor ut lectus consequat, eu vehicula eros lobortis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec consectetur elit ac lectus cursus, dapibus suscipit justo ornare. Fusce at tincidunt libero. Quisque condimentum leo vitae mi tristique commodo. Donec sit amet sapien eget felis hendrerit tempus. Maecenas scelerisque libero tincidunt urna volutpat laoreet. Sed bibendum quam augue, nec dapibus elit cursus vitae. Curabitur mollis dui in neque euismod vestibulum. Etiam condimentum sem eu sapien euismod, eleifend tristique ipsum malesuada.</p>
+  </div>
+</div>
+
+<!-- MODAL TIRA-DÚVIDAS -->
+<div id="duvidas" class="modal hide fade modal-curso">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3>Quisque vel magna nunc.</h3>
+  </div>
+  <div class="modal-body">
+    <p>Sed quis sapien vel lorem congue vulputate. Quisque vel magna nunc. Maecenas vehicula velit dolor, quis fringilla erat accumsan vitae. Fusce gravida gravida convallis. Nunc nec eros lacus. Cras convallis tortor ut lectus consequat, eu vehicula eros lobortis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec consectetur elit ac lectus cursus, dapibus suscipit justo ornare. Fusce at tincidunt libero. Quisque condimentum leo vitae mi tristique commodo. Donec sit amet sapien eget felis hendrerit tempus. Maecenas scelerisque libero tincidunt urna volutpat laoreet. Sed bibendum quam augue, nec dapibus elit cursus vitae. Curabitur mollis dui in neque euismod vestibulum. Etiam condimentum sem eu sapien euismod, eleifend tristique ipsum malesuada.</p>
+  </div>
+</div>
+
+<!-- MODAL FAQ/AJUDAS -->
+<div id="faq" class="modal hide fade modal-curso">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3>Quisque vel magna nunc.</h3>
+  </div>
+  <div class="modal-body">
+    <p>Sed quis sapien vel lorem congue vulputate. Quisque vel magna nunc. Maecenas vehicula velit dolor, quis fringilla erat accumsan vitae. Fusce gravida gravida convallis. Nunc nec eros lacus. Cras convallis tortor ut lectus consequat, eu vehicula eros lobortis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec consectetur elit ac lectus cursus, dapibus suscipit justo ornare. Fusce at tincidunt libero. Quisque condimentum leo vitae mi tristique commodo. Donec sit amet sapien eget felis hendrerit tempus. Maecenas scelerisque libero tincidunt urna volutpat laoreet. Sed bibendum quam augue, nec dapibus elit cursus vitae. Curabitur mollis dui in neque euismod vestibulum. Etiam condimentum sem eu sapien euismod, eleifend tristique ipsum malesuada.</p>
+  </div>
+</div>
+
+<!-- MODAL MEUS DADOS -->
+<div id="meus_dados	" class="modal hide fade modal-curso">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3>Quisque vel magna nunc.</h3>
+  </div>
+  <div class="modal-body">
+    <p>Sed quis sapien vel lorem congue vulputate. Quisque vel magna nunc. Maecenas vehicula velit dolor, quis fringilla erat accumsan vitae. Fusce gravida gravida convallis. Nunc nec eros lacus. Cras convallis tortor ut lectus consequat, eu vehicula eros lobortis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec consectetur elit ac lectus cursus, dapibus suscipit justo ornare. Fusce at tincidunt libero. Quisque condimentum leo vitae mi tristique commodo. Donec sit amet sapien eget felis hendrerit tempus. Maecenas scelerisque libero tincidunt urna volutpat laoreet. Sed bibendum quam augue, nec dapibus elit cursus vitae. Curabitur mollis dui in neque euismod vestibulum. Etiam condimentum sem eu sapien euismod, eleifend tristique ipsum malesuada.</p>
+  </div>
+</div>
 
 
 </body>

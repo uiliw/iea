@@ -900,6 +900,64 @@ top: 0;
 }
 .sem-borda{ border-bottom:0 solid transparent!important; padding-bottom: 20px;}
 .modal-body .table{color:#000}
+.modal-curso{background-color:#fff; width:700px; margin-left:-350px;}
+
+.modal-curso h3 {
+    font-weight: normal;font-size: 22px;
+		
+    padding: 0.34em 1em;
+		
+    margin-left: 12px;
+		
+    margin-top: 10px;
+		
+    margin-bottom: 30px;
+    position:relative;
+		color: #ffffff;
+		text-align: center;
+		letter-spacing:0.1em;
+		text-shadow: 0px -1px 0px rgba(0,0,0,0.3);
+		
+		 
+    font-family: 'Anaheim', sans-serif;
+    background: #59adcf;
+      display: inline-block;
+	}
+	
+.modal-curso h3:before {
+		font-family: 'Anaheim', sans-serif;
+		content: "";
+		width:.2em;
+		bottom:-.5em;
+		position:absolute;
+		display:block;
+		border: .9em solid #48a4c1;
+		z-index:-2;
+	}
+	
+.modal-curso h3:before {
+		left:-1.35em;
+		border-right-width: .75em;
+	}
+	
+
+.modal-curso h3 span:before {
+		content:"";
+		bottom:-.5em;
+		position:absolute;
+		display:block;
+		border-style:solid;
+		border-color: #0675b3 transparent transparent transparent;
+		z-index:-1;
+	}
+	
+.modal-curso h3 span:before {
+	  left: 0;
+	  border-width: .5em 0 0 .5em;
+	}
+	
+.modal-curso .modal-header p{ padding:0px 30px; font-size:17px}
+    
 /* ==========================================================================
    RESET
    ========================================================================== */
@@ -1347,7 +1405,11 @@ header {
 	position: fixed;
 	z-index: 1;
 	top: 40px;
-	width: 100%;
+	width: 100%!important;
+	border-top: 2px solid #26a3ef;
+	border-bottom-style: solid!important;
+	border-bottom-color: #bd676c;
+	border-bottom-width: 5px!important;
 }
 .brand {
 	margin: 10px 0;
@@ -1409,18 +1471,70 @@ header {
 	background-color: #008fee;
 	border-radius: 10px 9px 0 0;
 	box-shadow: 0px 0px 6px rgba(0,0,0,.5);
+    padding-bottom:4px;
 }
 #nav li:hover {
+	background-color: #18608c;
+    margin-top:-3px
 }
 #nav a {
-	color: #222;
+	color: #fff;
 	padding: 5px 15px;
 	float: left;
 }
 #nav a:hover {
-	text-decoration: none;
-	color: #fff;
 }
+.home-ico{float: left;}
+.home{float: left;position: absolute;top: -5px;width: 300px;z-index: 100;left: 40px;}
+.home p{ color:#000; background-color:#d2b64f; padding: 5px 15px; border-radius: 0 0 10px 10px; float: left; margin-left: 10px;}
+
+.btn-navbar {
+  position: absolute;
+  padding: 10px 10px;
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #1c7ac1;
+  *background-color: #e5e5e5;
+     
+          
+  right: 0;
+  top: -38px;
+}
+
+.btn-navbar:hover,
+.btn-navbar:focus,
+.btn-navbar:active,
+.btn-navbar.active,
+.btn-navbar.disabled,
+.btn-navbar[disabled] {
+  color: #ffffff;
+  background-color: #18608c;
+  *background-color: #18608c;
+}
+
+.btn-navbar:active,
+.btn-navbar.active {
+  background-color: #18608c \9;
+}
+
+.btn-navbar .icon-bar {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background-color: #f5f5f5;
+  -webkit-border-radius: 1px;
+     -moz-border-radius: 1px;
+          border-radius: 1px;
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+     -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+          box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.btn-navbar .icon-bar + .icon-bar {
+  margin-top: 3px;
+}
+
+#sair{color:#fff; background-color:#18608c;position: absolute;z-index: 10;right: 0;top: 5px;padding: 5px 20px;font-size: 20px;}
 /* ==========================================================================
    CONTENT
    ========================================================================== */
@@ -1484,7 +1598,7 @@ tbody td{font-size:15px; line-height:15px!important;color: #000;}
 tfoot{background-color: #868686;font-weight: bold;}
 .table-atividades tbody td{width:33.333px}
 .media-heading {
-	margin: 0 0 5px;
+	margin: 0;
 	font-family: 'Anaheim', sans-serif;
 	color: #fff;
 	font-size: 17px;
@@ -1701,8 +1815,38 @@ tfoot{background-color: #868686;font-weight: bold;}
 	-webkit-animation-delay: 4500ms
 }
 /* ==========================================================================
-   FOOTER
+   RESPONSIVO
    ========================================================================== */
+
+@media (max-width: 1024px) {
+  .hidden-desktop {
+    display: inherit !important;
+  }
+  .visible-desktop {
+    display: none !important;
+  }
+  .visible-tablet {
+    display: inherit !important;
+  }
+  .hidden-tablet {
+    display: none !important;
+  }
+}
+@media (min-width: 1025px) {
+  .hidden-desktop {
+    display: none !important;
+  }
+  .visible-desktop {
+    display: inherit !important ;
+  }
+  .visible-tablet {
+    display: none !important;
+  }
+  .hidden-tablet {
+    display: inherit !important;
+  }
+}
+
 
 /* ==========================================================================
    CAROUSEL
@@ -1737,10 +1881,16 @@ tfoot{background-color: #868686;font-weight: bold;}
 	margin-right: 15px;
 	float: left;
 	border: 3px transparent solid;
+    position:relative;
 }
 .paradas li a.ativo, .paradas li:hover a {
-	border: 3px rgb(255, 154, 2) solid;
+	/* border: 3px rgb(255, 154, 2) solid; */
 }
+.media, .media-body{overflow:visible;}
+.paradas li a.ativo:before, .paradas li:hover a:before {
+    content:url(../img/parada-ativa.png);
+    position:absolute;
+    left: -22px;}
 /*
 			.paradas li img{
 			    box-shadow: 2px 2px 3px rgba(0,0,0,0.5);
