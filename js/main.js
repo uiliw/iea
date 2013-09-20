@@ -68,15 +68,17 @@ $(function() {
 
 		init: function() {
 
+			//DESABILITA/HABILITA CACHE NAS RESPOSTAS AJAX
+			$.ajaxSetup({
+				cache: false //setar true na versão online
+			});
 
+			//REDIMENCIONA MAPA
 			$(window).on("resize", function() {
 				$('.flexslider .slides > li').height($(window).height());
 			});
+			$(window).trigger('resize');
 
-			$.ajaxSetup({
-				// Disable caching of AJAX responses
-				cache: false
-			});
 
 			//INICIALIZA TOOLTIPS
 			app.initTooltip();
@@ -92,36 +94,16 @@ $(function() {
 
 			//EVENTOS DE ALTERACAO DE TOPICO
 			app.initTopicoEvent();
-
+			
+			//INICIALIZA TABS
 			app.initTabEvent();
 
-			app.vaiMapa();
-
-			$(window).trigger('resize');
+			
+			//INICIALIZA MENU LATERAL
 			app.initSidr();
 
 		},
 
-		vaiMapa: function() {
-
-
-			$('.trilha1a-box-mapa').click(function(evt) {
-
-				$(".zoomContainer").zoomContainer();
-				var datatargetsize = $(".trilha1a-box").data("targetsize");
-				var dataduration = $(".trilha1a-box").data("duration");
-
-				$(".trilha1a-box").zoomTo({
-					targetsize: datatargetsize,
-					duration: dataduration,
-					easing: "ease-in-out",
-					closeclick: true
-				});
-				evt.stopPropagation();
-
-
-			});
-		},
 
 		initTabEvent: function() {
 			$('.nav-tabs a').click(function(e) {
@@ -136,6 +118,7 @@ $(function() {
 			$('[data-toggle=tooltip]').tooltip();
 		},
 		
+		//INICIALIZA MENU LATERAL
 		initSidr: function(){
 			$('#menu-sidr').sidr({
 			  side: 'right'
