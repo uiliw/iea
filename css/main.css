@@ -592,11 +592,11 @@
 	width: 20px;
 	height: 38px;
 	position: absolute;
-	-webkit-animation: jump 1s infinite;
+	/*-webkit-animation: jump 1s infinite;
 	-moz-animation: jump 1s infinite;
 	-o-animation: jump 1s infinite;
 	-ms-animation: jump 1s infinite;
-	animation: jump 1s infinite;
+	animation: jump 1s infinite;*/
 }
 .pin_sim {
 	background-image: url(../img/pin.png);
@@ -604,128 +604,13 @@
 	width: 20px;
 	height: 38px;
 	position: absolute;
-	-webkit-animation: jump 1s infinite;
+	/*-webkit-animation: jump 1s infinite;
 	-moz-animation: jump 1s infinite;
 	-o-animation: jump 1s infinite;
 	-ms-animation: jump 1s infinite;
-	animation: jump 1s infinite;
+	animation: jump 1s infinite;*/
 }
-/*******************************************
-		POPUP INTRO
-*******************************************/
-
-.menu_janela {
-	background: url(../img/bg_menu.jpg);
-	position: absolute;
-	top: 398px;
-	left: 1200px;
-	width: 500px;
-	padding-bottom: 10px;
-	opacity: 0;
-	display: none;
-}
-.menu_janela:before {
-	width: 22px;
-	height: 22px;
-	content: url(../img/seta_esq.png);
-	position: absolute;
-	left: -22px;
-	top: 200px;
-	overflow: hidden;
-}
-.titulo_menu_janela {
-	margin: 10px 20px 0 20px;
-	color: #fff;
-	font-size: 17px;
-}
-.titulo_menu_janela h2 {
-	margin: -10px 0 19px;
-	color: #003f3a;
-	border-bottom: 1px solid #fff;
-	padding-bottom: 10px;
-}
-.titulo_menu_janela h3 {
-	color: #fff;
-	font-size: 16px;
-	margin: 0;
-}
-.menu_fecha {
-	position: absolute;
-	right: 10px;
-	top: 8px;
-	color: #fff;
-	font-size: 27px;
-	cursor: pointer;
-}
-.menu_links {
-	list-style: none;
-	margin: 10px 15px 0;
-}
-.menu_links .menu_trilha a {
-	border-bottom: none;
-	font-size: 18px;
-	background-color: rgba(0,0,0,.2);
-	width: auto;
-	float: right;
-	margin: 5px;
-	color: #fff;
-	line-height: 35px;
-	cursor: pointer
-}
-.menu_links .menu_trilha a:hover {
-	background-color: rgba(0,0,0,.3);
-	text-decoration: none;
-}
-.menu_links .menu_trilha a span {
-	margin: 30px 20px;
-}
-.menu_links .zoomButton {
-	border-bottom: none;
-	font-size: 18px;
-	background-color: rgba(0,0,0,.2);
-	width: auto;
-	float: right;
-	margin: 34px 5px 5px;
-	color: #fff;
-	line-height: 35px;
-	cursor: pointer
-}
-.menu_links .zoomButton:hover {
-	background-color: rgba(0,0,0,.3);
-	text-decoration: none;
-}
-.menu_links .zoomButton span {
-	margin: 30px 20px;
-}
-/*******************************************
-		POPUP TRILHAS
-*******************************************/
-
-
-
-
-
-.fechar_conteudo_janela {
-	padding: 5px 10px;
-	background-color: #0b8480;
-	position: relative;
-	float: left;
-	cursor: pointer;
-	color: #fff;
-	visibility: visible;
-	float: right;
-	margin: 5px;
-}
-.fechar_conteudo_janela:hover {
-	background-color: rgb(9, 105, 102);
-}
-.flex-caption {
-	display: none
-}
-.tooltip {
-	z-index: 2000 !important;
-}
- @-webkit-keyframes jump {
+@-webkit-keyframes jump {
 0% {
 top: 0;
  -webkit-animation-timing-function: ease-in;
@@ -863,6 +748,122 @@ top: 0;
  animation-timing-function: ease-in;
 }
 }
+/*******************************************
+		POPUP INTRO
+*******************************************/
+
+.menu_janela {
+	background: url(../img/bg_menu.jpg);
+	position: absolute;
+	top: 398px;
+	left: 1200px;
+	width: 500px;
+	padding-bottom: 10px;
+	opacity: 0;
+	display: none;
+}
+.menu_janela:before {
+	width: 22px;
+	height: 22px;
+	content: url(../img/seta_esq.png);
+	position: absolute;
+	left: -22px;
+	top: 200px;
+	overflow: hidden;
+}
+.titulo_menu_janela {
+	margin: 10px 20px 0 20px;
+	color: #fff;
+	font-size: 17px;
+}
+.titulo_menu_janela h2 {
+	margin: -10px 0 19px;
+	color: #003f3a;
+	border-bottom: 1px solid #fff;
+	padding-bottom: 10px;
+}
+.titulo_menu_janela h3 {
+	color: #fff;
+	font-size: 16px;
+	margin: 0;
+}
+.menu_fecha {
+	position: absolute;
+	right: 10px;
+	top: 8px;
+	color: #fff;
+	font-size: 27px;
+	cursor: pointer;
+}
+.menu_links {
+	list-style: none;
+	margin: 10px 15px 0;
+}
+.menu_links .menu_trilha a {
+	border-bottom: none;
+	font-size: 18px;
+	background-color: rgba(0,0,0,.2);
+	width: auto;
+	float: right;
+	margin: 5px;
+	color: #fff;
+	line-height: 35px;
+	cursor: pointer
+}
+.menu_links .menu_trilha a:hover {
+	background-color: rgba(0,0,0,.3);
+	text-decoration: none;
+}
+.menu_links .menu_trilha a span {
+	margin: 30px 20px;
+}
+.menu_links .zoomButton {
+	border-bottom: none;
+	font-size: 18px;
+	background-color: rgba(0,0,0,.2);
+	width: auto;
+	float: right;
+	margin: 34px 5px 5px;
+	color: #fff;
+	line-height: 35px;
+	cursor: pointer
+}
+.menu_links .zoomButton:hover {
+	background-color: rgba(0,0,0,.3);
+	text-decoration: none;
+}
+.menu_links .zoomButton span {
+	margin: 30px 20px;
+}
+/*******************************************
+		POPUP TRILHAS
+*******************************************/
+
+
+
+
+
+.fechar_conteudo_janela {
+	padding: 5px 10px;
+	background-color: #0b8480;
+	position: relative;
+	float: left;
+	cursor: pointer;
+	color: #fff;
+	visibility: visible;
+	float: right;
+	margin: 5px;
+}
+.fechar_conteudo_janela:hover {
+	background-color: rgb(9, 105, 102);
+}
+.flex-caption {
+	display: none
+}
+.tooltip {
+	z-index: 2000 !important;
+}
+
 #legenda2 {
 	top: 20px
 }
@@ -1445,6 +1446,8 @@ header {
 }
 .titulos {
 	float: right
+;
+	margin-right: 100px;
 }
 .ajuda {
 	float: right;
@@ -1462,7 +1465,7 @@ header {
 }
 #nav ul {
 	list-style: none;
-	margin: 10px auto 0;
+	margin: 10px 100px auto 0;
 	float: right;
 }
 #nav li {
@@ -1485,7 +1488,7 @@ header {
 #nav a:hover {
 }
 .home-ico{float: left;}
-.home{float: left;position: absolute;top: -5px;width: 300px;z-index: 100;left: 40px;}
+.home{float: left;position: absolute;top: -5px;width: 300px;z-index: 100;left: 100px;}
 .home p{ color:#000; background-color:#d2b64f; padding: 5px 15px; border-radius: 0 0 10px 10px; float: left; margin-left: 10px;}
 
 .btn-navbar {
