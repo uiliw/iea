@@ -1,3 +1,29 @@
+
+/*******************************************
+		DEMO
+*******************************************/
+body.login{ background-image: none;}
+body.login header{ border-bottom: 0px none transparent; border-top:none; height: auto; padding: 20px 0; position: relative; margin-bottom: 70px;}
+.logo-negocio{ margin:0 auto; display: block;}
+
+.painel-login{}
+.painel-login {
+    margin: 20px;
+ }
+.painel-login {
+	border-left: none;
+padding-left: 0;
+
+
+	width: 405px;
+	display: block;
+	margin: 0 auto;
+}
+.painel-login h3{color: #007ac3;font-weight: normal;}
+.painel-login .tab-content {
+padding: 0;
+}
+
 /*******************************************
 		DEMO
 *******************************************/
@@ -957,11 +983,35 @@ top: 0;
 	  border-width: .5em 0 0 .5em;
 	}
 	
-.modal-curso .modal-header p{ padding:0px 30px; font-size:17px}
+.modal-curso p{ padding:0px 30px; font-size:17px}
+.modal-curso .modal-body{ max-height: 300px; overflow-y:auto}
     
 /* ==========================================================================
    RESET
    ========================================================================== */
+   
+   
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+display: inline-block;
+height: 20px;
+padding: 4px 6px;
+margin-bottom: 10px;
+font-size: 14px;
+line-height: 20px;
+color: #555;
+vertical-align: middle;
+-webkit-border-radius: 0px;
+-moz-border-radius: 0px;
+border-radius: 0px;
+}
+
+
+   .btn {
+background-image: none;
+border-radius: 0;
+}
+
+
    a.btn-primary,a.btn-primary i {
 color: #fff!important;
 }
