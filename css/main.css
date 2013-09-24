@@ -469,155 +469,130 @@ padding: 0;
 /************** pins ****************/
 
 .pin1a {
-	position: absolute;
-	left: 934px;
-	top: 500px;
+	left: 914px;
+	top: 462px;
 	z-index: 9999;
 }
 .pin2a {
-	position: absolute;
-	left: 1110px;
-	top: 428px;
+	left: 1090px;
+	top: 388px;
 	z-index: 9999;
 }
 .pin3a {
-	position: absolute;
-	left: 1149px;
-	top: 543px;
+	left: 1132px;
+	top: 503px;
 	z-index: 10001;
 }
 .pin4a {
-	position: absolute;
-	left: 1294px;
-	top: 480px;
+	left: 1274px;
+	top: 428px;
 	z-index: 10009;
 }
 .pin5a {
-	position: absolute;
-	left: 1194px;
-	top: 725px;
+	left: 1147px;
+	top: 698px;
 	z-index: 10009;
 }
 .pin6a {
-	position: absolute;
-	left: 1354px;
-	top: 590px;
+	left: 1344px;
+	top: 555px;
 	z-index: 10009;
 }
 .pin7a {
-	position: absolute;
-	left: 1527px;
-	top: 420px;
+	left: 1511px;
+	top: 388px;
 	z-index: 9999;
 }
 .pin8a {
-	position: absolute;
-	left: 1544px;
-	top: 670px;
+	left: 1496px;
+	top: 659px;
 	z-index: 9999;
 }
 .pin1b {
-	position: absolute;
-	left: 934px;
-	top: 500px;
+	left: 916px;
+	top: 460px;
 	z-index: 9999;
 }
 .pin2b {
-	position: absolute;
-	left: 1110px;
-	top: 398px;
+	left: 1095px;
+	top: 372px;
 	z-index: 9999;
 }
 .pin3b {
-	position: absolute;
-	left: 1029px;
-	top: 623px;
+	left: 1012px;
+	top: 593px;
 	z-index: 10001;
 }
 .pin4b {
-	position: absolute;
-	left: 1262px;
-	top: 480px;
+	left: 1242px;
+	top: 449px;
 	z-index: 10009;
 }
 .pin5b {
-	position: absolute;
-	left: 1194px;
-	top: 715px;
+	left: 1172px;
+	top: 685px;
 	z-index: 10009;
 }
 .pin6b {
-	position: absolute;
 	left: 1354px;
-	top: 590px;
+	top: 558px;
 	z-index: 10009;
 }
 .pin7b {
-	position: absolute;
 	left: 1567px;
-	top: 487px;
+	top: 456px;
 	z-index: 9999;
 }
 .pin8b {
-	position: absolute;
-	left: 1544px;
-	top: 680px;
+	left: 1523px;
+	top: 662px;
 	z-index: 9999;
 }
 .pin1c {
-	position: absolute;
-	left: 934px;
-	top: 450px;
+	left: 924px;
+	top: 420px;
 	z-index: 9999;
 }
 .pin2c {
-	position: absolute;
-	left: 1038px;
-	top: 598px;
+	left: 1017px;
+	top: 571px;
 	z-index: 9999;
 }
 .pin3c {
-	position: absolute;
-	left: 1169px;
-	top: 493px;
+	left: 1154px;
+	top: 461px;
 	z-index: 10001;
 }
 .pin4c {
-	position: absolute;
-	left: 1315px;
-	top: 460px;
+	left: 1305px;
+	top: 430px;
 	z-index: 10009;
 }
 .pin5c {
-	position: absolute;
-	left: 1194px;
-	top: 675px;
+	left: 1177px;
+	top: 651px;
 	z-index: 10009;
 }
 .pin6c {
-	position: absolute;
 	left: 1354px;
-	top: 590px;
+	top: 552px;
 	z-index: 10009;
 }
 .pin7c {
-	position: absolute;
-	left: 1527px;
-	top: 430px;
+	left: 1515px;
+	top: 400px;
 	z-index: 9999;
 }
 .pin8c {
-	position: absolute;
-	left: 1544px;
-	top: 630px;
+	left: 1524px;
+	top: 605px;
 	z-index: 9999;
 }
 .pin_nao {
-	background-image: url(../img/pin.png);
+	background: url(../img/pin_nao.svg) 8px 20px;
 	background-repeat: no-repeat;
-	width: 20px;
-	height: 38px;
-	position: absolute;
+	width: 50px;
+	height: 70px;
 	/*-webkit-animation: jump 1s infinite;
 	-moz-animation: jump 1s infinite;
 	-o-animation: jump 1s infinite;
@@ -625,16 +600,33 @@ padding: 0;
 	animation: jump 1s infinite;*/
 }
 .pin_sim {
-	background-image: url(../img/pin.png);
+	background: url(../img/pin_sim.svg) 8px 20px;
 	background-repeat: no-repeat;
-	width: 20px;
-	height: 38px;
-	position: absolute;
+	width: 50px;
+	height: 70px;
 	/*-webkit-animation: jump 1s infinite;
 	-moz-animation: jump 1s infinite;
 	-o-animation: jump 1s infinite;
 	-ms-animation: jump 1s infinite;
 	animation: jump 1s infinite;*/
+}
+
+.pins{
+	width: 50px;
+	height: 71px;
+	overflow: hidden;
+	position: absolute;
+}
+.pins div{position:absolute;z-index: 9999;}
+
+.pins_pe_status{
+	background: url(../img/pin_pe.svg) no-repeat;
+	top: 0px;
+	position: absolute;
+	left: 1px;
+	width: 50px;
+	height: 70px;
+	z-index: 1!important;
 }
 @-webkit-keyframes jump {
 0% {

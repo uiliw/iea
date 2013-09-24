@@ -8,6 +8,7 @@ $(function() {
 			sem = trilha sem pin
 			sim = trilha concluida
 			nao = trilha não concluida
+			xx  = porcentagem concluida
 		*/
 		arrayPins: {
 			m1: {
@@ -33,7 +34,7 @@ $(function() {
 				// m2/t1
 				"pin2b": "sim",
 				// m2/t2
-				"pin3b": "sim",
+				"pin3b": "47",
 				// m2/t3
 				"pin4b": "sim",
 				// m2/t4
@@ -47,7 +48,7 @@ $(function() {
 				// m2/t8
 			},
 			m3: {
-				"pin1c": "sim",
+				"pin1c": "sem",
 				// m3/t1
 				"pin2c": "sem",
 				// m3/t2
@@ -101,6 +102,7 @@ $(function() {
 			
 			//INICIALIZA MENU LATERAL
 			app.initSidr();
+			
 
 		},
 
@@ -266,6 +268,21 @@ $(function() {
 			});
 
 		},
+		
+		//INICIALIZA OS PINS
+		pin: function(){
+		$(".pin").knob({
+					'width':50,
+					'readOnly': true,
+					'fgColor':'#1c7ac1',
+					'bgColor':'#18608c',
+					'inputColor':'#222222',
+					
+				  'draw' : function () { 
+					$(this.i).val(this.cv + '%')
+				  }});	
+			
+		},
 
 		//INICIALIZA SLIDER DOS MAPAS
 		//OBS.: ADICIONAR OS VALORES COM OS ATRIBUTOS DATA NOS ELEMENTOS COM CLASSE .FLEX-CAPTION
@@ -334,12 +351,17 @@ $(function() {
 				if (v1 == 'sem') {
 					$('.' + n1).hide();
 				}
-				if (v1 == 'sim') {
+				else if (v1 == 'sim') {
 					$('.' + n1).html('<div class="pin_sim"></div>');
 				}
-				if (v1 == 'nao') {
+				else if (v1 == 'nao') {
 					$('.' + n1).html('<div class="pin_nao"></div>');
 				}
+				else {
+					$('.' + n1).html('<input class="pin" value="'+v1+'" ><div class="pins_pe_status"></div>');
+				}
+				
+				app.pin();
 			});
 		},
 
