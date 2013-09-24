@@ -917,6 +917,7 @@ top: 0;
     width:800px;
     margin-left:-400px
 }
+.modal-curso .modal-header{border-bottom:2px dashed #eee}
 .sem-borda{ border-bottom:0 solid transparent!important; padding-bottom: 20px;}
 .modal-body .table{color:#000}
 .modal-curso{background-color:#fff; width:700px; margin-left:-350px;}
@@ -1948,6 +1949,7 @@ e{overflow:visible;}
 			    -webkit-box-shadow: 2px 2px 3px rgba(0,0,0,0.5);
 }
 */
+.paradas img{ float:left; margin-right:10px }
 .paradas.responsive {
 	width: auto;
 	margin-left: 0;
@@ -2080,6 +2082,7 @@ e{overflow:visible;}
 	text-decoration: none;
 	color: #e3634e;
 }
+.comple_nao{opacity:.3}
 /* ---------  DECK THEME  ---------- */
 
 .loading-container {
