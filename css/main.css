@@ -976,17 +976,76 @@ top: 0;
 	  border-width: .5em 0 0 .5em;
 	}
 	
-.modal-curso p{ padding:0px 30px; font-size:17px}
-.modal-curso .modal-body{ max-height: 300px; overflow-y:auto}
-    
+.modal-curso p{ padding:0px 30px; font-size: 15px;}
+.modal-curso .modal-body{ overflow-y:auto}
+.modal-curso .nav-tabs {
+border-bottom: 2px solid #26a3ef;
+margin: 0 30px!important;
+}
+.modal-curso .nav-tabs>li {
+margin-bottom: -1px;
+}
+.modal-curso .nav-tabs>li.active {
+padding-bottom: 1px!important;
+}
+.modal-curso .tab-content {
+}
+.wrap-tab-content{
+    background-color: #1c7ac1;
+    padding:20px;
+    margin: 0 30px;
+}
+.modal-curso .nav-tabs>li.active>a {
+    background-color: #1c7ac1;
+    color:#fff;
+    border: 0px solid;
+}
+.modal-curso .nav-tabs>li>a {
+    background-color: #d2b64f;
+    color:#fff;
+    border: none;
+}
+.modal-curso .biblio-down{
+	list-style:none;
+	width:100%;
+	
+	margin: 0;
+}
+.modal-curso .biblio-down li{
+	background: url(../img/biblio-down.png) no-repeat 20px 10px;
+	
+	padding: 15px 0 15px 80px;
+	border-bottom: 2px dashed #d2b64f;
+}
+.modal-curso .biblio-down li:hover{
+	background:url(../img/biblio-down-hover.png) no-repeat 20px 10px;
+	
+}
+.modal-curso .biblio-down li a{
+	
+}
+.modal-curso .biblio-down li a:hover{
+	
+}
+
+
+.modal-curso .accordion-heading{
+	background-color:#18608c;
+    color:#fff
+}
+.modal-curso .accordion-heading a{
+    color:#fff;
+    padding:10px;
+    font-weight:normal;
+}
+.padding-modal-body{padding: 0 45px;}
 /* ==========================================================================
    RESET
    ========================================================================== */
    
-   
+.no-padding-side{padding-left:0!important; padding-right:0!important;margin: 0 0 20px 0;}
 select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
 display: inline-block;
-height: 20px;
 padding: 4px 6px;
 margin-bottom: 10px;
 font-size: 14px;
@@ -996,9 +1055,12 @@ vertical-align: middle;
 -webkit-border-radius: 0px;
 -moz-border-radius: 0px;
 border-radius: 0px;
+background-color: #f2f2f2;
 }
 
-
+textarea {
+    resize:vertical;
+}
    .btn {
 background-image: none;
 border-radius: 0;
