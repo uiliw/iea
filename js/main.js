@@ -457,7 +457,7 @@ $(function() {
 			$('#paradas').carouFredSel({
 				responsive: true,
 				width: '100%',
-				height: 83,
+				height: 77,
 				scroll: 1,
 				items: {
 					width: 300,

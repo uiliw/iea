@@ -1920,22 +1920,27 @@ tfoot{background-color: #868686;font-weight: bold;}
 	margin: 7px 20px 10px;
 	display: block;
 	float: left;
-	min-height: 70px;
+	min-height: 60px;
 }
 .paradas li a {
-	margin-right: 15px;
-	float: left;
-	border: 3px transparent solid;
-    position:relative;
+	/* margin-right: 15px; */
+	/* float: left; */
+	/* border: 3px transparent solid; */
+    
+	position:relative;
+	display: block;
+}
+.paradas li a:hover {
+	text-decoration:none;
 }
 .paradas li a.ativo, .paradas li:hover a {
 	/* border: 3px rgb(255, 154, 2) solid; */
 }
-.media, .media-body{overflow:visible;}
+e{overflow:visible;}
 .paradas li a.ativo:before, .paradas li:hover a:before {
     content:url(../img/parada-ativa.png);
     position:absolute;
-    left: -22px;}
+    left: -20px;}
 /*
 			.paradas li img{
 			    box-shadow: 2px 2px 3px rgba(0,0,0,0.5);
@@ -1976,9 +1981,10 @@ tfoot{background-color: #868686;font-weight: bold;}
 .media-body {
 	height: 68px;
 	overflow: visible;
-	width: 100%;
+	/* width: 100%; */
 	display: table-cell;
 	vertical-align: middle;
+	/* float: left; */
 }
 .caroufredsel_wrapper {
 	cursor: default!important
