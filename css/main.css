@@ -907,9 +907,10 @@ top: 0;
 	color: #FFF;
 	font-size: 17px;
 	background: url(../img/bg_menu.jpg);
-    width:500px;
-    margin-left:-250px
-}
+    
+	width: 520px;
+    
+	margin-left: -260px;}
 .modal-conteudoG {
 	color: #FFF;
 	font-size: 17px;
