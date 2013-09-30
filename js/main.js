@@ -555,6 +555,7 @@ $(function() {
 				$("#intro").transition({
 					height: '0px'
 				}, 800);
+				
 
 				if ($(".conteudo").is(":visible")) {
 
