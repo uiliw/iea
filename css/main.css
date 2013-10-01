@@ -42,9 +42,21 @@
 }
 
 
-
 /*******************************************
 		DEMO
+*******************************************/
+
+#anima {
+	position: absolute;
+	top: 249px;
+	left: 270px;
+}
+.demo .container {
+	position: relative
+}
+
+/*******************************************
+		LOGIN
 *******************************************/
 body.login{ background-image: none;}
 body.login header{ border-bottom: 0px none transparent; border-top:none; height: auto; padding: 20px 0; position: relative; margin-bottom: 70px;}
@@ -68,18 +80,6 @@ padding-left: 0;
 padding: 0;
 }
 
-/*******************************************
-		DEMO
-*******************************************/
-
-#anima {
-	position: absolute;
-	top: 249px;
-	left: 270px;
-}
-.demo .container {
-	position: relative
-}
 /*******************************************
 		MAPA (predios, pins, mapas)
 *******************************************/
@@ -632,16 +632,35 @@ padding: 0;
 	top: 605px;
 	z-index: 9999;
 }
-.pin_nao {
-	background: url(../img/pin_nao.svg) 8px 20px;
+.pin_0 {
+	background: url(../img/pin_0.svg);
 	background-repeat: no-repeat;
 	width: 50px;
 	height: 70px;
-	/*-webkit-animation: jump 1s infinite;
-	-moz-animation: jump 1s infinite;
-	-o-animation: jump 1s infinite;
-	-ms-animation: jump 1s infinite;
-	animation: jump 1s infinite;*/
+}
+.pin_25 {
+	background: url(../img/pin_25.svg);
+	background-repeat: no-repeat;
+	width: 50px;
+	height: 70px;
+}
+.pin_50 {
+	background: url(../img/pin_50.svg);
+	background-repeat: no-repeat;
+	width: 50px;
+	height: 70px;
+}
+.pin_75 {
+	background: url(../img/pin_75.svg);
+	background-repeat: no-repeat;
+	width: 50px;
+	height: 70px;
+}
+.pin_100 {
+	background: url(../img/pin_100.svg);
+	background-repeat: no-repeat;
+	width: 50px;
+	height: 70px;
 }
 .pin_sim {
 	background: url(../img/pin_sim.svg) 8px 20px;
@@ -657,21 +676,11 @@ padding: 0;
 
 .pins{
 	width: 50px;
-	height: 71px;
-	overflow: hidden;
+	height: 70px;
 	position: absolute;
 }
 .pins div{position:absolute;z-index: 9999;}
 
-.pins_pe_status{
-	background: url(../img/pin_pe.svg) no-repeat;
-	top: 0px;
-	position: absolute;
-	left: 1px;
-	width: 50px;
-	height: 70px;
-	z-index: 1!important;
-}
 @-webkit-keyframes jump {
 0% {
 top: 0;
@@ -1080,7 +1089,7 @@ padding-bottom: 1px!important;
 }
 .modal-curso .accordion-heading a{
     color:#fff;
-    padding:10px;
+    padding: 10px 40px 10px 10px;
     font-weight:normal;
 }
 .padding-modal-body{padding: 0 45px;}
@@ -1702,7 +1711,7 @@ header {
   margin-top: 3px;
 }
 
-#sair{color:#fff; background-color:#18608c;position: absolute;z-index: 10;right: 0;top: 5px;padding: 5px 20px;font-size: 20px;}
+#sair{color:#fff; background-color:#18608c;position: absolute;z-index: 10;right: 0;top: 7px;padding: 3px 10px;font-size: 15px;}
 /* ==========================================================================
    CONTENT
    ========================================================================== */
@@ -1742,11 +1751,24 @@ article {
 	text-transform: none;
 	font-family: 'Anaheim', sans-serif;
 }
-.accordion-heading a {
+.accordion-heading a{
 	color: #007bc3;
 	font-size: 15PX;
 	font-family: 'Roboto Slab', serif;
 	text-transform: uppercase;
+}
+.accordion-heading a i{
+	color: #007bc3;
+    padding-top:10px
+;
+	margin-right: -20px;
+}
+.modal-curso .accordion-heading a i{
+	color: #fff;
+    padding-top:4px
+}
+.accordion-heading a:hover i{
+	text-decoration: none
 }
 .accordion-heading a:hover {
 	text-decoration: none
@@ -2045,32 +2067,32 @@ tfoot{background-color: #868686;font-weight: bold;}
 	float: left;
 	min-height: 60px;
 }
-.paradas li a {
-	/* margin-right: 15px; */
-	/* float: left; */
-	/* border: 3px transparent solid; */
+.paradas li a img{
+	margin-right: 15px;
+	float: left;
+	border: 3px transparent solid;
     
+	position:relative;
+	display: block;
+}
+.paradas li a{
+	
 	position:relative;
 	display: block;
 }
 .paradas li a:hover {
 	text-decoration:none;
 }
-.paradas li a.ativo, .paradas li:hover a {
-	/* border: 3px rgb(255, 154, 2) solid; */
+.paradas li a.ativo img, .paradas li:hover a img{
+	border: 3px rgb(255, 154, 2) solid;
 }
 e{overflow:visible;}
-.paradas li a.ativo:before, .paradas li:hover a:before {
+.paradas li a.concluido:before {
     content:url(../img/parada-ativa.png);
     position:absolute;
-    left: -20px;}
-/*
-			.paradas li img{
-			    box-shadow: 2px 2px 3px rgba(0,0,0,0.5);
-			    -moz-box-shadow: 2px 2px 3px rgba(0,0,0,0.5);
-			    -webkit-box-shadow: 2px 2px 3px rgba(0,0,0,0.5);
-}
-*/
+    left: -20px;
+    z-index:999}
+
 .paradas img{ float:left; margin-right:10px }
 .paradas.responsive {
 	width: auto;

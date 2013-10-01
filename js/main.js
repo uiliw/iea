@@ -6,9 +6,11 @@ $(function() {
 
 /*	
 			sem = trilha sem pin
-			sim = trilha concluida
-			nao = trilha não concluida
-			xx  = porcentagem concluida
+			0 = trilha com 0%
+			25 = trilha com 25%
+			50 = trilha com 50%
+			75 = trilha com 75%
+			100 = trilha com 100%
 		*/
 		arrayPins: {
 			m1: {
@@ -32,19 +34,19 @@ $(function() {
 			m2: {
 				"pin1b": "sem",
 				// m2/t1
-				"pin2b": "sim",
+				"pin2b": "25",
 				// m2/t2
-				"pin3b": "47",
+				"pin3b": "50",
 				// m2/t3
-				"pin4b": "sim",
+				"pin4b": "100",
 				// m2/t4
 				"pin5b": "sem",
 				// m2/t5
 				"pin6b": "sem",
 				// m2/t6
-				"pin7b": "sim",
+				"pin7b": "75",
 				// m2/t7
-				"pin8b": "sim",
+				"pin8b": "0",
 				// m2/t8
 			},
 			m3: {
@@ -105,9 +107,26 @@ $(function() {
 			
 			
 			app.filtro();
+			
+			app.acordeom();
 		},
 
-
+		acordeom: function() {
+			$('.accordion').collapse({
+      		toggle: false
+	  
+			  }).on('show',function (e) {
+				
+				$(e.target).parent().find(".icon-plus").removeClass("icon-plus").addClass("icon-minus");
+				
+				
+			  }).on('hide', function (e) {
+				  
+			
+				$(e.target).parent().find(".icon-minus").removeClass("icon-minus").addClass("icon-plus");
+				
+			  });	
+		},
 		initTabEvent: function() {
 			$('.nav-tabs a').click(function(e) {
 				e.preventDefault();
@@ -302,20 +321,6 @@ $(function() {
 
 		},
 		
-		//INICIALIZA OS PINS
-		pin: function(){
-		$(".pin").knob({
-					'width':50,
-					'readOnly': true,
-					'fgColor':'#1c7ac1',
-					'bgColor':'#18608c',
-					'inputColor':'#222222',
-					
-				  'draw' : function () { 
-					$(this.i).val(this.cv + '%')
-				  }});	
-			
-		},
 
 		//INICIALIZA SLIDER DOS MAPAS
 		//OBS.: ADICIONAR OS VALORES COM OS ATRIBUTOS DATA NOS ELEMENTOS COM CLASSE .FLEX-CAPTION
@@ -384,17 +389,22 @@ $(function() {
 				if (v1 == 'sem') {
 					$('.' + n1).hide();
 				}
-				else if (v1 == 'sim') {
-					$('.' + n1).html('<div class="pin_sim"></div>');
+				else if (v1 == '0') {
+					$('.' + n1).html('<div class="pin_0"></div>');
 				}
-				else if (v1 == 'nao') {
-					$('.' + n1).html('<div class="pin_nao"></div>');
+				else if (v1 == '25') {
+					$('.' + n1).html('<div class="pin_25"></div>');
 				}
-				else {
-					$('.' + n1).html('<input class="pin" value="'+v1+'" ><div class="pins_pe_status"></div>');
+				else if (v1 == '50') {
+					$('.' + n1).html('<div class="pin_50"></div>');
+				}
+				else if (v1 == '75') {
+					$('.' + n1).html('<div class="pin_75"></div>');
+				}
+				else if (v1 == '100') {
+					$('.' + n1).html('<div class="pin_100"></div>');
 				}
 				
-				app.pin();
 			});
 		},
 
@@ -490,7 +500,7 @@ $(function() {
 			$('#paradas').carouFredSel({
 				responsive: true,
 				width: '100%',
-				height: 77,
+				height: 83,
 				scroll: 1,
 				items: {
 					width: 300,
@@ -581,6 +591,9 @@ $(function() {
 							app.paraCarrossel();
 
 							app.initPopupTwitter();
+							
+			
+							app.acordeom();
 
 							$('.conteudo').transition({
 								height: '496px'
