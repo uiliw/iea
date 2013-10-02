@@ -1195,7 +1195,7 @@ text-decoration:none!important;
 .accordion-heading .accordion-toggle {
 	display: block;
 	border-right-color: 0d7a74;
-	padding: 0px 15px;
+	padding: 0px 30px 0 15px;
 }
 .modal .popover, .modal .twipsy {
 	z-index: 12000;
