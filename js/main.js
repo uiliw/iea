@@ -106,9 +106,26 @@ $(function() {
 			app.initSidr();
 			
 			
+			//INICIALIZA O FILTRO DE FAQ
 			app.filtro();
 			
+			//ADICIONA SINAIS DE + E - NO ACORDEOM
 			app.acordeom();
+			
+			//INICIALIZA O BOX DE PONTOS
+			app.pontos();
+			
+		},
+		
+		pontos: function() {
+			$('.menu_trilha a').click(function(e){
+				e.preventDefault();
+			  $('.box-pontos').transition({y:'0'})
+			})
+			$('[data-dismiss=pontos]').click(function(e){
+				e.preventDefault();
+				$('.box-pontos').transition({y:'100%'})
+			})
 		},
 
 		acordeom: function() {
@@ -454,7 +471,6 @@ $(function() {
 		},		
 
 		//INICIALIZA EVENTO DE AO CLICAR EM FECHAR O POPUP
-		//FOI ALTERADA PRA NAO PRECISAR ADICIONAR UM EVENTO DE CLICK EM CADA JANELA
 		initPopupCloseEvent: function() {
 
 			$('.menu_fecha').click(function(evt) {
@@ -591,7 +607,6 @@ $(function() {
 							app.paraCarrossel();
 
 							app.initPopupTwitter();
-							
 			
 							app.acordeom();
 
@@ -626,6 +641,10 @@ $(function() {
 
 						app.paraCarrossel()
 
+						app.initPopupTwitter();
+		
+						app.acordeom();
+
 						setTimeout(function() {
 							$('.conteudo').transition({
 								height: '496px'
@@ -648,7 +667,7 @@ $(function() {
 
 	//LISTA DE IMAGENS PARA PRE-CARREGAMENTO INICIAL
 	//AS IMAGENS PRECISARAM SER INSERIDAS UMA A UMA, POIS ALGUMAS VINHAM DE CSS, E NAO TINHA COMO FAZER UMA LISTAGEM DINAMICA DAS IMAGENS
-	var images = ['img/bg.jpg', 'js/vendor/flexslider/images/bg_direction_nav.png', 'img/bg_menu.jpg', 'mapa/chao.png', 'mapa/default1a.png', 'mapa/default1b.png', 'mapa/default1c.png', 'mapa/default2a.png', 'mapa/default2b.png', 'img/logo-sebrae.png', 'mapa/predio1a.png', 'mapa/predio1b.png', 'mapa/predio1c.png', 'mapa/predio2a.png', 'mapa/predio2b.png', 'mapa/predio2c.png', 'mapa/predio3a.png', 'mapa/predio3b.png', 'mapa/predio3c.png', 'mapa/predio4a.png', 'mapa/predio4b.png', 'mapa/predio4c.png', 'mapa/predio5a.png', 'mapa/predio5b.png', 'mapa/predio5c.png', 'mapa/predio6a.png', 'mapa/predio6b.png', 'mapa/predio6c.png', 'mapa/predio7a.png', 'mapa/predio7b.png', 'mapa/predio7c.png', 'mapa/predio8a.png', 'mapa/predio8b.png', 'mapa/predio8c.png', 'img/space.png'];
+	var images = ['img/bg.jpg', 'js/vendor/flexslider/images/bg_direction_nav.png', 'img/bg_menu.jpg', 'mapa/chao.png', 'mapa/default1a.png', 'mapa/default1b.png', 'mapa/default1c.png', 'mapa/default2a.png', 'mapa/default2b.png', 'img/logo-sebrae.png', 'mapa/predio1a.png', 'mapa/predio1b.png', 'mapa/predio1c.png', 'mapa/predio2a.png', 'mapa/predio2b.png', 'mapa/predio2c.png', 'mapa/predio3a.png', 'mapa/predio3b.png', 'mapa/predio3c.png', 'mapa/predio4a.png', 'mapa/predio4b.png', 'mapa/predio4c.png', 'mapa/predio5a.png', 'mapa/predio5b.png', 'mapa/predio5c.png', 'mapa/predio6a.png', 'mapa/predio6b.png', 'mapa/predio6c.png', 'mapa/predio7a.png', 'mapa/predio7b.png', 'mapa/predio7c.png', 'mapa/predio8a.png', 'mapa/predio8b.png', 'mapa/predio8c.png', 'img/space.png','img/bg_menu.jpg','img/bg_slide.jpg','img/bg.jpg','img/biblio-down-hover.png','img/biblio-down.png','img/bullet.png','img/home.png','img/parada-ativa.png','img/pin_0.svg','img/pin_25.svg','img/pin_50.svg','img/pin_75.svg','img/pin_100.svg','img/seta_esq.png'];
 
 	//INICIALIZA OS MAPAS SOMENTE APOS O CARREGAMENTO DE TODAS AS IMAGENS
 	$.imgpreload(images, {
