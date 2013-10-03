@@ -80,6 +80,7 @@ padding-left: 0;
 padding: 0;
 }
 
+
 /*******************************************
 		MAPA (predios, pins, mapas)
 *******************************************/
@@ -910,8 +911,20 @@ top: 0;
 		POPUP TRILHAS
 *******************************************/
 
+.box-pontos{
+    position: fixed;
+    z-index: 9999;
+    background-color: #e5e5e5;
+    bottom: 0;
+    padding: 10px 20px;
+    -webkit-transform: translate(0px, 100%);
+    text-align: center;
+    right: 90px;
+}
 
-
+/*******************************************
+		POPUP TRILHAS
+*******************************************/
 
 
 .fechar_conteudo_janela {
@@ -971,6 +984,8 @@ top: 0;
     width:800px;
     margin-left:-400px
 }
+
+.modal-conteudo .modal-body a{color:#fff;text-decoration: underline;}
 .modal-curso .modal-header{border-bottom:2px dashed #eee}
 .sem-borda{ border-bottom:0 solid transparent!important; padding-bottom: 20px;}
 .modal-body .table{color:#000}
@@ -1247,7 +1262,7 @@ blockquote.pull-center, p.pull-center {
     width:100%
 }
 
-p.pull-center {
+.pull-center {
 	text-align: center!important;
     width:100%;
     position:relative;
