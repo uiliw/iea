@@ -1262,7 +1262,7 @@ blockquote.pull-center, p.pull-center {
     width:100%
 }
 
-.pull-center {
+p.pull-center {
 	text-align: center!important;
     width:100%;
     position:relative;
@@ -1677,7 +1677,7 @@ header {
 #nav a:hover {
 }
 .home-ico{float: left;}
-.home{float: left;position: absolute;top: -5px;width: 300px;z-index: 100;left: 100px;}
+.home{float: left;position: fixed;top: -5px;width: 300px;z-index: 100;left: 100px;}
 .home p{ color:#000; background-color:#d2b64f; padding: 5px 15px; border-radius: 0 0 10px 10px; float: left; margin-left: 10px;}
 
 .btn-navbar {
