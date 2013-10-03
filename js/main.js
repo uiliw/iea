@@ -1,10 +1,14 @@
 var app = {};
 
 $(function() {
-
+	
+	//PONTUAÇÃO
+	var pontuacao = 45;
+			
+			
 	app = {
-
-/*	
+		
+		/*	
 			sem = trilha sem pin
 			0 = trilha com 0%
 			25 = trilha com 25%
@@ -118,14 +122,55 @@ $(function() {
 		},
 		
 		pontos: function() {
+			
+			
+			$('#pontuacao').html(pontuacao);
+			
+			//SOMENTE PARA DEMONSTRAÇÃO, DEVE SER ALTERADO COM AS NECESSIDADES DO GAMEFICATION
 			$('.menu_trilha a').click(function(e){
 				e.preventDefault();
 			  $('.box-pontos').transition({y:'0'})
 			})
+			
+			//FECHA A JANELINHA DE PONTOS
 			$('[data-dismiss=pontos]').click(function(e){
 				e.preventDefault();
 				$('.box-pontos').transition({y:'100%'})
 			})
+			
+			if(pontuacao<=10){
+				$('.premiacaoP').html('<div class="medalhaP madeira"></div><p class="pull-left">MEDALHA DE MADEIRA</p>')
+				$('.premiacaoG').html('<div class="medalhaG madeira"></div>')
+			}
+			else if(pontuacao>10 && pontuacao<=20){
+				$('.premiacaoP').html('<div class="trofeuP madeira"></div><p class="pull-left">TROFÉU DE MADEIRA</p>')
+				$('.premiacaoG').html('<div class="trofeuG madeira"></div>')
+			}
+			else if(pontuacao>20 && pontuacao<=30){
+				$('.premiacaoP').html('<div class="medalhaP bronze"></div><p class="pull-left">MEDALHA DE BRONZE</p>')
+				$('.premiacaoG').html('<div class="medalhaG bronze"></div>')
+			}
+			else if(pontuacao>30 && pontuacao<=40){
+				$('.premiacaoP').html('<div class="trofeuP bronze"></div><p class="pull-left">TROFÉU DE BRONZE</p>')
+				$('.premiacaoG').html('<div class="trofeuG bronze"></div>')
+			}
+			else if(pontuacao>40 && pontuacao<=50){
+				$('.premiacaoP').html('<div class="medalhaP prata"></div><p class="pull-left">MEDALHA DE PRATA</p>')
+				$('.premiacaoG').html('<div class="medalhaG prata"></div>')
+			}
+			else if(pontuacao>50 && pontuacao<=60){
+				$('.premiacaoP').html('<div class="trofeuP prata"></div><p class="pull-left">TROFÉU DE PRATA</p>')
+				$('.premiacaoG').html('<div class="trofeuG prata"></div>')
+			}
+			else if(pontuacao>60 && pontuacao<=70){
+				$('.premiacaoP').html('<div class="medalhaP ouro"></div><p class="pull-left">MEDALHA DE OURO</p>')
+				$('.premiacaoG').html('<div class="medalhaG ouro"></div>')
+			}
+			else if(pontuacao>70 && pontuacao<=80){
+				$('.premiacaoP').html('<div class="trofeuP ouro"></div><p class="pull-left">TROFÉU DE OURO</p>')
+				$('.premiacaoG').html('<div class="trofeuG ouro"></div>')
+			}
+			
 		},
 
 		acordeom: function() {
@@ -152,7 +197,6 @@ $(function() {
 		},
 
 		//INICIALIZA TOOLTIP
-		//OBS.: NAO VI NENHUM LUGAR COM TOOLTIP, DEIXEI PARA SE FUTURAMENTE FOR INSERIDO, VAI FUNCIONAR
 		initTooltip: function() {
 			$('[data-toggle=tooltip]').tooltip();
 		},
@@ -242,6 +286,7 @@ $(function() {
 						app.caroufredsel();
 						app.loadAjax();
 						app.highlight();
+						app.initTabEvent();
 
 					}, 400);
 
@@ -398,9 +443,7 @@ $(function() {
 			});
 		},
 
-		//PRECISAR SER ALTERADA DEPOIS PARA FAZER A REQUISICAO AJAX COM OS DADOS DOS PINS, HOJE ESTA FIXO, 
-		//POIS NAO TEM COMO VALIDAR, NAO SABEMOS A RESPOSTA NEM O METODO QUE PRECISA SER CHAMADO DO LMS
-		//MAS E UMA ALTERACAO SIMPLES
+		//PRECISAR SER ALTERADA DEPOIS PARA FAZER A REQUISICAO AJAX COM OS DADOS DOS PINS, HOJE ESTA FIXO
 		showPins: function(map) {
 			$.each(app.arrayPins[map], function(n1, v1) {
 				if (v1 == 'sem') {
@@ -609,6 +652,7 @@ $(function() {
 							app.initPopupTwitter();
 			
 							app.acordeom();
+							app.initTabEvent();
 
 							$('.conteudo').transition({
 								height: '496px'
@@ -644,6 +688,7 @@ $(function() {
 						app.initPopupTwitter();
 		
 						app.acordeom();
+						app.initTabEvent();
 
 						setTimeout(function() {
 							$('.conteudo').transition({
