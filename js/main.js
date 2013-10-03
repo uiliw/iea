@@ -118,7 +118,8 @@ $(function() {
 		},
 		
 		pontos: function() {
-			$('#modal').on('hidden', function () {
+			$('.menu_trilha a').click(function(e){
+				e.preventDefault();
 			  $('.box-pontos').transition({y:'0'})
 			})
 			$('[data-dismiss=pontos]').click(function(e){
