@@ -166,7 +166,7 @@ $(function() {
 				$('.premiacaoP').html('<div class="medalhaP ouro"></div><p class="pull-left">MEDALHA DE OURO</p>')
 				$('.premiacaoG').html('<div class="medalhaG ouro"></div>')
 			}
-			else if(pontuacao>70 && pontuacao<=80){
+			else if(pontuacao>80 && pontuacao<=100){
 				$('.premiacaoP').html('<div class="trofeuP ouro"></div><p class="pull-left">TROFÉU DE OURO</p>')
 				$('.premiacaoG').html('<div class="trofeuG ouro"></div>')
 			}
