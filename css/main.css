@@ -914,14 +914,92 @@ top: 0;
 .box-pontos{
     position: fixed;
     z-index: 9999;
-    background-color: #e5e5e5;
+    background-image: url(../img/bg_slide.jpg);
     bottom: 0;
     padding: 10px 20px;
     -webkit-transform: translate(0px, 100%);
     text-align: center;
     right: 90px;
+    border-radius: 20px 20px 0 0;
 }
 
+.trofeuG{
+	width:161px;
+	height:161px;
+	display:block;
+	margin: 0 auto;
+}
+.trofeuG.madeira{
+	background-image:url(../img/medalhas/trofeu_madeira_160-01.png)
+}
+.trofeuG.bronze{
+	background-image:url(../img/medalhas/trofeu_bronze_160-01.png)
+}
+.trofeuG.prata{
+	background-image:url(../img/medalhas/trofeu_prata_160-01.png)
+}
+.trofeuG.ouro{
+	background-image:url(../img/medalhas/trofeu_ouro_160-01.png)
+}
+
+.trofeuP{
+	width:66px;
+	height:66px;
+	float: left;
+	display:block;
+	margin: 0 20px 0 0;
+}	
+.trofeuP.madeira{
+	background-image:url(../img/medalhas/trofeu_madeira_65-01.png)
+}
+.trofeuP.bronze{
+	background-image:url(../img/medalhas/trofeu_bronze_65-01.png)
+}
+.trofeuP.prata{
+	background-image:url(../img/medalhas/trofeu_prata_65-01.png)
+}
+.trofeuP.ouro{
+	background-image:url(../img/medalhas/trofeu_ouro_65-01.png)
+}
+
+.medalhaG{
+	width:161px;
+	height:161px;
+	display:block;
+	margin: 0 auto;
+}
+.medalhaG.madeira{
+	background-image:url(../img/medalhas/medalha_madeira_160.png)
+}
+.medalhaG.bronze{
+	background-image:url(../img/medalhas/medalha_bronze_160.png)
+}
+.medalhaG.prata{
+	background-image:url(../img/medalhas/medalha_prata_160.png)
+}
+.medalhaG.ouro{
+	background-image:url(../img/medalhas/medalha_ouro_160.png)
+}
+
+.medalhaP{
+	width:52px;
+	height:66px;
+	display:block;
+	float: left;
+	margin: 0 20px 0 0;
+}
+.medalhaP.madeira{
+	background-image:url(../img/medalhas/medalha_madeira_65.png)
+}
+.medalhaP.bronze{
+	background-image:url(../img/medalhas/medalha_bronze_65.png)
+}
+.medalhaP.prata{
+	background-image:url(../img/medalhas/medalha_prata_65.png)
+}
+.medalhaP.ouro{
+	background-image:url(../img/medalhas/medalha_ouro_65.png)
+}
 /*******************************************
 		POPUP TRILHAS
 *******************************************/
