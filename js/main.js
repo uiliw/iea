@@ -106,16 +106,19 @@ $(function() {
 			app.initSidr();
 			
 			
+			//INICIALIZA O FILTRO DE FAQ
 			app.filtro();
 			
+			//ADICIONA SINAIS DE + E - NO ACORDEOM
 			app.acordeom();
 			
+			//INICIALIZA O BOX DE PONTOS
 			app.pontos();
 			
 		},
 		
 		pontos: function() {
-			$('#modal').on('hide', function () {
+			$('#modal').on('hidden', function () {
 			  $('.box-pontos').transition({y:'0'})
 			})
 			$('[data-dismiss=pontos]').click(function(e){
