@@ -1262,7 +1262,7 @@ blockquote.pull-center, p.pull-center {
     width:100%
 }
 
-.pull-center {
+p.pull-center {
 	text-align: center!important;
     width:100%;
     position:relative;
