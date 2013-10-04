@@ -119,6 +119,8 @@ $(function() {
 			//INICIALIZA O BOX DE PONTOS
 			app.pontos();
 			
+			app.aticaScrool();
+			
 		},
 		
 		pontos: function() {
@@ -135,7 +137,7 @@ $(function() {
 			//FECHA A JANELINHA DE PONTOS
 			$('[data-dismiss=pontos]').click(function(e){
 				e.preventDefault();
-				$('.box-pontos').transition({y:'100%'})
+				$('.box-pontos').transition({y:'105%'})
 			})
 			
 			if(pontuacao<=10){
@@ -212,7 +214,37 @@ $(function() {
 				$.sidr('close');
 			})
 		},
-
+		
+		aticaScrool: function(){
+			function isTouchDevice(){
+			try{
+				document.createEvent("TouchEvent");
+				return true;
+			}catch(e){
+				return false;
+			}
+		}
+	
+		function touchScroll(id){
+			if(isTouchDevice()){ //if touch events exist...
+				var el=document.getElementById(id);
+				var scrollStartPos=0;
+	
+				document.getElementById(id).addEventListener("touchstart", function(event) {
+					scrollStartPos=this.scrollTop+event.touches[0].pageY;
+					event.preventDefault();
+				},false);
+	
+				document.getElementById(id).addEventListener("touchmove", function(event) {
+					this.scrollTop=scrollStartPos-event.touches[0].pageY;
+					event.preventDefault();
+				},false);
+			}
+		}
+	
+		//On page load
+		touchScroll('wrapper')
+		},
 		//CHAMADAS AJAX PARA O LMS
 		//**ALTERAR A VARIAVEL DA URL DO SISTEMA
 		//COMO COMBINADO, SOMENTE OS SETS, JA QUE OS GETS NAO SABEMOS O QUE VAI RETORNAR
@@ -575,6 +607,8 @@ $(function() {
 			});
 		},
 
+
+
 		//TRAVA CARROSSEL NO PRIMEIRO E NO ULTIMO SLIDE
 		paraCarrossel: function() {
 			
@@ -653,6 +687,7 @@ $(function() {
 			
 							app.acordeom();
 							app.initTabEvent();
+							app.aticaScrool();
 
 							$('.conteudo').transition({
 								height: '496px'
@@ -689,6 +724,8 @@ $(function() {
 		
 						app.acordeom();
 						app.initTabEvent();
+						app.aticaScrool();
+						
 
 						setTimeout(function() {
 							$('.conteudo').transition({
@@ -720,5 +757,7 @@ $(function() {
 			app.init();
 		}
 	})
+	
+	
 
 });

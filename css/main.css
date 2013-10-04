@@ -917,10 +917,11 @@ top: 0;
     background-image: url(../img/bg_slide.jpg);
     bottom: 0;
     padding: 10px 20px;
-    -webkit-transform: translate(0px, 100%);
+    -webkit-transform: translate(0px, 105%);
     text-align: center;
     right: 90px;
     border-radius: 20px 20px 0 0;
+    box-shadow: 0 0 6px #000;
 }
 
 .trofeuG{
@@ -1205,6 +1206,10 @@ padding: 10px 0;
    RESET
    ========================================================================== */
    
+   
+   .hide-tooltip{
+    margin: -20px!important;
+}
 .no-padding-side{padding-left:0!important; padding-right:0!important;margin: 0 0 20px 0;}
 select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
 display: inline-block;
