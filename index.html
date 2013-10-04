@@ -27,6 +27,7 @@
 <script src="js/vendor/jquery.transit.min.js"></script>
 <script src="js/vendor/jquery.zoomooz.js"></script>
 <script src="js/vendor/sidr/dist/jquery.sidr.js"></script>
+<script src="js/vendor/mmenu/jquery.mmenu.min.js"></script>
 <script src="js/plugins.js"></script>
 <script src="js/main.js"></script>
 
@@ -38,12 +39,14 @@
 <link rel="stylesheet" href="icones/font-awesome/css/font-awesome.min.css">
 <link rel="stylesheet" href="js/vendor/flexslider/flexslider.css">
 <link rel="stylesheet" href="js/vendor/sidr/dist/stylesheets/jquery.sidr.dark.css">
+<link rel="stylesheet" href="js/vendor/mmenu/mmenu.css">
+<link rel="stylesheet" href="js/vendor/mmenu/mmenu-positioning.css">
 <link href='http://fonts.googleapis.com/css?family=Anaheim|Roboto+Slab:400,700|Shadows+Into+Light+Two' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
 <!-- MENU LATERAL -->
-<div id="sidr" class="sidr">
+<nav id="menu-lateral">
   <ul>
     <li><a href="#meus_dados" data-toggle="modal">MEUS DADOS</a></li>
     <li><a href="#faq" data-toggle="modal">FAQ/AJUDA</a></li>
@@ -51,10 +54,10 @@
     <li><a href="#pontos" data-toggle="modal">PONTOS</a></li>
     <li><a href="#biblioteca" data-toggle="modal">BIBLIOTECA</a></li>
     <li><a href="#questionario" data-toggle="modal">QUESTIONÁRIO</a></li>
-    <li><a href="#" data-toggle="modal">SAIR</a></li>
+    <li><a href="https://atendimento.sebrae-sc.com.br/" data-toggle="modal">SAIR</a></li>
   </ul>
-</div>
-
+</nav>
+<div>
 <!-- MENU SUPERIOR -->
 <div id="nav" class="visible-desktop hidden-tablet">
   <ul>
@@ -76,7 +79,7 @@
 <a href="#" id="sair" class="visible-desktop hidden-tablet">SAIR</a> 
 
 <!-- HEADER -->
-<header> <a href="#sidr" id="menu-sidr" class="btn-navbar hidden-desktop visible-tablet"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
+<header> <a href="#menu-lateral" class="btn-navbar hidden-desktop visible-tablet"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
   <div class="titulos">
     <h3 class="sub-titulo-trilhas">TRILHAS DE AUTOATENDIMENTO</h3>
     <div class="clearfix"></div>
@@ -941,6 +944,7 @@
     <button class="btn btn-success pull-right" style="margin-left:20px">Salvar</button>
     <button class="btn btn-danger pull-right">Cancelar</button>
   </div>
+</div>
 </div>
 </body>
 </html>

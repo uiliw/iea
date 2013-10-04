@@ -107,8 +107,7 @@ $(function() {
 
 			
 			//INICIALIZA MENU LATERAL
-			app.initSidr();
-			
+			app.initMenuLateral();
 			
 			//INICIALIZA O FILTRO DE FAQ
 			app.filtro();
@@ -204,15 +203,22 @@ $(function() {
 		},
 		
 		//INICIALIZA MENU LATERAL
-		initSidr: function(){
-			$('#menu-sidr').sidr({
-			  side: 'right'
+		initMenuLateral: function(){
+			$('nav#menu-lateral').mmenu({
+				position: 'right',
+				onClick : {
+				  setLocationHref : false,
+				  callback : function()
+				  {
+					var href = $(this).attr('href');
+					if (href.match(/#/)) {
+					  $(href).modal('toggle');
+					} else {
+					  window.location = href;
+					}
+				  }
+				}
 			});
-			
-			$('#sidr, #nav').click( function(e){
-				e.preventDefault();
-				$.sidr('close');
-			})
 		},
 		
 		aticaScrool: function(){
