@@ -3,7 +3,7 @@ var app = {};
 $(function() {
 
 	//PONTUAÇÃO
-	var pontuacao = 45;
+	var pontuacao = 80;
 
 
 	app = {
@@ -124,7 +124,7 @@ $(function() {
 			//INICIALIZA O BOX DE PONTOS
 			app.pontos();
 
-			app.aticaScrool();
+			app.ativaScroll();
 
 		},
 
@@ -138,7 +138,12 @@ $(function() {
 				e.preventDefault();
 				$('.box-pontos').transition({
 					y: '0'
-				})
+				});
+				setTimeout(function() {
+				$('.box-pontos').transition({
+						y: '105%'
+					})
+				}, 5000);
 			})
 
 			//FECHA A JANELINHA DE PONTOS
@@ -150,28 +155,28 @@ $(function() {
 			})
 
 			if (pontuacao <= 10) {
-				$('.premiacaoP').html('<div class="medalhaP madeira"></div><p class="pull-left">MEDALHA DE MADEIRA</p>')
+				$('.premiacaoP').html('<div class="medalhaP madeira"></div><p>MEDALHA DE MADEIRA</p>')
 				$('.premiacaoG').html('<div class="medalhaG madeira"></div>')
 			} else if (pontuacao > 10 && pontuacao <= 20) {
-				$('.premiacaoP').html('<div class="trofeuP madeira"></div><p class="pull-left">TROFÉU DE MADEIRA</p>')
+				$('.premiacaoP').html('<div class="trofeuP madeira"></div><p>TROFÉU DE MADEIRA</p>')
 				$('.premiacaoG').html('<div class="trofeuG madeira"></div>')
 			} else if (pontuacao > 20 && pontuacao <= 30) {
-				$('.premiacaoP').html('<div class="medalhaP bronze"></div><p class="pull-left">MEDALHA DE BRONZE</p>')
+				$('.premiacaoP').html('<div class="medalhaP bronze"></div><p>MEDALHA DE BRONZE</p>')
 				$('.premiacaoG').html('<div class="medalhaG bronze"></div>')
 			} else if (pontuacao > 30 && pontuacao <= 40) {
-				$('.premiacaoP').html('<div class="trofeuP bronze"></div><p class="pull-left">TROFÉU DE BRONZE</p>')
+				$('.premiacaoP').html('<div class="trofeuP bronze"></div><p>TROFÉU DE BRONZE</p>')
 				$('.premiacaoG').html('<div class="trofeuG bronze"></div>')
 			} else if (pontuacao > 40 && pontuacao <= 50) {
-				$('.premiacaoP').html('<div class="medalhaP prata"></div><p class="pull-left">MEDALHA DE PRATA</p>')
+				$('.premiacaoP').html('<div class="medalhaP prata"></div><p>MEDALHA DE PRATA</p>')
 				$('.premiacaoG').html('<div class="medalhaG prata"></div>')
 			} else if (pontuacao > 50 && pontuacao <= 60) {
-				$('.premiacaoP').html('<div class="trofeuP prata"></div><p class="pull-left">TROFÉU DE PRATA</p>')
+				$('.premiacaoP').html('<div class="trofeuP prata"></div><p>TROFÉU DE PRATA</p>')
 				$('.premiacaoG').html('<div class="trofeuG prata"></div>')
 			} else if (pontuacao > 60 && pontuacao <= 70) {
-				$('.premiacaoP').html('<div class="medalhaP ouro"></div><p class="pull-left">MEDALHA DE OURO</p>')
+				$('.premiacaoP').html('<div class="medalhaP ouro"></div><p>MEDALHA DE OURO</p>')
 				$('.premiacaoG').html('<div class="medalhaG ouro"></div>')
-			} else if (pontuacao > 80 && pontuacao <= 100) {
-				$('.premiacaoP').html('<div class="trofeuP ouro"></div><p class="pull-left">TROFÉU DE OURO</p>')
+			} else if (pontuacao > 70 && pontuacao <= 100) {
+				$('.premiacaoP').html('<div class="trofeuP ouro"></div><p>TROFÉU DE OURO</p>')
 				$('.premiacaoG').html('<div class="trofeuG ouro"></div>')
 			}
 
@@ -183,13 +188,13 @@ $(function() {
 
 			}).on('show', function(e) {
 
-				$(e.target).parent().find(".icon-plus").removeClass("icon-plus").addClass("icon-minus");
+				$(e.target).parent().find(".icon-plus").first().removeClass("icon-plus").addClass("icon-minus");
 
 
 			}).on('hide', function(e) {
 
 
-				$(e.target).parent().find(".icon-minus").removeClass("icon-minus").addClass("icon-plus");
+				$(e.target).parent().find(".icon-minus").first().removeClass("icon-minus").addClass("icon-plus");
 
 			});
 		},
@@ -223,7 +228,7 @@ $(function() {
 			});
 		},
 
-		aticaScrool: function() {
+		ativaScroll: function() {
 			function isTouchDevice() {
 				try {
 					document.createEvent("TouchEvent");
@@ -390,27 +395,49 @@ $(function() {
 			});
 			$("#busca-faq").keyup(function() {
 
-				// Retrieve the input field text and reset the count to zero
 				var filter = $(this).val(),
 					count = 0;
 
-				// Loop through the comment list
 				$("#faq-accordion .accordion-group").each(function() {
 
-					// If the list item does not contain the text phrase fade it out
 					if ($(this).text().search(new RegExp(filter, "i")) < 0) {
 						$(this).hide();
 
-						// Show the list item if the phrase matches and increase the count by 1
 					} else {
 						$(this).show();
 						count++;
 					}
 				});
 
-				// Update the count
 				var numberItems = count;
 				$("#filter-count").html("<i class='icon-filter'></i> " + count + " Perguntas filtradas");
+			});
+			
+			
+			
+			$('#busca-biblio').keydown(function(e) {
+				if (e.keyCode == 13) {
+					return false;
+				}
+			});
+			$("#busca-biblio").keyup(function() {
+
+				var filter = $(this).val(),
+					count = 0;
+
+				$("#biblio-accordion .accordion-group").each(function() {
+
+					if ($(this).text().search(new RegExp(filter, "i")) < 0) {
+						$(this).hide();
+
+					} else {
+						$(this).show();
+						count++;
+					}
+				});
+
+				var numberItems = count;
+				$("#filter-count-biblio").html("<i class='icon-filter'></i> " + count + " Perguntas filtradas");
 			});
 		},
 
@@ -690,7 +717,7 @@ $(function() {
 
 							app.acordeom();
 							app.initTabEvent();
-							app.aticaScrool();
+							app.ativaScroll();
 
 							$('.conteudo').transition({
 								height: '496px'
@@ -727,7 +754,7 @@ $(function() {
 
 	app.acordeom();
 	app.initTabEvent();
-	app.aticaScrool();
+	app.ativaScroll();
 
 
 	setTimeout(function() {

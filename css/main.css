@@ -908,7 +908,7 @@ top: 0;
 	margin: 30px 20px;
 }
 /*******************************************
-		POPUP TRILHAS
+		POPUP PONTOS
 *******************************************/
 
 .box-pontos{
@@ -918,11 +918,18 @@ top: 0;
     bottom: 0;
     padding: 10px 20px;
     -webkit-transform: translate(0px, 105%);
+    -moz-transform: translate(0px, 105%);
+    -ms-transform: translate(0px, 105%);
+    transform: translate(0px, 105%);
     text-align: center;
     right: 90px;
     border-radius: 20px 20px 0 0;
     box-shadow: 0 0 6px #000;
-}
+	
+    width: 197px;}
+
+.premiacaoP p{font-size:20px;text-align: left;padding-top: 10px;}
+#pontos h1{color: #18608c;font-weight: normal;}
 
 .trofeuG{
 	width:161px;
@@ -948,7 +955,7 @@ top: 0;
 	height:66px;
 	float: left;
 	display:block;
-	margin: 0 20px 0 0;
+	margin: 0 10px 0 16px;
 }	
 .trofeuP.madeira{
 	background-image:url(../img/medalhas/trofeu_madeira_65-01.png)
@@ -987,7 +994,7 @@ top: 0;
 	height:66px;
 	display:block;
 	float: left;
-	margin: 0 20px 0 0;
+	margin: 0 10px 0 16px;
 }
 .medalhaP.madeira{
 	background-image:url(../img/medalhas/medalha_madeira_65.png)
@@ -1162,8 +1169,14 @@ padding-bottom: 1px!important;
 .modal-curso .biblio-down li{
 	background: url(../img/biblio-down.png) no-repeat 20px 10px;
 	
-	padding: 15px 0 15px 80px;
+	padding: 15px 20px 15px 79px;
 	border-bottom: 2px dashed #d2b64f;
+	-ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word;
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+    hyphens: auto;
 }
 .modal-curso .biblio-down li:hover{
 	background:url(../img/biblio-down-hover.png) no-repeat 20px 10px;
@@ -1181,6 +1194,28 @@ padding-bottom: 1px!important;
 	background-color:#18608c;
     color:#fff
 }
+.modal-curso .accordion-heading{
+	background-color:#18608c;
+    color:#fff
+;
+	margin-bottom: 1px;
+}
+
+.accordion-heading.head-biblio a{
+	text-align: center;
+	color:#d2b64f!important;
+	
+}
+.head-inner-biblio a{
+	text-align: center;
+	color:#fff!important;
+	
+}
+.head-inner-biblio{
+	background-color:#1c7ac1!important;
+	
+}
+
 .modal-curso .accordion-heading a{
     color:#fff;
     padding: 10px 40px 10px 10px;
@@ -1211,6 +1246,7 @@ padding: 10px 0;
     margin: -20px!important;
 }
 .no-padding-side{padding-left:0!important; padding-right:0!important;margin: 0 0 20px 0;}
+.no-padding{padding:0!important;}
 select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
 display: inline-block;
 padding: 4px 6px;
@@ -1760,7 +1796,7 @@ header {
 #nav a:hover {
 }
 .home-ico{float: left;}
-.home{float: left;position: fixed;top: -5px;width: 300px;z-index: 100;left: 100px;}
+.home{float: left;position: fixed;top: -5px;width: 300px;z-index: 100;left: 50px;}
 .home p{ color:#000; background-color:#d2b64f; padding: 5px 15px; border-radius: 0 0 10px 10px; float: left; margin-left: 10px;}
 
 .btn-navbar {
@@ -1809,7 +1845,9 @@ header {
   margin-top: 3px;
 }
 
-#sair{color:#fff; background-color:#18608c;position: absolute;z-index: 10;right: 0;top: 7px;padding: 3px 10px;font-size: 15px;}
+#sair{color:#fff; background-color:#18608c;position: fixed;z-index: 10;right: 0;top: 7px;padding: 3px 10px;font-size: 15px;}
+
+
 /* ==========================================================================
    CONTENT
    ========================================================================== */
@@ -2044,7 +2082,15 @@ tfoot{background-color: #868686;font-weight: bold;}
 	background: url(../img/bullet.png) no-repeat;
 	padding-left: 26px;
 	-webkit-animation-fill-mode: both;
+	-moz-animation-fill-mode: both;
+	-ms-animation-fill-mode: both;
+	-o-animation-fill-mode: both;
+	animation-fill-mode: both;
 	-webkit-animation-duration: 1s;
+	-moz-animation-duration: 1s;
+	-ms-animation-duration: 1s;
+	-o-animation-duration: 1s;
+	animation-duration: 1s;
 }
 .bullets_div .bullet_div {
 	opacity: 1;
@@ -2055,58 +2101,138 @@ tfoot{background-color: #868686;font-weight: bold;}
 .deck-current .bullets_div.bulletanima_div .bullet_div:nth-child(1) {
 	opacity: 0;
 	-webkit-animation-name: fadeInRight;
-	-webkit-animation-delay: 0s
+	-moz-animation-name: fadeInRight;
+	-ms-animation-name: fadeInRight;
+	-o-animation-name: fadeInRight;
+	animation-name: fadeInRight;
+	-webkit-animation-delay: 0s;
+	-moz-animation-delay: 0s;
+	-ms-animation-delay: 0s;
+	-o-animation-delay: 0s;
+	animation-delay: 0s;
 }
 .deck-current .bullets_div.bulletanima_div .bullet_div:nth-child(2) {
 	opacity: 0;
 	-webkit-animation-name: fadeInRight;
-	-webkit-animation-delay: 500ms
+	-moz-animation-name: fadeInRight;
+	-ms-animation-name: fadeInRight;
+	-o-animation-name: fadeInRight;
+	animation-name: fadeInRight;
+	-webkit-animation-delay: 500ms;
+	-moz-animation-delay: 500ms;
+	-ms-animation-delay: 500ms;
+	-o-animation-delay: 500ms;
+	animation-delay: 500ms;
 }
 .deck-current .bullets_div.bulletanima_div .bullet_div:nth-child(3) {
 	opacity: 0;
 	-webkit-animation-name: fadeInRight;
-	-webkit-animation-delay: 1s
+	-moz-animation-name: fadeInRight;
+	-ms-animation-name: fadeInRight;
+	-o-animation-name: fadeInRight;
+	animation-name: fadeInRight;
+	-webkit-animation-delay: 1s;
+	-moz-animation-delay: 1s;
+	-ms-animation-delay: 1s;
+	-o-animation-delay: 1s;
+	animation-delay: 1s;
 }
 .deck-current .bullets_div.bulletanima_div .bullet_div:nth-child(4) {
 	opacity: 0;
 	-webkit-animation-name: fadeInRight;
-	-webkit-animation-delay: 1500ms
+	-moz-animation-name: fadeInRight;
+	-ms-animation-name: fadeInRight;
+	-o-animation-name: fadeInRight;
+	animation-name: fadeInRight;
+	-webkit-animation-delay: 1500ms;
+	-moz-animation-delay: 1500ms;
+	-ms-animation-delay: 1500ms;
+	-o-animation-delay: 1500ms;
+	animation-delay: 1500ms;
 }
 .deck-current .bullets_div.bulletanima_div .bullet_div:nth-child(5) {
 	opacity: 0;
 	-webkit-animation-name: fadeInRight;
-	-webkit-animation-delay: 2s
+	-moz-animation-name: fadeInRight;
+	-ms-animation-name: fadeInRight;
+	-o-animation-name: fadeInRight;
+	animation-name: fadeInRight;
+	-webkit-animation-delay: 2s;
+	-moz-animation-delay: 2s;
+	-ms-animation-delay: 2s;
+	-o-animation-delay: 2s;
+	animation-delay: 2s;
 }
 .deck-current .bullets_div.bulletanima_div .bullet_div:nth-child(6) {
 	opacity: 0;
 	-webkit-animation-name: fadeInRight;
-	-webkit-animation-delay: 2500ms
+	-moz-animation-name: fadeInRight;
+	-ms-animation-name: fadeInRight;
+	-o-animation-name: fadeInRight;
+	animation-name: fadeInRight;
+	-webkit-animation-delay: 2500ms;
+	-moz-animation-delay: 2500ms;
+	-ms-animation-delay: 2500ms;
+	-o-animation-delay: 2500ms;
+	animation-delay: 2500ms;
 }
 .deck-current .bullets_div.bulletanima_div .bullet_div:nth-child(7) {
 	opacity: 0;
 	-webkit-animation-name: fadeInRight;
-	-webkit-animation-delay: 3s
+	-moz-animation-name: fadeInRight;
+	-ms-animation-name: fadeInRight;
+	-o-animation-name: fadeInRight;
+	animation-name: fadeInRight;
+	-webkit-animation-delay: 3s;
+	-moz-animation-delay: 3s;
+	-ms-animation-delay: 3s;
+	-o-animation-delay: 3s;
+	animation-delay: 3s;
 }
 .deck-current .bullets_div.bulletanima_div .bullet_div:nth-child(8) {
 	opacity: 0;
 	-webkit-animation-name: fadeInRight;
-	-webkit-animation-delay: 3500ms
+	-moz-animation-name: fadeInRight;
+	-ms-animation-name: fadeInRight;
+	-o-animation-name: fadeInRight;
+	animation-name: fadeInRight;
+	-webkit-animation-delay: 3500ms;
+	-moz-animation-delay: 3500ms;
+	-ms-animation-delay: 3500ms;
+	-o-animation-delay: 3500ms;
+	animation-delay: 3500ms;
 }
 .deck-current .bullets_div.bulletanima_div .bullet_div:nth-child(9) {
 	opacity: 0;
 	-webkit-animation-name: fadeInRight;
-	-webkit-animation-delay: 4s
+	-moz-animation-name: fadeInRight;
+	-ms-animation-name: fadeInRight;
+	-o-animation-name: fadeInRight;
+	animation-name: fadeInRight;
+	-webkit-animation-delay: 4s;
+	-moz-animation-delay: 4s;
+	-ms-animation-delay: 4s;
+	-o-animation-delay: 4s;
+	animation-delay: 4s;
 }
 .deck-current .bullets_div.bulletanima_div .bullet_div:nth-child(10) {
 	opacity: 0;
 	-webkit-animation-name: fadeInRight;
-	-webkit-animation-delay: 4500ms
+	-moz-animation-name: fadeInRight;
+	-ms-animation-name: fadeInRight;
+	-o-animation-name: fadeInRight;
+	animation-name: fadeInRight;
+	-webkit-animation-delay: 4500ms;
+	-moz-animation-delay: 4500ms;
+	-ms-animation-delay: 4500ms;
+	-o-animation-delay: 4500ms;
+	animation-delay: 4500ms;
 }
 /* ==========================================================================
    RESPONSIVO
    ========================================================================== */
 
-@media (max-width: 1024px) {
+@media (max-width: 1024px){
   .hidden-desktop {
     display: inherit !important;
   }
@@ -2121,6 +2247,20 @@ tfoot{background-color: #868686;font-weight: bold;}
   }
 }
 @media (min-width: 1025px) {
+  .hidden-desktop {
+    display: none !important;
+  }
+  .visible-desktop {
+    display: inherit !important ;
+  }
+  .visible-tablet {
+    display: none !important;
+  }
+  .hidden-tablet {
+    display: inherit !important;
+  }
+}
+@media (orientation: landscape) {
   .hidden-desktop {
     display: none !important;
   }
@@ -2172,11 +2312,13 @@ tfoot{background-color: #868686;font-weight: bold;}
     
 	position:relative;
 	display: block;
+	width: 90px;
 }
 .paradas li a{
 	
 	position:relative;
 	display: block;
+	width: 100%;
 }
 .paradas li a:hover {
 	text-decoration:none;
