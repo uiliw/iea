@@ -77,7 +77,7 @@ $(function() {
 
 			//DESABILITA/HABILITA CACHE NAS RESPOSTAS AJAX
 			$.ajaxSetup({
-				cache: false //setar true na versão online
+				cache: true //setar true na versão online
 			});
 
 			//REDIMENCIONA MAPA
@@ -330,17 +330,14 @@ $(function() {
 					//INSERE O CONTEUDO HTML RECEBIDO PELA METODO imagePreload
 					$('.conteudo_janela').html(conteudo_janela);
 
-					setTimeout(function() {
-
+					$('.conteudo_janela').show();
+					$("#modal").modal();
+					$('#modal').on('shown', function () {
 						app.caroufredsel();
 						app.loadAjax();
 						app.highlight();
 						app.initTabEvent();
-
-					}, 400);
-
-					$('.conteudo_janela').show();
-					$("#modal").modal();
+					})
 
 
 					//LMS - SETA TRILHA

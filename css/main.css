@@ -1048,7 +1048,7 @@ top: 0;
 	top: 20px
 }
 .modal.fade.in {
-	top: 50%;
+	top: 46%;
 	margin-top: -311px;
 }
 .modal.fade {
@@ -2297,6 +2297,8 @@ tfoot{background-color: #868686;font-weight: bold;}
 	display: block;
 	float: left;
 	font-size: 17px;
+	height: 83px!important;
+	overflow-y: hidden;
 }
 .paradas li {
 	padding: 0;
@@ -2374,6 +2376,8 @@ e{overflow:visible;}
 }
 .caroufredsel_wrapper {
 	cursor: default!important
+;
+	height: 83px!important;
 }
 /* ==========================================================================
    SLIDES
@@ -2659,7 +2663,6 @@ filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	width: 100%;
-	padding: 20px 48px 20px;
 }
 .csstransitions.csstransforms .deck-container:not(.deck-menu) > .slide .slide {
 	position: relative;
@@ -2887,6 +2890,7 @@ filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
 	width: auto;
 	position: relative;
 	float: left;
+	padding: 20px 48px 20px;
 }
 .slide h1 {
 	font-size: 35px;
