@@ -332,12 +332,12 @@ $(function() {
 
 					$('.conteudo_janela').show();
 					$("#modal").modal();
-					$('#modal').on('shown', function () {
+					setTimeout(function() {
 						app.caroufredsel();
 						app.loadAjax();
 						app.highlight();
 						app.initTabEvent();
-					})
+					}, 400);
 
 
 					//LMS - SETA TRILHA
