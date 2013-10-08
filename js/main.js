@@ -188,15 +188,15 @@ $(function() {
 		
 			$.reject({  
 				reject : {
-				all: false, // Covers Everything (Nothing blocked)  
-				msie5: true, msie6: true, msie7: true, msie8: true, msie9: true, // Covers MSIE 5-6 (Blocked by default)
+				all: false, 
+				msie5: true, msie6: true, msie7: true, msie8: true, msie9: true 
 			},  
-			display: [], // What browsers to display and their order (default set below)  
-			browserShow: true, // Should the browser options be shown?  
-			browserInfo: { // Settings for which browsers to display  
+			display: [],
+			browserShow: true,
+			browserInfo: {
 				firefox: {  
-					text: 'Firefox 23', // Text below the icon  
-					url: 'http://www.mozilla.com/firefox/' // URL For icon/text link  
+					text: 'Firefox 23', 
+					url: 'http://www.mozilla.com/firefox/' 
 				},  
 				safari: {  
 					text: 'Safari 6',  
@@ -217,51 +217,34 @@ $(function() {
 				gcf: {  
 					text: 'Google Chrome Frame',  
 					url: 'http://code.google.com/chrome/chromeframe/',  
-					// This browser option will only be displayed for MSIE  
 					allow: { all: false, msie: true }  
 				}  
 			},  
 		  
-			// Header of pop-up window  
 			header: 'Você sabia que seu browser esta desatualizado?',  
-			// Paragraph 1  
 			paragraph1: 'Seu browser esta desatualizado e pode não ser compatível com nosso website. Uma lista dos browsers mais populares podem ser encontrado abaixo.',  
-			// Paragraph 2  
 			paragraph2: 'Clique no icones para ir para a página de download do browser',  
-			close: true, // Allow closing of window  
-			// Message displayed below closing link  
+			close: true,
 			closeMessage: 'Ao fechar esta janela, você reconhece que a sua experiência de uso neste site pode ser prejudicado',  
-			closeLink: 'Fechar esta janela', // Text for closing link  
-			closeURL: '#', // Close URL  
-			closeESC: true, // Allow closing of window with esc key  
-		  
-			// If cookies should be used to remmember if the window was closed  
-			// See cookieSettings for more options  
-			closeCookie: false,  
-			// Cookie settings are only used if closeCookie is true  
-			cookieSettings: {  
-				// Path for the cookie to be saved on  
-				// Should be root domain in most cases  
-				path: '/',  
-				// Expiration Date (in seconds)  
-				// 0 (default) means it ends with the current session  
+			closeLink: 'Fechar esta janela',  
+			closeURL: '#',
+			closeESC: true,
+		   
+			closeCookie: false,
+			cookieSettings: {
+				path: '/',
 				expires: 0  
 			},  
 		  
-			imagePath: 'js/vendor/jreject/images/', // Path where images are located  
-			overlayBgColor: '#000', // Background color for overlay  
-			overlayOpacity: 0.8, // Background transparency (0-1)  
+			imagePath: 'js/vendor/jreject/images/',
+			overlayBgColor: '#000', 
+			overlayOpacity: 0.8,
 		  
-			// Fade in time on open ('slow','medium','fast' or integer in ms)  
-			fadeInTime: 'fast',  
-			// Fade out time on close ('slow','medium','fast' or integer in ms)  
+			fadeInTime: 'fast', 
 			fadeOutTime: 'fast',  
 		  
-			// Google Analytics Link Tracking (Optional)  
-			// Set to true to enable  
-			// Note: Analytics tracking code must be added separately  
 			analytics: false  
-			}); // Customized Browsers  
+			});
 		  
 			return false;
 		},
