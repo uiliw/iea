@@ -2028,6 +2028,16 @@ tfoot{background-color: #868686;font-weight: bold;}
  -moz-transform: translateX(0);
 }
 }
+@-ms-keyframes fadeInRight {
+50% {
+ opacity: 0;
+ -ms-transform: translateX(20px);
+}
+ 100% {
+ opacity: 1;
+ -ms-transform: translateX(0);
+}
+}
  @-o-keyframes fadeInRight {
 50% {
  opacity: 0;
@@ -2051,6 +2061,7 @@ tfoot{background-color: #868686;font-weight: bold;}
 .deck-current .bullet.animabullet, .deck-previous .bullet.animabullet, .bullet.animaintro {
 	-webkit-animation-name: fadeInRight;
 	-moz-animation-name: fadeInRight;
+	-ms-animation-name: fadeInRight;
 	-o-animation-name: fadeInRight;
 	animation-name: fadeInRight;
 	-webkit-animation-fill-mode: both;
