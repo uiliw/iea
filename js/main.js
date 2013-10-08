@@ -125,6 +125,8 @@ $(function() {
 			app.pontos();
 
 			app.ativaScroll();
+			
+			app.rejeitarBrowser();
 
 		},
 
@@ -180,6 +182,88 @@ $(function() {
 				$('.premiacaoG').html('<div class="trofeuG ouro"></div>')
 			}
 
+		},
+		
+		rejeitarBrowser: function(){
+		
+			$.reject({  
+				reject : {
+				all: false, // Covers Everything (Nothing blocked)  
+				msie5: true, msie6: true, msie7: true, msie8: true, msie9: true, // Covers MSIE 5-6 (Blocked by default)
+			},  
+			display: [], // What browsers to display and their order (default set below)  
+			browserShow: true, // Should the browser options be shown?  
+			browserInfo: { // Settings for which browsers to display  
+				firefox: {  
+					text: 'Firefox 23', // Text below the icon  
+					url: 'http://www.mozilla.com/firefox/' // URL For icon/text link  
+				},  
+				safari: {  
+					text: 'Safari 6',  
+					url: 'http://www.apple.com/safari/download/'  
+				},  
+				opera: {  
+					text: 'Opera 16',  
+					url: 'http://www.opera.com/download/'  
+				},  
+				chrome: {  
+					text: 'Chrome 29',  
+					url: 'http://www.google.com/chrome/'  
+				},  
+				msie: {  
+					text: 'Internet Explorer 10',  
+					url: 'http://www.microsoft.com/windows/Internet-explorer/'  
+				},  
+				gcf: {  
+					text: 'Google Chrome Frame',  
+					url: 'http://code.google.com/chrome/chromeframe/',  
+					// This browser option will only be displayed for MSIE  
+					allow: { all: false, msie: true }  
+				}  
+			},  
+		  
+			// Header of pop-up window  
+			header: 'Você sabia que seu browser esta desatualizado?',  
+			// Paragraph 1  
+			paragraph1: 'Seu browser esta desatualizado e pode não ser compatível com nosso website. Uma lista dos browsers mais populares podem ser encontrado abaixo.',  
+			// Paragraph 2  
+			paragraph2: 'Clique no icones para ir para a página de download do browser',  
+			close: true, // Allow closing of window  
+			// Message displayed below closing link  
+			closeMessage: 'Ao fechar esta janela, você reconhece que a sua experiência de uso neste site pode ser prejudicado',  
+			closeLink: 'Fechar esta janela', // Text for closing link  
+			closeURL: '#', // Close URL  
+			closeESC: true, // Allow closing of window with esc key  
+		  
+			// If cookies should be used to remmember if the window was closed  
+			// See cookieSettings for more options  
+			closeCookie: false,  
+			// Cookie settings are only used if closeCookie is true  
+			cookieSettings: {  
+				// Path for the cookie to be saved on  
+				// Should be root domain in most cases  
+				path: '/',  
+				// Expiration Date (in seconds)  
+				// 0 (default) means it ends with the current session  
+				expires: 0  
+			},  
+		  
+			imagePath: 'js/vendor/jreject/images/', // Path where images are located  
+			overlayBgColor: '#000', // Background color for overlay  
+			overlayOpacity: 0.8, // Background transparency (0-1)  
+		  
+			// Fade in time on open ('slow','medium','fast' or integer in ms)  
+			fadeInTime: 'fast',  
+			// Fade out time on close ('slow','medium','fast' or integer in ms)  
+			fadeOutTime: 'fast',  
+		  
+			// Google Analytics Link Tracking (Optional)  
+			// Set to true to enable  
+			// Note: Analytics tracking code must be added separately  
+			analytics: false  
+			}); // Customized Browsers  
+		  
+			return false;
 		},
 
 		acordeom: function() {
