@@ -1990,7 +1990,7 @@ tfoot{background-color: #868686;font-weight: bold;}
 }
 .slide .carousel-caption {
 	background: #2683B8;
-	background: rgba(38,131,184,.5);
+	background: rgba(38,131,184,.8);
 	padding: 5px;
 }
 .slide .carousel-caption p {

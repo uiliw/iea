@@ -77,7 +77,7 @@ $(function() {
 
 			//DESABILITA/HABILITA CACHE NAS RESPOSTAS AJAX
 			$.ajaxSetup({
-				cache: true //setar true na versão online
+				cache: false //setar true na versão online
 			});
 
 			//REDIMENCIONA MAPA
