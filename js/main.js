@@ -5,7 +5,7 @@ $(function() {
 	//PONTUAÇÃO
 	var pontuacao = 80;
 
-
+	
 	app = {
 
 /*	
