@@ -598,6 +598,11 @@ $(function() {
 
 			});
 		},
+		/*
+		showPins: function(map) {
+			trilhas.getPinValues( map );
+		},
+		*/
 
 		//INICIALIZA EVENTO PARA ABRIR POPUP AO CLICAR NO PREDIO DO MAPA
 		initPopupEvent: function() {
