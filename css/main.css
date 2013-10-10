@@ -1047,6 +1047,10 @@ top: 0;
 #legenda5 {
 	top: 20px
 }
+
+.modal-curso.fade.in {
+	top: 50%!important;
+}
 .modal.fade.in {
 	top: 46%;
 	margin-top: -311px;
