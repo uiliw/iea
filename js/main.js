@@ -296,37 +296,8 @@ $(function() {
 		},
 
 		ativaScroll: function() {
-			function isTouchDevice() {
-				try {
-					document.createEvent("TouchEvent");
-					return true;
-				} catch (e) {
-					return false;
-				}
-			}
-
-			function touchScroll(id) {
-				//EXECUTA SOMENTE SE O ELEMENTO COM ID WRAPPER EXISTIR, 
-				//CASO CONTRATIO ESTAVA CAUSANDO ERRO DE JAVASCRIPT POR TENTAR 
-				//ADICIONAR UM EVENTO EM UM ELEMENTO QUE NAO EXISTIA
-				if (isTouchDevice() && $("#" + id).size() > 0) { //if touch events exist...
-					var el = document.getElementById(id);
-					var scrollStartPos = 0;
-
-					document.getElementById(id).addEventListener("touchstart", function(event) {
-						scrollStartPos = this.scrollTop + event.touches[0].pageY;
-						event.preventDefault();
-					}, false);
-
-					document.getElementById(id).addEventListener("touchmove", function(event) {
-						this.scrollTop = scrollStartPos - event.touches[0].pageY;
-						event.preventDefault();
-					}, false);
-				}
-			}
-
-			//On page load
-			touchScroll('wrapper');
+			"use strict";
+        	$('.scroll').perfectScrollbar();
 		},
 
 		//CHAMADAS AJAX PARA O LMS
@@ -342,7 +313,7 @@ $(function() {
 
 					try {
 
-						$.get(urlSistema + chamada, callback);
+						$.get(trilhas.getUrlSistema( chamada ), callback);
 
 					} catch (e) {
 
