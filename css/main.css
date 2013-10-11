@@ -1801,7 +1801,7 @@ header {
 }
 .home-ico{float: left;}
 .home{float: left;position: fixed;top: -5px;z-index: 100;left: 50px;}
-.home p{ color:#000; background-color:#d2b64f; padding: 5px 15px; border-radius: 0 0 10px 10px; float: left; margin-left: 10px;}
+.home p{ color:#000; background-color:#d2b64f; padding: 5px 15px; border-radius: 0 0 10px 10px; margin-left: 55px;}
 
 .btn-navbar {
   position: absolute;
