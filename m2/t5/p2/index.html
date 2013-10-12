@@ -149,37 +149,30 @@ a seguir:</p>
 <div class="complementar">
   <h5>CONTEÚDO COMPLEMENTAR</h5>
   <ul class="inline icons-ul">
-    <li><i class="icon-li icon-camera-retro"></i>Foto</li>
-    <li><i class="icon-li icon-music"></i>Áudio</li>
-    <li><i class="icon-li icon-film"></i>Vídeo</li>
-    <li><i class="icon-li icon-file-alt"></i>Texto</li>
+    <li class="comple_nao"><i class="icon-li icon-camera-retro"></i>Foto</li>
+    <li class="comple_nao"><i class="icon-li icon-music"></i>Áudio</li>
+    <li class="comple_nao"><i class="icon-li icon-film"></i>Vídeo</li>
+    <li class="comple_nao"><i class="icon-li icon-file-alt"></i>Texto</li>
     <li class="pull-right googlep"><a href="https://plus.google.com/share?url=http://iea.uili.com.br/v2" onclick="javascript:window.open(this.href,
   '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="icon-google-plus-sign"></i></a></li>
     <li class="pull-right linkedin"><a href="http://www.linkedin.com/shareArticle?mini=true&url=http://iea.uili.com.br/v2&title=Obtendo acesso ao crédito&summary=Aqui você identificará aspectos importantes para o crescimento do seu negócio por meio do acesso ao crédito.&source=Sebrae SC" onclick="javascript:window.open(this.href,
   '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=600');return false;"><i class="icon-linkedin-sign"></i></a></li>
-    <li class="pull-right face"><a onclick='SendFacetrilha4(); return false;'><i class="icon-facebook-sign"></i></a></li>
+    <li class="pull-right face"><a onclick='SendFacem2t5(); return false;'><i class="icon-facebook-sign"></i></a></li>
     <li class="pull-right twitter"><a href="https://twitter.com/home?status=O objetivo principal desta etapa é auxiliar você a identificar quais ideias de negócio são possíveis de se enquadrar como MEI, analisar o mercado que o negócio se encontra e verificar a viabilidade da ideia de negócio escolhida." class="popup-twitter" data-lang="pt_BR"><i class="icon-twitter-sign"></i></a></li>
   </ul>
 </div>
 </article>
-
+<script src="http://connect.facebook.net/pt_BR/all.js"></script> 
 <script>
-$(function(){
-	$('.popup-twitter').click(function(event) {
-		var width  = 575,
-			height = 400,
-			left   = ($(window).width()  - width)  / 2,
-			top    = ($(window).height() - height) / 2,
-			url    = this.href,
-			opts   = 'status=1' +
-					 ',width='  + width  +
-					 ',height=' + height +
-					 ',top='    + top    +
-					 ',left='   + left;
+function SendFacem2t5(){
+	  // assume we are already logged in
+	  FB.init({appId: '363677080399471', xfbml: true, cookie: true});
 	
-		window.open(url, 'twitter', opts);
-	
-		return false;
-	  });
-});
+	  FB.ui({
+		  method: 'send',
+		  name: 'Análise de viabilidade do negócio',
+		  link: 'https://atendimento.sebrae-sc.com.br',
+		  description:'Analisei a viabilidade do meu negócio como MEI através de um trilha do %23sebraesc. Analise você também! url/link.curto'
+		  });
+}
 </script>
