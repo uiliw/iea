@@ -2460,13 +2460,16 @@ e{overflow:visible;}
 	padding: 6px 0px 6px 35px!important;
 	margin-bottom: 0;
 }
+.complementar ul li a{
+	color:#333;
+}
 .face {
 	font-size: 23px;
 	padding-right: 10px!important;
 }
 .face a {
 	text-decoration: none;
-	color: #3b5998;
+	color: #3b5998!important;
 	cursor: pointer;
 }
 .twitter {
@@ -2475,7 +2478,7 @@ e{overflow:visible;}
 }
 .twitter a {
 	text-decoration: none;
-	color: #4099eb;
+	color: #4099eb!important;
 }
 .linkedin {
 	font-size: 23px;
@@ -2483,7 +2486,7 @@ e{overflow:visible;}
 }
 .linkedin a {
 	text-decoration: none;
-	color: #3399cc;
+	color: #3399cc!important;
 }
 .googlep {
 	font-size: 23px;
@@ -2491,7 +2494,7 @@ e{overflow:visible;}
 }
 .googlep a {
 	text-decoration: none;
-	color: #e3634e;
+	color: #e3634e!important;
 }
 .comple_nao{opacity:.3}
 /* ---------  DECK THEME  ---------- */
