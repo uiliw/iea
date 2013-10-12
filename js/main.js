@@ -38,19 +38,19 @@ $(function() {
 			m2: {
 				"pin1b": "sem",
 				// m2/t1
-				"pin2b": "25",
+				"pin2b": 32,
 				// m2/t2
-				"pin3b": "50",
+				"pin3b": 46,
 				// m2/t3
-				"pin4b": "100",
+				"pin4b": 12,
 				// m2/t4
 				"pin5b": "sem",
 				// m2/t5
 				"pin6b": "sem",
 				// m2/t6
-				"pin7b": "75",
+				"pin7b": 79,
 				// m2/t7
-				"pin8b": "0",
+				"pin8b": 98,
 				// m2/t8
 			},
 			m3: {
@@ -555,15 +555,28 @@ $(function() {
 			$.each(app.arrayPins[map], function(n1, v1) {
 				if (v1 == 'sem') {
 					$('.' + n1).hide();
-				} else if (v1 == '0') {
+					
+				} else if (v1 <= 5) {
 					$('.' + n1).html('<div class="pin_0"></div>');
-				} else if (v1 == '25') {
-					$('.' + n1).html('<div class="pin_25"></div>');
-				} else if (v1 == '50') {
+				} else if (v1 > 5 && v1 <= 10) {
+					$('.' + n1).html('<div class="pin_10"></div>');
+				} else if (v1 > 10 && v1 <= 20) {
+					$('.' + n1).html('<div class="pin_20"></div>');
+				} else if (v1 > 20 && v1 <= 30) {
+					$('.' + n1).html('<div class="pin_30"></div>');
+				} else if (v1 > 30 && v1 <= 40) {
+					$('.' + n1).html('<div class="pin_40"></div>');
+				} else if (v1 > 40 && v1 <= 50) {
 					$('.' + n1).html('<div class="pin_50"></div>');
-				} else if (v1 == '75') {
-					$('.' + n1).html('<div class="pin_75"></div>');
-				} else if (v1 == '100') {
+				} else if (v1 > 50 && v1 <= 60) {
+					$('.' + n1).html('<div class="pin_60"></div>');
+				} else if (v1 > 60 && v1 <= 70) {
+					$('.' + n1).html('<div class="pin_70"></div>');
+				} else if (v1 > 70 && v1 <= 80) {
+					$('.' + n1).html('<div class="pin_80"></div>');
+				} else if (v1 > 80 && v1 <= 90) {
+					$('.' + n1).html('<div class="pin_90"></div>');
+				} else if (v1 > 90 && v1 <= 100) {
 					$('.' + n1).html('<div class="pin_100"></div>');
 				}
 
@@ -819,7 +832,7 @@ return false;
 
 //LISTA DE IMAGENS PARA PRE-CARREGAMENTO INICIAL
 //AS IMAGENS PRECISARAM SER INSERIDAS UMA A UMA, POIS ALGUMAS VINHAM DE CSS, E NAO TINHA COMO FAZER UMA LISTAGEM DINAMICA DAS IMAGENS
-var images = ['img/bg.jpg', 'js/vendor/flexslider/images/bg_direction_nav.png', 'img/bg_menu.jpg', 'mapa/chao.png', 'mapa/default1a.png', 'mapa/default1b.png', 'mapa/default1c.png', 'mapa/default2a.png', 'mapa/default2b.png', 'img/logo-sebrae.png', 'mapa/predio1a.png', 'mapa/predio1b.png', 'mapa/predio1c.png', 'mapa/predio2a.png', 'mapa/predio2b.png', 'mapa/predio2c.png', 'mapa/predio3a.png', 'mapa/predio3b.png', 'mapa/predio3c.png', 'mapa/predio4a.png', 'mapa/predio4b.png', 'mapa/predio4c.png', 'mapa/predio5a.png', 'mapa/predio5b.png', 'mapa/predio5c.png', 'mapa/predio6a.png', 'mapa/predio6b.png', 'mapa/predio6c.png', 'mapa/predio7a.png', 'mapa/predio7b.png', 'mapa/predio7c.png', 'mapa/predio8a.png', 'mapa/predio8b.png', 'mapa/predio8c.png', 'img/space.png', 'img/bg_menu.jpg', 'img/bg_slide.jpg', 'img/bg.jpg', 'img/biblio-down-hover.png', 'img/biblio-down.png', 'img/bullet.png', 'img/home.png', 'img/parada-ativa.png', 'img/pin_0.svg', 'img/pin_25.svg', 'img/pin_50.svg', 'img/pin_75.svg', 'img/pin_100.svg', 'img/seta_esq.png'];
+var images = ['img/bg.jpg', 'js/vendor/flexslider/images/bg_direction_nav.png', 'img/bg_menu.jpg', 'mapa/chao.png', 'mapa/default1a.png', 'mapa/default1b.png', 'mapa/default1c.png', 'mapa/default2a.png', 'mapa/default2b.png', 'img/logo-sebrae.png', 'mapa/predio1a.png', 'mapa/predio1b.png', 'mapa/predio1c.png', 'mapa/predio2a.png', 'mapa/predio2b.png', 'mapa/predio2c.png', 'mapa/predio3a.png', 'mapa/predio3b.png', 'mapa/predio3c.png', 'mapa/predio4a.png', 'mapa/predio4b.png', 'mapa/predio4c.png', 'mapa/predio5a.png', 'mapa/predio5b.png', 'mapa/predio5c.png', 'mapa/predio6a.png', 'mapa/predio6b.png', 'mapa/predio6c.png', 'mapa/predio7a.png', 'mapa/predio7b.png', 'mapa/predio7c.png', 'mapa/predio8a.png', 'mapa/predio8b.png', 'mapa/predio8c.png', 'img/space.png', 'img/bg_menu.jpg', 'img/bg_slide.jpg', 'img/bg.jpg', 'img/biblio-down-hover.png', 'img/biblio-down.png', 'img/bullet.png', 'img/home.png', 'img/parada-ativa.png', 'img/pin_0.svg', 'img/pin_10.svg', 'img/pin_20.svg', 'img/pin_30.svg', 'img/pin_40.svg', 'img/pin_50.svg', 'img/pin_60.svg', 'img/pin_70.svg', 'img/pin_80.svg', 'img/pin_90.svg', 'img/pin_100.svg', 'img/seta_esq.png'];
 
 //INICIALIZA OS MAPAS SOMENTE APOS O CARREGAMENTO DE TODAS AS IMAGENS
 $.imgpreload(images, {
