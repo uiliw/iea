@@ -2923,8 +2923,8 @@ filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
 	margin: 0 0 20px;
 	text-transform: uppercase;
 }
-{
-}
+.btn-info {
+color: #fff!important;}
 .csstransforms .slide h1, .csstransforms .slide .vcenter {
 }
 .slide .vcenter h1 {
