@@ -633,6 +633,11 @@ padding: 0;
 	top: 605px;
 	z-index: 9999;
 }
+.pin9c {
+	left: 934px;
+	top: 695px;
+	z-index: 9999;
+}
 .pin_0,.pin_10,.pin_20,.pin_30,.pin_40,.pin_50,.pin_60,.pin_70,.pin_80,.pin_90,.pin_100 {
 	background-repeat: no-repeat;
 	width: 50px;
@@ -1611,7 +1616,7 @@ background-color: transparent!important;border-left: none!important;border-top: 
 	font-size: 22px;
 }
 .alert {
-	padding: 12px 35px 12px 14px;
+	padding: 2px 35px 2px 14px;
 	text-shadow: 0 1px 0 rgba(255,255,255,0.5);
 	background-color: #fafafa;
 	border: 1px solid #e6e6e5;
@@ -1645,7 +1650,7 @@ background-color: transparent!important;border-left: none!important;border-top: 
 	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
 filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0044cc', GradientType=0);
  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
-	margin: -12px 0 0 -95px;
+	margin: -2px 0 0 -95px;
 	font-size: 50px;
 	float: none;
 	background-position: center center;
