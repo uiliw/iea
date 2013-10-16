@@ -1934,6 +1934,9 @@ article {
 	float: left;
 	width: 100%;
 }
+.collapse {
+    position: static;
+}
 thead {
 	color: #007bc3;
 	background-color: #fff
