@@ -773,6 +773,9 @@ $(function() {
 							app.acordeom();
 							app.initTabEvent();
 							app.ativaScroll();
+							
+						addthis.init();
+						addthis.toolbox('.addthis_toolbox');
 
 							$('.conteudo').transition({
 								height: '496px'
@@ -811,6 +814,8 @@ $(function() {
 	app.initTabEvent();
 	app.ativaScroll();
 
+						addthis.init();
+						addthis.toolbox('.addthis_toolbox');
 
 	setTimeout(function() {
 		$('.conteudo').transition({

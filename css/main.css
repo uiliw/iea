@@ -2343,7 +2343,7 @@ tfoot{background-color: #868686;font-weight: bold;}
 	min-height: 60px;
 }
 .paradas li a img{
-	margin-right: 15px;
+	margin-right: 7px;
 	float: left;
 	border: 3px transparent solid;
     
@@ -2478,6 +2478,7 @@ e{overflow:visible;}
 .face {
 	font-size: 23px;
 	padding-right: 10px!important;
+	padding-left: 0!important;
 }
 .face a {
 	text-decoration: none;
@@ -2487,6 +2488,7 @@ e{overflow:visible;}
 .twitter {
 	font-size: 23px;
 	padding-right: 10px!important;
+	padding-left: 0!important;
 }
 .twitter a {
 	text-decoration: none;
@@ -2495,6 +2497,7 @@ e{overflow:visible;}
 .linkedin {
 	font-size: 23px;
 	padding-right: 10px!important;
+	padding-left: 0!important;
 }
 .linkedin a {
 	text-decoration: none;
@@ -2503,6 +2506,7 @@ e{overflow:visible;}
 .googlep {
 	font-size: 23px;
 	padding-right: 15px!important;
+	padding-left: 0!important;
 }
 .googlep a {
 	text-decoration: none;
