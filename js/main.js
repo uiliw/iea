@@ -750,6 +750,8 @@ $(function() {
 					$('.conteudo').transition({
 						height: '0px'
 					}, 800);
+					
+					$('.carregando').addClass('carregando_anima');
 					setTimeout(function() {
 
 						app.imagePreload($this, function(conteudo) {
@@ -780,6 +782,8 @@ $(function() {
 							$('.conteudo').transition({
 								height: '496px'
 							}, 800);
+							
+					$('.carregando').removeClass('carregando_anima');
 
 							//LMS - SETA PARADA
 							app.getAPI().setParada(linkParada.data('mapa'), linkParada.data('trilha'), linkParada.data('parada'));
@@ -792,6 +796,7 @@ $(function() {
 
 				} else {
 
+					$('.carregando').addClass('carregando_anima');
 					app.imagePreload($this, function(conteudo) {
 
 	$('.conteudo').html(conteudo);
@@ -821,6 +826,8 @@ $(function() {
 		$('.conteudo').transition({
 			height: '496px'
 		}, 800);
+		
+					$('.carregando').removeClass('carregando_anima');
 	}, 1000);
 
 	//LMS - SETA PARADA
