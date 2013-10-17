@@ -56,11 +56,11 @@ $(function() {
 			m3: {
 				"pin1c": "sem",
 				// m3/t1
-				"pin2c": 10,
+				"pin2c": "sem",
 				// m3/t2
-				"pin3c": "sem",
+				"pin3c": 80,
 				// m3/t3
-				"pin4c": "sem",
+				"pin4c": 80,
 				// m3/t4
 				"pin5c": "sem",
 				// m3/t5
@@ -70,7 +70,7 @@ $(function() {
 				// m3/t7
 				"pin8c": "sem",
 				// m3/t8
-				"pin9c": 70,
+				"pin9c": 80,
 				// m3/t9
 			}
 		},
