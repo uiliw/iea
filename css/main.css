@@ -3251,15 +3251,16 @@ script {
 /* ---------  DECK STATUS  ---------- */
 
 .deck-container .deck-status {
-	position: absolute;
-	bottom: 1px;
-	width: 100%;
-	color: #007bc3;
-	z-index: 3;
-	margin: 0;
-	text-align: center;
-	font-size: 15px;
-	font-family: 'Roboto Slab', serif;
+position: absolute;
+bottom: 1px;
+width: 55px;
+color: #007bc3;
+z-index: 3;
+margin: 0;
+text-align: center;
+font-size: 15px;
+font-family: 'Roboto Slab', serif;
+left: 442px;
 }
 body.deck-container .deck-status {
 	position: fixed;
