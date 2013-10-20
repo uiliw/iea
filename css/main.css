@@ -2942,6 +2942,7 @@ color: #fff!important;}
 	margin-bottom: 0;
 	color: #007bc3;
 	text-transform: uppercase;
+	line-height: 24px;
 }
 .slide h4 {
 	font-size: 1.25em;
@@ -2989,6 +2990,11 @@ color: #fff!important;}
 }
 .slide li {
 	padding: 0 0 18px;
+	vertical-align: middle;
+	width: 100%;
+}
+.slide ol li {
+	padding: 0 0 10px;
 	vertical-align: middle;
 	width: 100%;
 }
