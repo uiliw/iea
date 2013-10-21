@@ -1314,6 +1314,8 @@ text-decoration:none!important;
 }
 .tooltip-inner a {
 	color: #eee!important
+;
+	text-decoration: underline;
 }
 .tooltip.right .tooltip-arrow {
 	border-right-color: #0d7a74;
