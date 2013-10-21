@@ -62,7 +62,7 @@ $(function() {
 				// m3/t3
 				"pin4c": 80,
 				// m3/t4
-				"pin5c": "sem",
+				"pin5c": 80,
 				// m3/t5
 				"pin6c": "sem",
 				// m3/t6
@@ -774,10 +774,10 @@ $(function() {
 							app.acordeom();
 							app.initTabEvent();
 							app.ativaScroll();
-							
+							/*
 						addthis.init();
 						addthis.toolbox('.addthis_toolbox');
-
+*/
 							$('.conteudo').transition({
 								height: '496px'
 							}, 800);
@@ -818,9 +818,9 @@ $(function() {
 	app.initTabEvent();
 	app.ativaScroll();
 
-						addthis.init();
+						/*addthis.init();
 						addthis.toolbox('.addthis_toolbox');
-
+*/
 	setTimeout(function() {
 		$('.conteudo').transition({
 			height: '496px'
