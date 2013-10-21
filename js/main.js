@@ -359,7 +359,7 @@ $(function() {
 			$('.menu_trilha').on('click', 'a.abre_modal', function(e) {
 
 				e.preventDefault();
-
+				$('.loading-container').fadeIn();
 				var linkAbreModal = $(this);
 				var url_conteudo_janela = linkAbreModal.data('momento') + '/' + linkAbreModal.data('trilha') + '/intro.html';
 
@@ -369,7 +369,7 @@ $(function() {
 
 					//INSERE O CONTEUDO HTML RECEBIDO PELA METODO imagePreload
 					$('.conteudo_janela').html(conteudo_janela);
-
+					$('.loading-container').fadeOut();
 					$('.conteudo_janela').show();
 					$("#modal").modal();
 					setTimeout(function() {
@@ -522,9 +522,7 @@ $(function() {
 					$activecaption = $('.flex-active-slide .flex-caption');
 
 					$captions.html($activecaption.text());
-					$('.loading-container').fadeOut(function() {
-						$(this).remove();
-					});
+					$('.loading-container').fadeOut();
 
 					app.initPopupEvent();
 					app.initPopupCloseEvent();
@@ -739,6 +737,7 @@ $(function() {
 				var linkParada = $(this);
 
 				var $this = $(this).attr('href');
+				$('.loading-container').fadeIn();
 
 				$("#intro").transition({
 					height: '0px'
@@ -757,7 +756,7 @@ $(function() {
 						app.imagePreload($this, function(conteudo) {
 
 							$('.conteudo').html(conteudo);
-
+							$('.loading-container').fadeOut();
 							$.deck('.slide', {
 								keys: {
 									next: 39,
@@ -800,7 +799,7 @@ $(function() {
 					app.imagePreload($this, function(conteudo) {
 
 	$('.conteudo').html(conteudo);
-
+	$('.loading-container').fadeOut();
 	$.deck('.slide', {
 		keys: {
 			next: 39,

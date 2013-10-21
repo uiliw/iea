@@ -2505,7 +2505,7 @@ e{overflow:visible;}
 	position: absolute;
 	left: 50%;
 	top: 50%;
-	z-index: 10;
+	z-index: 99999;
 }
 .pulse-loading {
 	border: 3px solid #999;
