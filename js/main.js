@@ -54,7 +54,7 @@ $(function() {
 				// m2/t8
 			},
 			m3: {
-				"pin1c": "sem",
+				"pin1c": 80,
 				// m3/t1
 				"pin2c": 50,
 				// m3/t2
