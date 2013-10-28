@@ -1563,6 +1563,31 @@ transform: scale(1);
 /* ==========================================================================
    GERAL
    ========================================================================== */
+   @font-face {
+  font-family: 'Anaheim';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Anaheim'), local('Anaheim-Regular'), url(../fontes/Anaheim-Regular.woff) format('woff');
+}
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Slab Regular'), local('RobotoSlab-Regular'), url(../fontes/RobotoSlab-Regular.woff) format('woff');
+}
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto Slab Bold'), local('RobotoSlab-Bold'), url(../fontes/RobotoSlab-Bold.woff) format('woff');
+}
+@font-face {
+  font-family: 'Shadows Into Light Two';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Shadows Into Light Two'), local('ShadowsIntoLightTwo-Regular'), url(../fontes/ShadowsIntoLightTwo-Regular.woff) format('woff');
+}
+
    .form-slide{-webkit-box-shadow: none!important;
 -moz-box-shadow:  none!important;
 box-shadow:  none!important;
