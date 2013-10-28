@@ -18,60 +18,35 @@ $(function() {
 		*/
 		arrayPins: {
 			m1: {
-				"pin1a": "sem",
-				// m1/t1
-				"pin2a": "sem",
-				// m1/t2
-				"pin3a": "sem",
-				// m1/t3
-				"pin4a": "sem",
-				// m1/t4
-				"pin5a": "sem",
-				// m1/t5
-				"pin6a": "sem",
-				// m1/t6
-				"pin7a": "sem",
-				// m1/t7
-				"pin8a": "sem",
-				// m1/t8
+				"pinm1t1": "sem",
+				"pinm1t2": "sem",
+				"pinm1t3": "sem",
+				"pinm1t4": "sem",
+				"pinm1t5": "sem",
+				"pinm1t6": "sem",
+				"pinm1t7": "sem",
+				"pinm1t8": "sem",
 			},
 			m2: {
-				"pin1b": "sem",
-				// m2/t1
-				"pin2b": 32,
-				// m2/t2
-				"pin3b": 46,
-				// m2/t3
-				"pin4b": 12,
-				// m2/t4
-				"pin5b": "sem",
-				// m2/t5
-				"pin6b": "sem",
-				// m2/t6
-				"pin7b": 79,
-				// m2/t7
-				"pin8b": 98,
-				// m2/t8
+				"pinm2t1": "sem",
+				"pinm2t2": 32,
+				"pinm2t3": 46,
+				"pinm2t4": 12,
+				"pinm2t5": "sem",
+				"pinm2t6": "sem",
+				"pinm2t7": 79,
+				"pinm2t8": 98,
 			},
 			m3: {
-				"pin1c": 80,
-				// m3/t1
-				"pin2c": 50,
-				// m3/t2
-				"pin3c": 80,
-				// m3/t3
-				"pin4c": 80,
-				// m3/t4
-				"pin5c": 80,
-				// m3/t5
-				"pin6c": "sem",
-				// m3/t6
-				"pin7c": 70,
-				// m3/t7
-				"pin8c": 20,
-				// m3/t8
-				"pin9c": 80,
-				// m3/t9
+				"pinm3t1": 80,
+				"pinm3t2": 50,
+				"pinm3t3": 80,
+				"pinm3t4": 80,
+				"pinm3t5": 80,
+				"pinm3t6": "sem",
+				"pinm3t7": 70,
+				"pinm3t8": 20,
+				"pinm3t9": 80,
 			}
 		},
 
@@ -359,7 +334,6 @@ $(function() {
 			$('.menu_trilha').on('click', 'a.abre_modal', function(e) {
 
 				e.preventDefault();
-				$('.loading-container').fadeIn();
 				var linkAbreModal = $(this);
 				var url_conteudo_janela = linkAbreModal.data('momento') + '/' + linkAbreModal.data('trilha') + '/intro.html';
 
@@ -369,7 +343,6 @@ $(function() {
 
 					//INSERE O CONTEUDO HTML RECEBIDO PELA METODO imagePreload
 					$('.conteudo_janela').html(conteudo_janela);
-					$('.loading-container').fadeOut();
 					$('.conteudo_janela').show();
 					$("#modal").modal();
 					setTimeout(function() {

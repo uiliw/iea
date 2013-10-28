@@ -1236,7 +1236,7 @@ border: 0;
 border-bottom: none;
 padding: 10px 0;
 }
-
+#ficha{margin:0 20px}
 
 /* ==========================================================================
    RESET
@@ -1858,6 +1858,39 @@ header {
 /* ==========================================================================
    CONTENT
    ========================================================================== */
+   .fracao{
+	   line-height: 1em;
+top: -0.5em;
+	   position: relative;
+}
+.numerador_azul{
+	padding-bottom: 0.1ex;
+
+	border-bottom: thin #007bc3 solid;
+top:0
+	;
+	text-align: center;
+}
+.numerador_preto{
+	padding-bottom: 0.1ex;
+
+	border-bottom: thin black solid;
+top:0
+	;
+	text-align: center;
+}
+	.linha{
+		
+position: absolute;
+top: 0;
+display: none;
+
+}
+.denominador{
+bottom: -32px;
+position: absolute;
+	
+}
 article {
 	margin-top: 20px
 }
