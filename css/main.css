@@ -1563,7 +1563,7 @@ transform: scale(1);
 }
 /* ==========================================================================
    GERAL
-   ========================================================================== */
+   ========================================================================== 
    @font-face {
   font-family: 'Anaheim';
   font-style: normal;
@@ -1588,7 +1588,7 @@ transform: scale(1);
   font-weight: 400;
   src: local('Shadows Into Light Two'), local('ShadowsIntoLightTwo-Regular'), url(../fontes/ShadowsIntoLightTwo-Regular.woff) format('woff');
 }
-
+*/
    .form-slide{-webkit-box-shadow: none!important;
 -moz-box-shadow:  none!important;
 box-shadow:  none!important;
