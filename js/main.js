@@ -21,7 +21,7 @@ $(function() {
 				"pinm1t1": "sem",
 				"pinm1t2": "sem",
 				"pinm1t3": "sem",
-				"pinm1t4": "sem",
+				"pinm1t4": 80,
 				"pinm1t5": "sem",
 				"pinm1t6": "sem",
 				"pinm1t7": "sem",
