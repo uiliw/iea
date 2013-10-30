@@ -19,23 +19,23 @@ $(function() {
 		arrayPins: {
 			m1: {
 				"pinm1t1": "sem",
-				"pinm1t2": 80,
-				"pinm1t3": "sem",
+				"pinm1t2": "sem",
+				"pinm1t3": 80,
 				"pinm1t4": 80,
-				"pinm1t5": "sem",
+				"pinm1t5": 80,
 				"pinm1t6": "sem",
 				"pinm1t7": "sem",
 				"pinm1t8": "sem",
 			},
 			m2: {
-				"pinm2t1": "sem",
+				"pinm2t1": 80,
 				"pinm2t2": 32,
 				"pinm2t3": 46,
 				"pinm2t4": 12,
-				"pinm2t5": "sem",
+				"pinm2t5": 47,
 				"pinm2t6": "sem",
-				"pinm2t7": 79,
-				"pinm2t8": 98,
+				"pinm2t7": "sem",
+				"pinm2t8": "sem",
 			},
 			m3: {
 				"pinm3t1": 80,
@@ -43,10 +43,10 @@ $(function() {
 				"pinm3t3": 80,
 				"pinm3t4": 80,
 				"pinm3t5": 80,
-				"pinm3t6": "sem",
+				"pinm3t6": 80,
 				"pinm3t7": 70,
 				"pinm3t8": 20,
-				"pinm3t9": 80,
+				"pinm3t9": "sem",
 			}
 		},
 
