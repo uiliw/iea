@@ -1563,32 +1563,63 @@ transform: scale(1);
 }
 /* ==========================================================================
    GERAL
-   ========================================================================== 
-   @font-face {
-  font-family: 'Anaheim';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Anaheim'), local('Anaheim-Regular'), url(../fontes/Anaheim-Regular.woff) format('woff');
-}
+   ========================================================================== */
+  
+
 @font-face {
-  font-family: 'Roboto Slab';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto Slab Regular'), local('RobotoSlab-Regular'), url(../fontes/RobotoSlab-Regular.woff) format('woff');
+    font-family: 'Anaheim';
+    src: url('../fontes/anaheim-regular-webfont.eot');
+    src: url('../fontes/anaheim-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fontes/anaheim-regular-webfont.woff') format('woff'),
+         url('../fontes/anaheim-regular-webfont.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+
 }
+
+
+
+
 @font-face {
-  font-family: 'Roboto Slab';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Roboto Slab Bold'), local('RobotoSlab-Bold'), url(../fontes/RobotoSlab-Bold.woff) format('woff');
+    font-family: 'Roboto Slab';
+    src: url('../fontes/robotoslab-regular-webfont.eot');
+    src: url('../fontes/robotoslab-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fontes/robotoslab-regular-webfont.woff') format('woff'),
+         url('../fontes/robotoslab-regular-webfont.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+
 }
+
+
+
+
 @font-face {
-  font-family: 'Shadows Into Light Two';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Shadows Into Light Two'), local('ShadowsIntoLightTwo-Regular'), url(../fontes/ShadowsIntoLightTwo-Regular.woff) format('woff');
+    font-family: 'Roboto Slab Bold';
+    src: url('../fontes/robotoslab-bold-webfont.eot');
+    src: url('../fontes/robotoslab-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fontes/robotoslab-bold-webfont.woff') format('woff'),
+         url('../fontes/robotoslab-bold-webfont.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+
 }
-*/
+
+
+
+
+@font-face {
+    font-family: 'Shadows Into Light Two';
+    src: url('../fontes/shadowsintolighttwo-regular-webfont.eot');
+    src: url('../fontes/shadowsintolighttwo-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fontes/shadowsintolighttwo-regular-webfont.woff') format('woff'),
+         url('../fontes/shadowsintolighttwo-regular-webfont.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+
    .form-slide{-webkit-box-shadow: none!important;
 -moz-box-shadow:  none!important;
 box-shadow:  none!important;
