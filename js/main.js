@@ -19,7 +19,7 @@ $(function() {
 		arrayPins: {
 			m1: {
 				"pinm1t1": "sem",
-				"pinm1t2": "sem",
+				"pinm1t2": 80,
 				"pinm1t3": "sem",
 				"pinm1t4": 80,
 				"pinm1t5": "sem",
