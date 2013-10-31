@@ -3,13 +3,14 @@
 .icheckbox_flat-blue,
 .iradio_flat-blue {
     display: block;
-    margin: 0;
+    margin: 0 10px 0 0;
     padding: 0;
     width: 20px;
     height: 20px;
     background: url(blue.png) no-repeat;
     border: none;
     cursor: pointer;
+    float: left;
 }
 
 .icheckbox_flat-blue {
