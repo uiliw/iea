@@ -61,12 +61,19 @@ Para testar seu perfil empreendedor, selecione as opções correspondentes a cad
   
   
   <section class="slide">
-  <h2>TESTE</h2>
+    <h2>Questionário de Perfil</h2>
+    <div class="scroll" style="height:290px; margin-bottom:10px" id="pesquisaPerfil">
+	</div>
+	<a href="#" class="btn pull-left" id="enviarPesquisaPerfil">Enviar respostas</a>
   </section>
   
   
   <section class="slide">
   <h2>Resultado</h2>
+    <div class="scroll" style="height:290px; margin-bottom:10px" id="pesquisaPerfilResultado">
+	  <blockquote class="pull-center pulse" style="margin:100px 0 30px">Favor responder o Questionário de Perfil na página anterior</blockquote>
+	</div>
+	<a href="#" class="btn pull-left" onclick="$.deck('prev');">Refazer questionário de perfil</a>
   </section>
   
   
@@ -83,16 +90,14 @@ Para testar seu perfil empreendedor, selecione as opções correspondentes a cad
 <div class="clearfix"></div>
   </section>
   
-  <section class="slide">
-  <h2>Resultado geral</h2>
-  <p style="margin:30px 0 0">Sua pontuação TOTAL foi XX.</p>
-
-<p style="margin:40px 0 50px">Você precisa buscar capacitação para desenvolver o seu perfil empreendedor. Sugerimos que você se candidate para fazer o Programa <strong>EMPRETEC</strong> oferecido pelo SEBRAE. Esse programa explora cada uma das características do comportamento empreendedor, auxiliando você a desenvolver ainda mais suas competências para empreender.</p>
-
-<p>Se você deseja refazer o teste analisando com mais detalhes os comportamentos clique em <strong>Refazer</strong>.</p>
-<div class="clearfix"></div>
-<a style="margin-top:20px" href="javascript:void()" class="btn">Refazer</a>
-
+	<section class="slide">
+		<h2>Resultado geral</h2>
+		<div class="scroll" style="height:290px; margin-bottom:10px" id="pesquisaPerfilResultado">
+			<p style="margin:30px 0 0;font-weight: bold" id="resultadoPontuacaoPerfil">Você precisa responder o Questionário de Perfil</p>
+			<p style="margin:40px 0 50px">Você precisa buscar capacitação para desenvolver o seu perfil empreendedor. Sugerimos que você se candidate para fazer o Programa <strong>EMPRETEC</strong> oferecido pelo SEBRAE. Esse programa explora cada uma das características do comportamento empreendedor, auxiliando você a desenvolver ainda mais suas competências para empreender.</p>
+			<p>Se você deseja refazer o teste analisando com mais detalhes os comportamentos clique em <strong>Refazer</strong>.</p>
+		</div>
+		<a style="margin-top:20px" onclick="$.deck('go', 3);" class="btn">Refazer questionário de perfil</a>
   </section>
   
   <section class="slide">

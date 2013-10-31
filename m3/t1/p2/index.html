@@ -34,29 +34,46 @@
 			<div class="bullet_div">irá comparar as ideias de negócio selecionadas com o seu perfil empreendedor.</div>
 		</div>
 	</section>
+
+	<!--slide 3 - situacao atual-->
 	<section class="slide">
 		<h2>Situação atual</h2>
+		<div style="height:290px; margin-bottom:10px">
 		<p style="margin:30px 0 40px">Mas antes de começar, vamos descobrir se o SEBRAE já possui a sua ideia de negócio cadastrada com informações relevantes sobre ela para você.</p>
 		<div class="clearfix"></div>
 		<h3 style="margin-bottom:20px">Você já possui uma ideia de negócio?</h3>
-		<p><a href="javascript:void()" class="btn btn-info">Sim</a> <abbr data-toggle="tooltip" title="Ao escolher essa opção, você poderá obter mais informações sobre a sua ideia de negócio no banco de dados do Sebrae." data-html="true" data-trigger="hover" data-placement="right">já tenho uma ideia em mente</abbr>.</p>
+		<p><a href="#" class="btn btn-info" id="btnTemIdeia">Sim</a> <abbr data-toggle="tooltip" title="Ao escolher essa opção, você poderá obter mais informações sobre a sua ideia de negócio no banco de dados do Sebrae." data-html="true" data-trigger="hover" data-placement="right">já tenho uma ideia em mente</abbr>.</p>
 		<div class="clearfix"></div>
-		<p><a href="javascript:void()" class="btn btn-info">Não</a> <abbr data-toggle="tooltip" title="Ao escolher essa opção, você responderá algumas perguntas para encontrar ideias de negócio que o Sebrae tem para você, de acordo com o seu perfil empreendedor." data-html="true" data-trigger="hover" data-placement="right">ainda não tenho uma ideia de negócio</abbr>.</p>
+		<p><a href="#" class="btn btn-info" id="btnNaoTemIdeia">Não</a> <abbr data-toggle="tooltip" title="Ao escolher essa opção, você responderá algumas perguntas para encontrar ideias de negócio que o Sebrae tem para você, de acordo com o seu perfil empreendedor." data-html="true" data-trigger="hover" data-placement="right">ainda não tenho uma ideia de negócio</abbr>.</p>
+		</div>
+		<a href="#" class="btn pull-left" onclick="return loadNaoConfirmadas();">Fichas selecionadas</a>
+		<a href="#" class="btn pull-left" onclick="return loadConfirmadas();">Fichas confirmadas</a>
 	</section>
+
+
+
+	<!--slide 4 buscar ideia -->
 	<section class="slide">
 		<h2>Busque sua ideia</h2>
+		<div style="height:290px; margin-bottom:10px">
 		<p>Se você já tem uma ideia de negócio, que bom! Porém, é importante que avalie sua ideia em relação ao seu perfil empreendedor, por isso, inicie todo o processo começando pelo cadastro da ideia. Também é importante que você escolha mais 4 ideias de negócios dentre as opções descritas.</p>
 		<p>Faça uma busca para verificar se sua ideia já se encontra em nossa base de dados. Digite uma <abbr data-toggle="tooltip" title="Por exemplo, se você está pensando em montar uma 'Banca de jornais', procure na palavra-chave por 'jornais', ou 'banca'." data-html="true" data-trigger="hover" data-placement="left">palavra-chave</abbr> no campo abaixo que faça referência à sua ideia de negócio. Caso não encontre nenhuma informação, cadastre sua ideia e continue o programa.</p>
 		<div class="clearfix"></div>
 		<form style="margin:40px 0 0">
 			Palavra-chave:
-			<input type="text" class="form-slide"/>
-			<button type="submit" class="btn btn-info">OK</button>
+			<input type="text" class="form-slide" id="FnFichaBusca"/>
+			<button type="submit" class="btn btn-info" id="pesquisarFichas">OK</button>
 		</form>
+		</div>
+		<a href="#" class="btn pull-left" onclick="$.deck('go',2);return false;">Voltar</a>
 	</section>
+
+
+
+	<!--slide 5 resultado busca-->
 	<section class="slide">
 		<h2>Selecione as ideias de negócio </h2>
-		<div class="scroll" style="height:290px; margin-bottom:10px">
+		<div class="scroll" style="height:290px; margin-bottom:10px" id="resultadoPesquisa">
 			<p>Foi(ram) encontrada(s) XX ideia(s) relacionada(s) à palavra-chave “xxxxxxxx”. Selecione a(s) ideia(s) que<br/>
 				mais lhe agradarem:</p>
 			<h3>Indústria</h3>
@@ -77,10 +94,19 @@
 				Resultado 04 </label>
 			<p style="margin-top:10px">Caso sua ideia não esteja na listagem, realize a busca novamente. </p>
 		</div>
-		<a href="javascript:void()" class="btn pull-left">Buscar novamente</a><a href="javascript:void()" class="btn pull-right">Próximo</a> </section>
+
+		<a href="#" class="btn pull-left" onclick="$.deck('go',2);return false;">Voltar</a>
+		<a href="#" class="btn pull-left" id="btnSelecionaFichas">Selecionar Fichas</a>
+		<a href="#" class="btn pull-left btnBuscarNovamente">Buscar novamente</a>
+		<a href="#" class="btn pull-right" onclick="return loadConfirmadas();">Fichas confirmadas</a>
+	</section>
+
+
+
+	<!--slide 6 fichas selecionadas-->
 	<section class="slide">
 		<h2>Fichas técnicas</h2>
-		<div class="scroll" style="height:290px; margin-bottom:10px">
+		<div class="scroll" style="height:290px; margin-bottom:10px" id="fichasNaoConfirmadas">
 			<p>Agora que você já selecionou a(s) ideia(s) de negócio que mais lhe interessou (interessaram), leia atentamente a(s) ficha(s) desta(s) ideia(s).</p>
 			<p style="margin:20px 0 30px">Resultado 01 - <a href="#fichas" data-toggle="modal"><strong>Ficha Técnica</strong></a> <br/>
 				Resultado 02 – <a href="#fichas" data-toggle="modal"><strong>Ficha Técnica</strong></a> <br/>
@@ -88,55 +114,76 @@
 				Resultado 04 - <a href="#fichas" data-toggle="modal"><strong>Ficha Técnica</strong></a> </p>
 			<p>Após ter lido as fichas técnicas acima, avance no conteúdo e responda ao questionário “Relação Entre o Perfil Pessoal e as Ideias de Negócio Escolhidas”, indicando o grau de concordância para cada afirmativa relacionada às ideias que estão em avaliação.</p>
 		</div>
-		<a href="javascript:void()" class="btn pull-left">Buscar novamente</a><a href="javascript:void()" class="btn pull-right">Questionário</a> </section>
+		<a href="#" class="btn pull-left" onclick="$.deck('go',2);return false;">Voltar</a>
+		<a href="#" class="btn pull-left btnBuscarNovamente">Buscar novamente</a>
+		<a href="#" class="btn pull-left" id="idConfirmaSelecao">Confirmar seleção</a>
+	</section>
+
+
+	<!--slide 7 formulario pesquisa-->
 	<section class="slide">
 		<h2>Localizando ideias para você</h2>
 		<div class="scroll" style="height:290px; margin-bottom:10px">
+			<form id="naotemideia">
+			<input type="hidden" name="_method" value="POST" />
 			<p>Responda a um breve questionário para identificarmos as ideias mais apropriadas ao seu perfil!</p>
 			<p>1) Você deseja trabalhar <abbr data-toggle="tooltip" title="existe a necessidade de contratação de funcionários para tocar o negócio ou apenas a sua participação é suficiente para abrir e manter a empresa?" data-html="true" data-trigger="hover" data-container="body" data-placement="right"><strong>sozinho</strong> ou <strong>contratar pessoas</strong></abbr>?</p>
 			<div class="clearfix"></div>
 			<label class="radio inline">
-				<input type="radio" name="optionsRadios" id="inlineCheckbox1" value="option1">
-				Sozinho </label>
-			<label class="radio inline">
-				<input type="radio" name="optionsRadios" id="inlineCheckbox2" value="option2">
-				Contratar Pessoas </label>
+					<input type="radio" name="data[FnFicha][question1]" id="FnFichaQuestion11" value="1">
+					Sozinho
+				</label>
+				<label class="radio inline">
+					<input type="radio" name="data[FnFicha][question1]" id="FnFichaQuestion12" value="2">
+					Contratar Pessoas
+				</label>
 			<div class="clearfix" style="margin-top:20px"></div>
 			<p>2) <abbr data-toggle="tooltip" title="O risco de um negócio, será quase sempre proporcional à qualidade dos ganhos que ele poderá apresentar e sempre será proporcional à quantidade de responsabilidade que<br/>exigirá de você." data-html="true" data-container="body" data-trigger="hover" data-placement="right"><strong>Grau do risco</strong></abbr> que está disposto a correr:</p>
 			<div class="clearfix"></div>
 			<label class="radio inline">
-				<input type="radio" name="optionsRadios1" id="inlineCheckbox3" value="option3">
-				Alto </label>
-			<label class="radio inline">
-				<input type="radio" name="optionsRadios1" id="inlineCheckbox4" value="option4">
-				Médio </label>
-			<label class="radio inline">
-				<input type="radio" name="optionsRadios1" id="inlineCheckbox5" value="option5">
-				Baixo </label>
+					<input type="radio" name="data[FnFicha][question2]" id="FnFichaQuestion23" value="3">
+					Alto
+				</label>
+				<label class="radio inline">
+					<input type="radio" name="data[FnFicha][question2]" id="FnFichaQuestion22" value="2">
+					Médio
+				</label>
+				<label class="radio inline">
+					<input type="radio" name="data[FnFicha][question2]" id="FnFichaQuestion21" value="1">
+					Baixo
+				</label>
 			<div class="clearfix" style="margin-top:20px"></div>
 			<p>3) <abbr data-toggle="tooltip" data-container="body" title="Cada setor tem características próprias e, em geral, depende muito da experiência ou habilidade que você já possui. Uma dica é analisar mais de uma vez as possibilidades de negócio, utilizando o autoatendimento quantas vezes forem necessárias, até chegar a uma conclusão satisfatória." data-html="true" data-trigger="hover" data-placement="right"><strong>Setor</strong></abbr> no qual pretende atuar:</p>
 			<div class="clearfix"></div>
 			<label class="radio inline">
-				<input type="radio" name="optionsRadios2" id="inlineCheckbox6" value="option6">
+					<input type="radio" name="data[FnFicha][question3]" id="FnFichaQuestion33" value="3">
 				<abbr data-container="body" data-toggle="tooltip" title="empresa criada para produzir/processar algum tipo de produto." data-html="true" data-trigger="hover" data-placement="right">Indústria</abbr> </label>
 			<label class="radio inline">
-				<input type="radio" name="optionsRadios2" id="inlineCheckbox7" value="option7">
+					<input type="radio" name="data[FnFicha][question3]" id="FnFichaQuestion32" value="2">
 				<abbr data-container="body" data-toggle="tooltip" title="empresa criada para comprar e vender produtos." data-html="true" data-trigger="hover" data-placement="right">Comércio</abbr> </label>
 			<label class="radio inline">
-				<input type="radio" name="optionsRadios2" id="inlineCheckbox8" value="option8">
+				<input type="radio" name="data[FnFicha][question3]" id="FnFichaQuestion34" value="4">
 				<abbr data-container="body" data-toggle="tooltip" title="empresa criada para prestar serviços a terceiros." data-html="true" data-trigger="hover" data-placement="right">Serviços</abbr> </label>
 			<label class="radio inline">
-				<input type="radio" name="optionsRadios2" id="inlineCheckbox9" value="option9">
+				<input type="radio" name="data[FnFicha][question3]" id="FnFichaQuestion31" value="1">
 				<abbr data-toggle="tooltip" title="empresa criada para plantar/produzir e/ou processar produtos hortifrutigranjeiros." data-html="true" data-trigger="hover" data-placement="right">Agronegócio</abbr> </label>
 			<div class="clearfix" style="margin-top:20px"></div>
 			<p>4) <abbr data-container="body" data-toggle="tooltip" title="Digite o valor aproximado que você deseja investir em seu negócio, não se preocupe com a exatidão do valor, o sistema buscará fichas com valores menores e aproximados<br/>ao valor mencionado." data-html="true" data-trigger="hover" data-placement="right"><strong>Quanto</strong></abbr> você tem para investir no negócio:
-				<input type="text" class="form-slide"/>
+				<input type="text" name="data[FnFicha][question4]" size="15" id="FnFichaQuestion4" onpaste="return false;" class="form-slide"/>
 			</p>
+			</form>
 		</div>
-		<a href="javascript:void()" class="btn pull-right">Enviar</a> </section>
+		<a href="#" class="btn pull-left" onclick="$.deck('go',2);$('#naotemideia')[0].reset();return false;">Voltar</a>
+		<a href="#" class="btn pull-right" id="pesquisarNaoTemIdeia">Pesquisar</a>
+	</section>
+
+
+
+
+	<!--slide 8 fichas selecionadas-->
 	<section class="slide">
 		<h2>Selecione as ideias de negócio </h2>
-		<div class="scroll" style="height:290px; margin-bottom:10px">
+		<div class="scroll" style="height:290px; margin-bottom:10px" id="fichasJaSelecionadas">
 			<p>Sugerimos a você as seguintes ideias de negócio, das quais você poderá selecionar até 5 para continuar<br/>
 				o programa.</p>
 			<div class="clearfix" style="margin-top:20px"></div>
@@ -159,8 +206,12 @@
 			<p>Leia atentamente as fichas técnicas e selecione até 5 ideias que mais lhe interessem para comparar com seu perfil empreendedor no questionário a seguir. </p>
 			<p>Se preferir, você ainda pode selecionar mais algumas ideias, pelo botão “Buscar Novamente”. </p>
 		</div>
-		<a href="javascript:void()" class="btn pull-left">Buscar novamente</a><a href="javascript:void()" class="btn pull-right">Questionário</a> </section>
-	<section class="slide">
+		<a href="#" class="btn pull-left" onclick="$.deck('go',2);return false;">Voltar</a>
+		<a href="#" class="btn pull-left btnBuscarNovamente">Buscar novamente</a>
+		<a href="#" class="btn pull-right" onclick="return loadQuestionario();">Continuar</a>
+ </section>
+<!--	
+<section class="slide">
 		<h2>Compare suas ideias de negócio</h2>
 		<div class="row-fluid">
 			<div class="span6">
@@ -202,11 +253,12 @@
 					E - IDEIA 5</p>
 			</div>
 		</div>
-	</section>
+	</section>-->
+<!--slide 9 questionario-->
 	<section class="slide">
 		<h2>Questionário</h2>
 		<div class="clearfix"></div>
-		<div class="scroll" style="height:300px; margin-bottom:10px">
+		<div class="scroll" style="height:290px; margin-bottom:10px" id="pontuarFichas">
 			<table class="table table-hover table-bordered table-striped">
 				<thead>
 					<tr>
@@ -352,25 +404,36 @@
 				</tbody>
 			</table>
 		</div>
-		<a href="javascript:void()" class="btn pull-right">Enviar</a> </section>
+		<a href="#" class="btn pull-left" onclick="$.deck('go',7);return false;">Voltar</a>
+		<a href="#" class="btn pull-right" id="enviarPesquisa">Enviar</a>
+	</section>
+	<!--slide 10 resultado questionario-->
 	<section class="slide">
 		<h2>Resultado - Pontuação</h2>
-		<p>Agora que você tem a soma dos pontos de cada ideia, observe a seguir em que consideração a pontuação de cada uma se encaixa, de acordo com o Índice de Aconselhabilidade (IA):</p>
-		<p>IDEIA 1 - <strong>XX pontos – IA XX</strong><br/>
-			IDEIA 2 - <strong>XX pontos – IA XX</strong><br/>
-			IDEIA 3 - <strong>XX pontos – IA XX</strong> <br/>
-			IDEIA 4 - <strong>XX pontos – IA XX</strong><br/>
-			IDEIA 5 - <strong>XX pontos – IA XX</strong></p>
-		<div class="clearfix"></div>
-		<div class="bullets_div bulletanima_div">
-			<div class="bullet_div">A ideia que somar um número maior ou igual a 60 pontos está de acordo com o seu perfil pessoal.</div>
-			<div class="bullet_div">Entre 40 e 59 pontos a ideia precisa ser melhor trabalhada, pois apresenta alguns fatores que não estão de acordo com o seu perfil pessoal. Então reveja onde e por que sua pontuação foi baixa.</div>
-			<div class="bullet_div">Abaixo de 40 pontos a ideia não está de acordo com o seu perfil pessoal. Sugerimos que você procure uma outra ideia mais alinhada com suas características pessoais.</div>
+		<div class="scroll" style="height:290px; margin-bottom:10px">
+			<p>Agora que você tem a soma dos pontos de cada ideia, observe a seguir em que consideração a pontuação de cada uma se encaixa, de acordo com o Índice de Aconselhabilidade (IA):</p>
+			<p id="somatorioFichas">IDEIA 1 - <strong>XX pontos – IA XX</strong><br/>
+				IDEIA 2 - <strong>XX pontos – IA XX</strong><br/>
+				IDEIA 3 - <strong>XX pontos – IA XX</strong> <br/>
+				IDEIA 4 - <strong>XX pontos – IA XX</strong><br/>
+				IDEIA 5 - <strong>XX pontos – IA XX</strong>
+			</p>
+			<div class="clearfix"></div>
+			<div class="bullets_div bulletanima_div">
+				<div class="bullet_div">A ideia que somar um número maior ou igual a 60 pontos está de acordo com o seu perfil pessoal.</div>
+				<div class="bullet_div">Entre 40 e 59 pontos a ideia precisa ser melhor trabalhada, pois apresenta alguns fatores que não estão de acordo com o seu perfil pessoal. Então reveja onde e por que sua pontuação foi baixa.</div>
+				<div class="bullet_div">Abaixo de 40 pontos a ideia não está de acordo com o seu perfil pessoal. Sugerimos que você procure uma outra ideia mais alinhada com suas características pessoais.</div>
+			</div>
 		</div>
+		<a href="#" class="btn pull-left" id="reAvaliarFichas">Refazer Avaliação</a>
+		<a href="#" class="btn pull-right" id="pontuacaoAvancar">Avançar</a>
 	</section>
+
+
+	<!--slide 11-->
 	<section class="slide">
 		<h2>Resultado – O que fazer?</h2>
-		<div class="row-fluid">
+		<div class="row-fluid scroll" style="height:315px; margin-bottom:10px">
 			<div class="span6">
 				<p>Caso você tenha duas ou mais ideias com a mesma pontuação, então escolha aquela que você considera mais interessante. Caso todas as ideias tenham menos de 40 pontos, você tem quatro opções:</p>
 				<div class="clearfix"></div>
@@ -383,23 +446,26 @@
 			</div>
 			<div class="span6">
 				<p>Se você estiver de acordo com os resultados, clique em "continuar" para prosseguir, mas caso ainda esteja com dúvidas, poderá refazer a avaliação e avaliar novas ideias de negócios.</p>
-				 
-				<label class="radio">
-					<input type="radio" name="a1" value="">
-					IDEIA 1 - <strong>XX pontos – IA XX</strong> </label>
-				<label class="radio">
-					<input type="radio" name="a1" value="">
-					IDEIA 2 - <strong>XX pontos – IA XX</strong> </label>
-				<label class="radio">
-					<input type="radio" name="a1" value="">
-					IDEIA 3 - <strong>XX pontos – IA XX</strong> </label>
-				<label class="radio">
-					<input type="radio" name="a1" value="">
-					IDEIA 4 - <strong>XX pontos – IA XX</strong> </label>
-				<label class="radio">
-					<input type="radio" name="a1" value="">
-					IDEIA 5 - <strong>XX pontos – IA XX</strong> </label>
-				<a style="margin-top:20px" href="javascript:void()" class="btn pull-left">Refazer avaliação</a><a style="margin-top:20px" href="javascript:void()" class="btn pull-right">Continuar</a> </div>
+				<div class="clearfix"></div>
+				<span id="somatorioFichas2">
+					<label class="radio">
+						<input type="radio" name="a1" value="">
+						IDEIA 1 - <strong>XX pontos – IA XX</strong>
+					</label>
+					<label class="radio">
+						<input type="radio" name="a1" value="">
+						IDEIA 2 - <strong>XX pontos – IA XX</strong> </label>
+					<label class="radio">
+						<input type="radio" name="a1" value="">
+						IDEIA 3 - <strong>XX pontos – IA XX</strong> </label>
+					<label class="radio">
+						<input type="radio" name="a1" value="">
+						IDEIA 4 - <strong>XX pontos – IA XX</strong> </label>
+					<label class="radio">
+						<input type="radio" name="a1" value="">
+						IDEIA 5 - <strong>XX pontos – IA XX</strong> </label>
+				</span>
+				<a href="#" class="btn" id="selecaoIdeia">Enviar</a> </div>
 		</div>
 	</section>
 	<section class="slide">
