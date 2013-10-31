@@ -2619,8 +2619,17 @@ e{overflow:visible;}
 	-moz-transform-origin: 50% 50%;
 	-ms-transform-origin: 50% 50%;
 	-o-transform-origin: 50% 50%;
+	transform-origin: 50% 50%;
 	-webkit-animation: pulsate 1s ease-out;
+	-moz-animation: pulsate 1s ease-out;
+	-ms-animation: pulsate 1s ease-out;
+	-o-animation: pulsate 1s ease-out;
+	animation: pulsate 1s ease-out;
 	-webkit-animation-iteration-count: infinite;
+	-moz-animation-iteration-count: infinite;
+	-ms-animation-iteration-count: infinite;
+	-o-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
 	-webkit-border-radius: 30px;
 	-moz-border-radius: 30px;
 	-ms-border-radius: 30px;
@@ -2642,6 +2651,67 @@ filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
  opacity: 0.0;
 }
 }
+ @-moz-keyframes pulsate {
+0% {
+ -moz-transform: scale(0.1, 0.1);
+ opacity: 0.0;
+}
+ 50% {
+ opacity: 1.0;
+}
+ 100% {
+ -moz-transform: scale(1.2, 1.2);
+ opacity: 0.0;
+}
+}
+ @-o-keyframes pulsate {
+0% {
+ -o-transform: scale(0.1, 0.1);
+ opacity: 0.0;
+}
+ 50% {
+ opacity: 1.0;
+}
+ 100% {
+ -o-transform: scale(1.2, 1.2);
+ opacity: 0.0;
+}
+}
+ @-ms-keyframes pulsate {
+0% {
+ -ms-transform: scale(0.1, 0.1);
+ opacity: 0.0;
+}
+ 50% {
+ opacity: 1.0;
+}
+ 100% {
+ -ms-transform: scale(1.2, 1.2);
+ opacity: 0.0;
+}
+}
+ @keyframes pulsate {
+0% {
+ transform: scale(0.1, 0.1);
+ opacity: 0.0;
+}
+ 50% {
+ opacity: 1.0;
+}
+ 100% {
+ transform: scale(1.2, 1.2);
+ opacity: 0.0;
+}
+}
+
+
+
+
+
+
+
+
+
 .deck-container > .slide {
 	/* text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5); */
 }
