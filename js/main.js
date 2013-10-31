@@ -104,6 +104,11 @@ $(function() {
 			app.ativaScroll();
 			
 			app.rejeitarBrowser();
+			
+		  $('input').iCheck({
+			checkboxClass: 'icheckbox_flat-blue',
+			radioClass: 'iradio_flat-blue'
+		  });
 
 		},
 
@@ -747,6 +752,11 @@ $(function() {
 							app.acordeom();
 							app.initTabEvent();
 							app.ativaScroll();
+							
+		  $('input').iCheck({
+			checkboxClass: 'icheckbox_flat-blue',
+			radioClass: 'iradio_flat-blue'
+		  });
 							/*
 						addthis.init();
 						addthis.toolbox('.addthis_toolbox');
@@ -791,6 +801,10 @@ $(function() {
 	app.initTabEvent();
 	app.ativaScroll();
 
+		  $('input').iCheck({
+			checkboxClass: 'icheckbox_flat-blue',
+			radioClass: 'iradio_flat-blue'
+		  });
 						/*addthis.init();
 						addthis.toolbox('.addthis_toolbox');
 */

@@ -1241,7 +1241,7 @@ padding: 10px 0;
 /* ==========================================================================
    RESET
    ========================================================================== */
-   label{font-size:18px}
+   label{font-size:18px;padding-left: 0!important;}
    
    .hide-tooltip{
     margin: -20px!important;
