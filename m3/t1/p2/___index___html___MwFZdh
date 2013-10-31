@@ -446,26 +446,23 @@
 			</div>
 			<div class="span6">
 				<p>Se você estiver de acordo com os resultados, clique em "continuar" para prosseguir, mas caso ainda esteja com dúvidas, poderá refazer a avaliação e avaliar novas ideias de negócios.</p>
-				<div class="clearfix"></div>
-				<span id="somatorioFichas2">
-					<label class="radio">
-						<input type="radio" name="a1" value="">
-						IDEIA 1 - <strong>XX pontos – IA XX</strong>
-					</label>
-					<label class="radio">
-						<input type="radio" name="a1" value="">
-						IDEIA 2 - <strong>XX pontos – IA XX</strong> </label>
-					<label class="radio">
-						<input type="radio" name="a1" value="">
-						IDEIA 3 - <strong>XX pontos – IA XX</strong> </label>
-					<label class="radio">
-						<input type="radio" name="a1" value="">
-						IDEIA 4 - <strong>XX pontos – IA XX</strong> </label>
-					<label class="radio">
-						<input type="radio" name="a1" value="">
-						IDEIA 5 - <strong>XX pontos – IA XX</strong> </label>
-				</span>
-				<a href="#" class="btn" id="selecaoIdeia">Enviar</a> </div>
+				 
+				<label class="radio">
+					<input type="radio" name="a1" value="">
+					IDEIA 1 - <strong>XX pontos – IA XX</strong> </label>
+				<label class="radio">
+					<input type="radio" name="a1" value="">
+					IDEIA 2 - <strong>XX pontos – IA XX</strong> </label>
+				<label class="radio">
+					<input type="radio" name="a1" value="">
+					IDEIA 3 - <strong>XX pontos – IA XX</strong> </label>
+				<label class="radio">
+					<input type="radio" name="a1" value="">
+					IDEIA 4 - <strong>XX pontos – IA XX</strong> </label>
+				<label class="radio">
+					<input type="radio" name="a1" value="">
+					IDEIA 5 - <strong>XX pontos – IA XX</strong> </label>
+				<a style="margin-top:20px" href="javascript:void()" class="btn pull-left">Refazer avaliação</a><a style="margin-top:20px" href="javascript:void()" class="btn pull-right">Continuar</a> </div>
 		</div>
 	</section>
 	<section class="slide">
