@@ -1071,6 +1071,13 @@ top: 0;
     width:800px;
     margin-left:-400px
 }
+.modal-conteudoxG {
+	color: #FFF;
+	font-size: 17px;
+	background: url(../img/bg_menu.jpg);
+    width:920px;
+    margin-left:-460px
+}
 
 .modal-conteudo .modal-body a{color:#fff;text-decoration: underline;}
 .modal-curso .modal-header{border-bottom:2px dashed #eee}
