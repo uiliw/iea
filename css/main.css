@@ -1046,10 +1046,10 @@ top: 0;
 }
 
 .modal-curso.fade.in {
-	top: 50%!important;
+	/*top: 50%!important;*/
 }
 .modal.fade.in {
-	top: 46%;
+	/*top: 46%;*/
 	margin-top: -311px;
 }
 .modal.fade {
