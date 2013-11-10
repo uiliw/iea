@@ -1075,9 +1075,10 @@ top: 0;
 	color: #FFF;
 	font-size: 17px;
 	background: url(../img/bg_menu.jpg);
-    width:920px;
-    margin-left:-460px
-}
+    
+	width: 960px;
+    
+	margin-left: -480px;}
 
 .modal-conteudo .modal-body a{color:#fff;text-decoration: underline;}
 .modal-curso .modal-header{border-bottom:2px dashed #eee}
@@ -1925,6 +1926,16 @@ header {
    
    .filled{
 	   background: #fff!important;
+
+	   color: #007bc3;
+   
+	   padding: 8px!important; 
+	   line-height: 20px!important; 
+	   font-size: 18px;
+	   font-weight: bold;
+}
+.filled2{
+	   background: #F1F1F1!important;
 
 	   color: #007bc3;
    
