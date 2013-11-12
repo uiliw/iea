@@ -2537,6 +2537,7 @@ e{overflow:visible;}
 	font-size: 40px;
 	margin: 0 0 30px;
 	color: #007bc3;
+	text-transform: uppercase;
 }
 .intro p {
 	text-align: justify;
