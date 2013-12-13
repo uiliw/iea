@@ -1139,7 +1139,7 @@ top: 0;
 	  left: 0;
 	  border-width: .5em 0 0 .5em;
 	}
-.scroll{position:relative; overflow:hidden;}
+.scroll{position:relative; overflow:hidden;padding-right: 15px;margin-right: -15px;}
 .modal-curso p{ padding:0px 30px; font-size: 15px;}
 .modal-curso .modal-body{ overflow: hidden; padding: 0;}
 .modal-curso .nav-tabs {
@@ -1631,7 +1631,7 @@ transform: scale(1);
    .form-slide{-webkit-box-shadow: none!important;
 -moz-box-shadow:  none!important;
 box-shadow:  none!important;
-background-color: transparent!important;border-left: none!important;border-top: none!important;border-right: none!important;border-bottom: 1px solid #333!important;margin-bottom: 5px!important;width: inherit!important;}
+background-color: transparent!important;margin-bottom: 5px!important;width: inherit!important;border: #3498db 2px solid!important;}
 .direita {
 	float: right
 }
