@@ -1645,7 +1645,6 @@ background-color: transparent!important;margin-bottom: 5px!important;width: inhe
 	position: relative;
 	max-width: 100%;
 	float: left;
-	padding-bottom: 5px;
 }
 .sombra-img img {
 	margin: 0!important;
@@ -1654,7 +1653,7 @@ background-color: transparent!important;margin-bottom: 5px!important;width: inhe
 	content: "";
 	position: absolute;
 	top: 0;
-	bottom: 4px;
+	bottom: 0;
 	left: 0;
 	right: 0;
 	box-shadow: inset 0 0 8px rgba(0,0,0,.6);

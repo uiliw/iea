@@ -336,7 +336,7 @@ $(function() {
 		//OBS.: ADICIONAR OS VALORES COM OS ATRIBUTOS DE DATA NOS LINKS COM CLASSE ABRE_MODAL
 		initTrilhaEvent: function() {
 
-			$('.menu_trilha').on('click', 'a.abre_modal', function(e) {
+			$('a.abre_modal').click(function(e){
 
 				e.preventDefault();
 				var linkAbreModal = $(this);
@@ -640,7 +640,7 @@ $(function() {
 		//INICIALIZA EVENTO PARA MARCAR AS TRILHAS ATIVAS AO CLICAR
 		highlight: function() {
 
-			$('.paradas li a').click(function() {
+			$('a.parada').click(function() {
 				var $this = $(this);
 				$this.closest('ul').children('li').find('a').removeClass('ativo');
 				$this.addClass('ativo');
@@ -748,10 +748,11 @@ $(function() {
 							app.paraCarrossel();
 
 							app.initPopupTwitter();
-
+							app.initTrilhaEvent();
 							app.acordeom();
 							app.initTabEvent();
 							app.ativaScroll();
+							app.loadAjax();
 							
 		  $('input').iCheck({
 			checkboxClass: 'icheckbox_flat-blue',
@@ -792,7 +793,8 @@ $(function() {
 	});
 	//$.deck('getContainer').off('touchstart.deck touchmove.deck touchend.deck');
 	app.initTooltip();
-
+	app.initTrilhaEvent();
+	app.loadAjax();
 	app.paraCarrossel()
 
 	app.initPopupTwitter();
