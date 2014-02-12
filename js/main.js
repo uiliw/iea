@@ -516,6 +516,12 @@ $(function() {
 
 					$cor = $('.flex-active-slide .flex-caption').data('cor');
 					$('header').css('border-bottom', $cor);
+					$('.menu_janela').css('background-color', $cor);
+					
+					$('.tri_e').css('border-color', $cor+' transparent transparent transparent');
+					$('.tri_d').css('border-color', 'transparent transparent '+$cor+' transparent');
+					
+					$('.flex-control-nav').css('background-color', $cor);
 					$activecaption = $('.flex-active-slide .flex-caption');
 					$captions.html($activecaption.text());
 
@@ -748,11 +754,11 @@ $(function() {
 							app.paraCarrossel();
 
 							app.initPopupTwitter();
-							app.initTrilhaEvent();
+							//app.initTrilhaEvent();
 							app.acordeom();
 							app.initTabEvent();
 							app.ativaScroll();
-							app.loadAjax();
+							//app.loadAjax();
 							
 		  $('input').iCheck({
 			checkboxClass: 'icheckbox_flat-blue',
@@ -793,8 +799,8 @@ $(function() {
 	});
 	//$.deck('getContainer').off('touchstart.deck touchmove.deck touchend.deck');
 	app.initTooltip();
-	app.initTrilhaEvent();
-	app.loadAjax();
+	//app.initTrilhaEvent();
+	//app.loadAjax();
 	app.paraCarrossel()
 
 	app.initPopupTwitter();

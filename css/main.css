@@ -43,7 +43,7 @@
 		LOGIN
 *******************************************/
 body.login{ background-image: none;}
-body.login header{ border-bottom: 0px none transparent; border-top:none; height: auto; padding: 20px 0; position: relative; margin-bottom: 70px;}
+body.login header{ border-bottom: 0px none transparent; border-top:none; height: auto; padding: 20px 0; position: relative; top: 0; margin-bottom: 30px;}
 .logo-negocio{ margin:0 auto; display: block;}
 
 .painel-login{}
@@ -59,7 +59,7 @@ padding-left: 0;
 	display: block;
 	margin: 0 auto;
 }
-.painel-login h3{color: #007ac3;font-weight: normal;}
+.painel-login h3{color: #186087;font-weight: normal;}
 .painel-login .tab-content {
 padding: 0;
 }
@@ -822,7 +822,7 @@ top: 0;
 *******************************************/
 
 .menu_janela {
-	background: url(../img/bg_menu.jpg);
+	background-color: #65babc;
 	position: absolute;
 	top: 398px;
 	left: 1200px;
@@ -832,13 +832,21 @@ top: 0;
 	display: none;
 }
 .menu_janela:before {
-	width: 22px;
-	height: 22px;
-	content: url(../img/seta_esq.png);
-	position: absolute;
-	left: -22px;
-	top: 200px;
-	overflow: hidden;
+	width: 0px;
+height: 0px;
+border-style: solid;
+
+	border-width: 0 0 30px 40px;
+border-color: transparent transparent #65babc transparent;
+_border-color: #000000 #000000 #51be7a #000000;
+line-height: 0px;
+_filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000');
+content: "";
+
+	top: 150px;
+
+	left: -40px;
+position: absolute;
 }
 .titulo_menu_janela {
 	margin: 10px 20px 0 20px;
@@ -892,7 +900,7 @@ top: 0;
 	background-color: rgba(0,0,0,.2);
 	width: auto;
 	float: right;
-	margin: 34px 5px 5px;
+	margin: 10px 5px;
 	color: #fff;
 	line-height: 35px;
 	cursor: pointer
@@ -1258,7 +1266,7 @@ padding: 10px 0;
 .no-padding{padding:0!important;}
 select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
 display: inline-block;
-padding: 4px 6px;
+padding: 18px 6px;
 margin-bottom: 10px;
 font-size: 14px;
 line-height: 20px;
@@ -1267,7 +1275,9 @@ vertical-align: middle;
 -webkit-border-radius: 0px;
 -moz-border-radius: 0px;
 border-radius: 0px;
-background-color: #f2f2f2;
+background-color: #FFFFFF;
+box-shadow: none;
+border-color: #186087;
 }
 
 textarea {
@@ -1278,6 +1288,20 @@ background-image: none;
 border-radius: 0;
 }
 
+.btn-primary{
+    background-color: #186087;
+	
+    border: none;
+    border-bottom: 2px solid #1c7abc;
+    padding: 10px 20px;
+}
+.btn-success{
+    background-color: #8fa70d;
+	
+    border: none;
+    border-bottom: 2px solid #C6E90A;
+    padding: 10px 20px;
+}
 
    a.btn-primary,a.btn-primary i {
 color: #fff!important;
@@ -1785,11 +1809,45 @@ header {
 	position: fixed;
 	z-index: 1;
 	top: 40px;
-	width: 100%!important;
 	border-top: 2px solid #26a3ef;
 	border-bottom-style: solid!important;
-	border-bottom-color: #bd676c;
+	border-bottom-color: #65babc;
 	border-bottom-width: 5px!important;
+	left: 0;
+	right: 0;
+}
+
+.tri_e{
+	width: 0px;
+height: 0px;
+border-style: solid;
+
+	border-width: 70px 70px 0 0;
+
+	border-color: #65babc transparent transparent transparent;
+_border-color: #65babc #000000 #000000 #000000;
+line-height: 0px;
+_filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000');
+content: "";
+top: 0;
+left: 0;
+position: absolute;
+}
+.tri_d{
+	width: 0px;
+height: 0px;
+border-style: solid;
+
+	border-width: 0 0 70px 70px;
+
+	border-color:  transparent transparent #65babc transparent;
+_border-color: #000000 #000000 #51be7a #000000;
+line-height: 0px;
+_filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000');
+content: "";
+top: 0;
+right: 0;
+position: absolute;
 }
 .brand {
 	margin: 10px 0;
@@ -1809,24 +1867,22 @@ header {
 }
 .titulo-trilhas {
 	color: #fff;
-	float: right;
-	margin-bottom: 0;
-	line-height: 27px;
-	margin-top: 0;
+	float: left;
+	margin: -8px 0 0 70px;
 	font-weight: normal;
+	font-size: 27px;
 }
 .sub-titulo-trilhas {
-	color: #dcb452;
-	margin: 20px;
+	color: #fff;
 	float: right;
-	margin: 4px 0 0;
+	margin: -3px 70px 0 0;
 	font-weight: normal;
 	line-height: 30px;
+	font-size: 20px;
 }
 .titulos {
-	float: right
-;
-	margin-right: 100px;
+	width: 100%;
+	margin-top: 23px;
 }
 .ajuda {
 	float: right;
@@ -1868,7 +1924,7 @@ header {
 }
 .home-ico{float: left;}
 .home{float: left;position: fixed;top: -5px;z-index: 100;left: 50px;}
-.home p{ color:#000; background-color:#d2b64f; padding: 5px 15px; border-radius: 0 0 10px 10px; margin-left: 55px;}
+.home p{ color: #fff; background-color: #186087; padding: 5px 15px; border-radius: 0 0 10px 10px; margin-left: 30px;}
 
 .btn-navbar {
   position: absolute;
