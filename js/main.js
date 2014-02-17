@@ -129,19 +129,24 @@ $(function () {
 			//Funcionalidade navegação do sistema
 			var momento = 2;
 			var trilha = 't'+4;
-			var parada = 0;
-			var aula = 0;
+			var parada = 2;
+			var aula = 4;
 			
 			if ( document.location.href.indexOf('?funcionalidade') > -1 ) {
-				$('.flexslider').flexslider(momento-1);
-				setTimeout(function(){
+				$('.flexslider').flexslider(momento-1); //vai para o mapa
+				setTimeout(function(){//clica no predio
 					$('.view'+momento).find('.zoomTarget.'+trilha).click();
-					setTimeout(function(){
+					setTimeout(function(){//abre a trilha
 						$('.flexslider').find('a[data-trilha="' + trilha + '"]').click();	
-						
-					setTimeout(function(){	
-						$('#modalPesquisa-Funcionalidade').modal('show');
-					},500)
+						setTimeout(function(){//abre a parada
+							$('#paradas').find('a[data-parada="p' + parada + '"]').click();
+							setTimeout(function(){//abre aula
+								$.deck('go',aula);
+								setTimeout(function(){	
+									$('#modalPesquisa-Funcionalidade').modal('show');
+								},500)
+							},3000)
+						},500);
 					},1000)
 				},1000);
 			
