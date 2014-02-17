@@ -130,7 +130,7 @@ $(function () {
 			var momento = 2;
 			var trilha = 't'+4;
 			var parada = 2;
-			var aula = 4;
+			var aula = 5;
 			
 			if ( document.location.href.indexOf('?funcionalidade') > -1 ) {
 				$('.flexslider').flexslider(momento-1); //vai para o mapa
@@ -141,7 +141,7 @@ $(function () {
 						setTimeout(function(){//abre a parada
 							$('#paradas').find('a[data-parada="p' + parada + '"]').click();
 							setTimeout(function(){//abre aula
-								$.deck('go',aula);
+								$.deck('go',aula+1);
 								setTimeout(function(){	
 									$('#modalPesquisa-Funcionalidade').modal('show');
 								},500)
