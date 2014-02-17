@@ -123,7 +123,7 @@ $(function () {
 		},
 		
 		
-		parou: function() {
+		parouAonde: function() {
 		
 			
 			//Funcionalidade navegação do sistema
@@ -985,7 +985,7 @@ $(function () {
     $.imgpreload(images, {
         all: function () {
             app.init();
-			app.parou();
+			app.parouAonde();
         }
     })
 
