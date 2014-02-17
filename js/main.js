@@ -1,7 +1,9 @@
 var app = {};
 
 $(function () {
-
+	
+	
+			
     //PONTUAÇÃO
     var pontuacao = 80;
 
@@ -101,6 +103,9 @@ $(function () {
             //INICIALIZA O BOX DE PONTOS
             app.pontos();
 
+            //INICIALIZA O BOX DE PONTOS
+            app.pesquisa();
+
             app.ativaScroll();
 
             app.rejeitarBrowser();
@@ -111,6 +116,100 @@ $(function () {
             });
 
         },
+		
+		fechaModal: function(){
+					$('#modalPesquisa-Aplicabilidade').modal('hide');
+					$('#modal').modal('hide');
+		},
+		
+		
+		parou: function() {
+		
+			
+			//Funcionalidade navegação do sistema
+			var momento = 2;
+			var trilha = 't'+4;
+			var parada = 0;
+			var aula = 0;
+			
+			if ( document.location.href.indexOf('?funcionalidade') > -1 ) {
+				$('.flexslider').flexslider(momento-1);
+				setTimeout(function(){
+					$('.view'+momento).find('.zoomTarget.'+trilha).click();
+					setTimeout(function(){
+						$('.flexslider').find('a[data-trilha="' + trilha + '"]').click();	
+						
+					setTimeout(function(){	
+						$('#modalPesquisa-Funcionalidade').modal('show');
+					},500)
+					},1000)
+				},1000);
+			
+				
+			}
+				
+		},
+		pesquisa: function() {
+				
+				
+			//Satisfação
+			if ( document.location.href.indexOf('?satisfacao') > -1 ) {
+				$('#modalSatisfacao').modal('show');
+			}
+			
+			//Aplicabilidade conteúdo 
+			$('.fechar_conteudo_janela').click(function(e){
+				e.preventDefault();
+				
+				
+				if ( document.location.href.indexOf('?aplicabilidade') > -1 ) {
+					$('#modalPesquisa-Aplicabilidade').modal('show');
+					$('#modalPesquisa-Aplicabilidade-Sim').click(function(){
+						//envia função pro lms
+						
+						app.fechaModal()
+					});
+					$('#modalPesquisa-Aplicabilidade-Nao').click(function(){
+						//envia função pro lms
+						
+						app.fechaModal()
+					});	
+				}else{
+					app.fechaModal()
+				};
+				
+				
+			});	
+			
+			//Atendimento
+			if ( document.location.href.indexOf('?atendimento') > -1 ) {
+				$('#biblioteca').on('hide', function(){
+					$('#modalPesquisa-Atendimento').modal('show');				
+					$('#modalPesquisa-Atendimento-Sim').click(function(){
+						//envia função pro lms
+					});
+					$('#modalPesquisa-Atendimento-Nao').click(function(){
+						//envia função pro lms
+					});		
+				});
+			};
+			
+			//Modelo aplicado
+			if ( document.location.href.indexOf('?modelo') > -1 ) {
+			$('#sair').click(function(e){
+				e.preventDefault();
+				$('#modalPesquisa-Modelo').modal('show');
+			});		
+			$('#modalPesquisa-Modelo-Sim').click(function(){
+				//envia função pro lms
+				window.location = 'login.html';
+			});
+			$('#modalPesquisa-Modelo-Nao').click(function(){
+				//envia função pro lms
+				window.location = 'login.html';
+			});	
+			}
+		},
 
         pontos: function () {
 
@@ -364,6 +463,7 @@ $(function () {
                         app.highlight();
                         app.initTabEvent();
                         app.initProximaParada();
+						app.pesquisa();
                     }, 400);
 
 
@@ -724,23 +824,32 @@ $(function () {
 		initProximaParada: function(){
 			$('a.proxima-parada').click(function(e){
 				e.preventDefault();
-				$parada = $(this).data('parada');
-				$('#paradas').find("[data-parada='" + $parada + "']").click();
+				var parada = $(this).data('parada');
+				$('#paradas').find("[data-parada='" + parada + "']").click();
 				return false
 			})
-			$('a.proxima-trilha').click(function(e){
-				e.preventDefault();
-				$trilha_mapa = $(this).data('momento').substr(1, 2)-1;
-				$trilha_momento = $(this).data('momento');
-				$trilha_trilha = $(this).data('trilha');
+			
+			$('a.proxima-trilha').click(function(){
+				var view = $(this).data('momento').substr(1, 2);
+				var mapa = $(this).data('momento').substr(1, 2)-1;
+				var momento = $(this).data('momento');
+				var trilha = $(this).data('trilha');
+				
 				$('#modal').modal('hide');
-				setInterval(function(){
-					//$('.flexslider').flexslider($trilha_mapa);
-					//$('.flexslider').find("a.abre_modal[data-momento='" + $trilha_momento + "'][data-trilha='" + $trilha_trilha + "']").click();
+				$('.view'+view).click();
+				
+				/*if(view == mapa){
+					}else{
+				$('.view'+view+1).click();
+						}
+				*/
+				setTimeout(function(){
+					$('.flexslider').flexslider(mapa);
+					$('.view'+view).find('.zoomTarget.'+trilha).click();
 				},1000);
-				return false
 				
 			})
+			
 		},
 
         //ADICIONA O EVENTO DE CLICK NOS BOTOES DE PARADA, E CARREGA SEU CONTEUDO COM PRE-CARREGAMENTO DE IMAGENS
@@ -790,7 +899,7 @@ $(function () {
                             app.initTabEvent();
                             app.ativaScroll();
                             app.initProximaParada();
-	
+							
                             $('input').iCheck({
                                 checkboxClass: 'icheckbox_flat-blue',
                                 radioClass: 'iradio_flat-blue'
@@ -876,8 +985,7 @@ $(function () {
     $.imgpreload(images, {
         all: function () {
             app.init();
-			$('#modalSatisfacao').modal('show');
-			
+			app.parou();
         }
     })
 
