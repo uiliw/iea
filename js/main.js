@@ -141,7 +141,7 @@ $(function () {
 						setTimeout(function(){//abre a parada
 							$('#paradas').find('a[data-parada="p' + parada + '"]').click();
 							setTimeout(function(){//abre aula
-								$.deck('go',aula+1);
+								$.deck('go',aula-1);
 								setTimeout(function(){	
 									$('#modalPesquisa-Funcionalidade').modal('show');
 								},500)
