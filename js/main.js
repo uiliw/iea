@@ -136,17 +136,18 @@ $(function () {
 				$('.flexslider').flexslider(momento-1); //vai para o mapa
 				setTimeout(function(){//clica no predio
 					$('.view'+momento).find('.zoomTarget.'+trilha).click();
+					var $this = $('.view'+momento);
 					setTimeout(function(){//abre a trilha
-						$('.flexslider').find('a[data-trilha="' + trilha + '"]').click();	
+						$('.flex-active-slide').find('a[data-trilha="' + trilha + '"]').click();	
 						setTimeout(function(){//abre a parada
 							$('#paradas').find('a[data-parada="p' + parada + '"]').click();
 							setTimeout(function(){//abre aula
 								$.deck('go',aula-1);
 								setTimeout(function(){	
 									$('#modalPesquisa-Funcionalidade').modal('show');
-								},500)
+								},300)
 							},3000)
-						},500);
+						},3000);
 					},1000)
 				},1000);
 			
