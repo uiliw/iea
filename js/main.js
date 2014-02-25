@@ -369,6 +369,13 @@ $(function () {
         //INICIALIZA TOOLTIP
         initTooltip: function () {
             $('[data-toggle=tooltip]').tooltip();
+			$('body').on('click', function (e) {
+				$('[data-toggle=tooltip]').each(function () {
+					// hide any open popovers when the anywhere else in the body is clicked
+					if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.tooltip').has(e.target).length === 0) {
+						$(this).tooltip('hide');}
+				});
+			});
         },
 
         //INICIALIZA MENU LATERAL

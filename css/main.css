@@ -1379,16 +1379,29 @@ text-decoration:none!important;
 .no-margin {
 	margin: 0!important
 }
+.tooltip-inner:after {
+	content:"";
+	background: url(../img/bg_menu.jpg);
+	position:absolute;
+	left:0;
+	top:0;
+	right:0;
+	bottom:0;
+	opacity:.8;
+	z-index:-1
+}
 .tooltip-inner {
 	padding: 20px 30px;
 	font-size: 20px;
 	text-shadow: none;
-	background: url(../img/bg_menu.jpg);
 	-webkit-border-radius: 0;
 	-moz-border-radius: 0;
 	border-radius: 0;
 	max-width: 400px;
 	font-family: 'Anaheim', sans-serif;
+	position:relative;
+	background:none;
+	
 }
 .tooltip-inner a {
 	color: #eee!important
@@ -1397,15 +1410,19 @@ text-decoration:none!important;
 }
 .tooltip.right .tooltip-arrow {
 	border-right-color: #0d7a74;
+	opacity:.8;
 }
 .tooltip.top .tooltip-arrow {
 	border-top-color: #0d7a74;
+	opacity: .8;
 }
 .tooltip.left .tooltip-arrow {
 	border-left-color: #0d7a74;
+	opacity:.8;
 }
 .tooltip.bottom .tooltip-arrow {
 	border-bottom-color: #0d7a74;
+	opacity:.8;
 }
 .accordion-heading .accordion-toggle {
 	display: block;
@@ -1660,7 +1677,7 @@ transform: scale(1);
 	display: block
 }
 .carousel .item img {
-	margin-bottom: 0
+	margin: 0;
 }
 /* ==========================================================================
    GERAL
@@ -2250,6 +2267,8 @@ tfoot{background-color: #868686;font-weight: bold;}
 	margin: 0;
 	font-size: 17px;
 	text-shadow: none
+;
+	float: inherit;
 }
 .slide .carousel-caption p a {
 	color: #fff;
@@ -2608,7 +2627,7 @@ e{overflow:visible;}
 	float: none;
 	clear: both;
 }
-.prev {
+.prev_carou {
 	
 position: absolute;
 left: 10px;
@@ -2623,7 +2642,7 @@ height: 23px;
 text-align: center;
 padding-top: 7px;
 }
-.next {
+.next_carou {
 	position: absolute;
 	right: 10px;
 	top: 27px;
@@ -2637,7 +2656,7 @@ padding-top: 7px;
 	text-align: center;
 	padding-top: 7px;
 }
-.prev:hover, .next:hover {
+.prev_carou:hover, .next_carou:hover {
 	text-decoration: none;
 	color: #333
 }
@@ -3303,7 +3322,7 @@ color: #fff!important;}
 	margin-top: -18px;
 }
 .slide p {
-	text-align: justify;
+	/* text-align: justify; */
 	line-height: 23px;
 	float: left;
 	font-size: 18px;
