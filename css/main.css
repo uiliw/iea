@@ -3322,7 +3322,7 @@ color: #fff!important;}
 	margin-top: -18px;
 }
 .slide p {
-	/* text-align: justify; */
+	text-align: justify;
 	line-height: 23px;
 	float: left;
 	font-size: 18px;

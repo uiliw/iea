@@ -850,6 +850,11 @@ $(function () {
 				
 				$('#modal').modal('hide');
 				$('.view'+view).click();
+				$('.menu_janela').css({
+                    display: 'none'
+                }).transition({
+                    opacity: 0
+                });
 				
 				/*if(view == mapa){
 					}else{
