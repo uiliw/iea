@@ -26,6 +26,15 @@
 }
 
 
+.pergunta{
+	border-left: 1px solid #666;
+color: #666;
+margin:10px
+}
+.pergunta p{
+	padding:0 20px!important
+	
+}
 /*******************************************
 		DEMO
 *******************************************/
@@ -825,8 +834,8 @@ top: 0;
 	background-color: #65babc;
 	position: absolute;
 	top: 398px;
-	left: 1200px;
-	width: 500px;
+	left: 1170px;
+	width: 580px;
 	padding-bottom: 10px;
 	opacity: 0;
 	display: none;
