@@ -25,8 +25,8 @@ $(function () {
                 "pinm1t3": 30,
                 "pinm1t4": 40,
                 "pinm1t5": 50,
-                "pinm1t6": "sem",
-                "pinm1t7": "sem",
+                "pinm1t6": 60,
+                "pinm1t7": 70,
                 "pinm1t8": "sem",
             },
             m2: {
@@ -35,8 +35,8 @@ $(function () {
                 "pinm2t3": 30,
                 "pinm2t4": 40,
                 "pinm2t5": 50,
-                "pinm2t6": "sem",
-                "pinm2t7": "sem",
+                "pinm2t6": 60,
+                "pinm2t7": 70,
                 "pinm2t8": "sem",
             },
             m3: {
@@ -110,6 +110,9 @@ $(function () {
 
             app.rejeitarBrowser();
 
+            // INICIALIZA AS TAGS DE AUDIO
+            app.initAudioTags();
+
             $('input').iCheck({
                 checkboxClass: 'icheckbox_flat-blue',
                 radioClass: 'iradio_flat-blue'
@@ -167,6 +170,7 @@ $(function () {
 			$('.fechar_conteudo_janela').click(function(e){
 				e.preventDefault();
 				
+                app.stopAnyAudio();
 				
 				if ( document.location.href.indexOf('?aplicabilidade') > -1 ) {
 					$('#modalPesquisa-Aplicabilidade').modal('show');
@@ -350,26 +354,13 @@ $(function () {
             }).on('show', function (e) {
 
                 $(e.target).parent().find(".icon-plus").first().removeClass("icon-plus").addClass("icon-minus");
-				$('.scroll').perfectScrollbar('update');
 
 
             }).on('hide', function (e) {
 
 
                 $(e.target).parent().find(".icon-minus").first().removeClass("icon-minus").addClass("icon-plus");
-				$('.scroll').perfectScrollbar('update');
 
-            });
-
-			$('#biblio-accordion').on('shown', function (e) {
-				
-				$('.scroll').animate({
-				   scrollTop: $(e.target).offset().top - $(e.target).parent().parent().parent().parent().parent().offset().top-40
-				 }, 300);
-				 setTimeout(function(){
-					$('.scroll').perfectScrollbar('update');
-				},320);
-				 
             });
         },
         initTabEvent: function () {
@@ -469,6 +460,8 @@ $(function () {
         //OBS.: ADICIONAR OS VALORES COM OS ATRIBUTOS DE DATA NOS LINKS COM CLASSE ABRE_MODAL
         initTrilhaEvent: function () {
 
+
+
             $('a.abre_modal').click(function (e) {
                 e.preventDefault();
                 var linkAbreModal = $(this);
@@ -498,6 +491,11 @@ $(function () {
                     app.getAPI().setTrilha(linkAbreModal.data('momento'), linkAbreModal.data('trilha'));
 
                 });
+
+                var momentoTrilha = linkAbreModal.data('momento') + '-' + linkAbreModal.data('trilha');
+
+                app.stopAnyAudio();
+                app.playAudio($('.' + momentoTrilha));
 
             });
 
@@ -553,12 +551,10 @@ $(function () {
 
                     if ($(this).text().search(new RegExp(filter, "i")) < 0) {
                         $(this).hide();
-						$('.scroll').perfectScrollbar('update');
 
                     } else {
                         $(this).show();
                         count++;
-						$('.scroll').perfectScrollbar('update');
                     }
                 });
 
@@ -582,12 +578,10 @@ $(function () {
 
                     if ($(this).text().search(new RegExp(filter, "i")) < 0) {
                         $(this).hide();
-						$('.scroll').perfectScrollbar('update');
 
                     } else {
                         $(this).show();
                         count++;
-						$('.scroll').perfectScrollbar('update');
                     }
                 });
 
@@ -713,10 +707,46 @@ $(function () {
 		},
 		*/
 
+        // INICIALIZA AS TAGS DE AUDIO DAS TRILHAS
+        initAudioTags: function () {
+
+            var classeAudio;
+
+            $('.menu_janela').each(function(){
+                classeAudio = $(this).attr('class');
+                classeAudio = classeAudio.substring(12);
+                $(this).prepend('<audio src="audio/' + classeAudio + '.mp3" autobuffer preload>');
+            });
+
+            $('a.abre_modal').each(function(){
+                var elementoModal = $(this);
+                classeAudio = elementoModal.data('momento') + '-' + elementoModal.data('trilha');
+                $(this).parent().prepend('<audio class="' + classeAudio + '" src="audio/' + classeAudio + '.mp3" autobuffer preload>');
+            });
+
+        },
+
+        playAudio: function (audioObj) {
+            audioObj.get(0).play();
+        },
+
+        // INTERROMPE QUALQUER AUDIO EM EXECUÇÃO
+        stopAnyAudio: function () {
+            $.each($('audio'), function(){
+                this.pause();
+                this.load();
+            });
+        },
+
         //INICIALIZA EVENTO PARA ABRIR POPUP AO CLICAR NO PREDIO DO MAPA
         initPopupEvent: function () {
 
+            $('.mapa-fundo').click(function(){
+                app.stopAnyAudio();
+            });
+
             $('.popup').click(function () {
+                app.stopAnyAudio();
                 var $id = $(this).attr('class').split(' ')[2];
                 $('.menu_janela').css({
                     display: 'none'
@@ -725,13 +755,13 @@ $(function () {
                 });
                 $("ul.flex-direction-nav").addClass('hide');
                 setTimeout(function () {
+                    app.playAudio($('.' + $id + '-popup audio'));
                     $('.' + $id + '-popup').css({
                         display: 'block'
                     }).transition({
                         opacity: 1
                     });
                 }, 600);
-
 
             });
 
