@@ -165,6 +165,11 @@ $(function () {
 			if ( document.location.href.indexOf('?satisfacao') > -1 ) {
 				$('#modalSatisfacao').modal('show');
 			}
+				
+			//Fichas
+			if ( document.location.href.indexOf('?ficha') > -1 ) {
+				$('#fichas').modal('show');
+			}
 			
 			//Aplicabilidade conteúdo 
 			$('.fechar_conteudo_janela').click(function(e){
@@ -203,6 +208,7 @@ $(function () {
 					});		
 				});
 			};
+			
 			
 			//Modelo aplicado
 			if ( document.location.href.indexOf('?modelo') > -1 ) {
